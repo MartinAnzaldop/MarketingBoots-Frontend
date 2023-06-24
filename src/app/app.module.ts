@@ -12,6 +12,7 @@ import { ContactoComponent } from './components/contacto/contacto.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { NavbarAdminComponent } from './components/navbar-admin/navbar-admin.component';
 import { ListaProductoComponent } from './components/lista-producto/lista-producto.component';
+import { EncuestaConfiguradaComponent } from './components/encuesta-configurada/encuesta-configurada.component';
 
 
 
@@ -27,6 +28,7 @@ import { ListaProductoComponent } from './components/lista-producto/lista-produc
     FooterComponent,
     NavbarAdminComponent,
     ListaProductoComponent,
+    EncuestaConfiguradaComponent,
     
   ],
   imports: [

@@ -22,16 +22,16 @@ Table of contents
 12. portfolio
 
 --------------------------------------------- */
-/* 
+/*
 ---------------------------------------------
 font & reset css
---------------------------------------------- 
+---------------------------------------------
 */
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
-/* 
+/*
 ---------------------------------------------
 reset
---------------------------------------------- 
+---------------------------------------------
 */
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, div
 pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q,
@@ -134,10 +134,10 @@ img {
   overflow: hidden;
 }
 
-/* 
+/*
 ---------------------------------------------
 global styles
---------------------------------------------- 
+---------------------------------------------
 */
 html,
 body {
@@ -218,7 +218,7 @@ body {
   border-radius: 23px;
   letter-spacing: 0.25px;
   border-bottom: 2px solid #fff!important;
-  transition: all .3s;
+  transition: all .3s
 }
 
 .main-blue-button a:hover {
@@ -248,10 +248,10 @@ body {
 }
 
 
-/* 
+/*
 ---------------------------------------------
 header
---------------------------------------------- 
+---------------------------------------------
 */
 
 .background-header {
@@ -737,10 +737,10 @@ header
   }
 }
 
-/* 
+/*
 ---------------------------------------------
 preloader
---------------------------------------------- 
+---------------------------------------------
 */
 
 .js-preloader {
@@ -839,10 +839,10 @@ preloader
 
 
 
-/* 
+/*
 ---------------------------------------------
 Banner Style
---------------------------------------------- 
+---------------------------------------------
 */
 
 .main-banner {
@@ -927,10 +927,10 @@ Banner Style
 
 
 
-/* 
+/*
 ---------------------------------------------
 Features Style
---------------------------------------------- 
+---------------------------------------------
 */
 
 #features {
@@ -1149,8 +1149,8 @@ Features Style
   text-transform: uppercase;
 }
 
-/* This for loop creates the  necessary css animation names 
-Due to the split circle of progress-left and progress right, we must use the animations on each side. 
+/* This for loop creates the  necessary css animation names
+Due to the split circle of progress-left and progress right, we must use the animations on each side.
 */
 .progress[data-percentage="10"] .progress-right .progress-bar {
   animation: loading-1 1.5s linear forwards;
@@ -1277,10 +1277,10 @@ Due to the split circle of progress-left and progress right, we must use the ani
 }
 
 
-/* 
+/*
 ---------------------------------------------
 About Us Style
---------------------------------------------- 
+---------------------------------------------
 */
 
 #about {
@@ -1313,10 +1313,10 @@ About Us Style
   margin: 40px 0px;
 }
 
-/* 
+/*
 ---------------------------------------------
 Services Style
---------------------------------------------- 
+---------------------------------------------
 */
 
 .our-services {
@@ -1371,10 +1371,10 @@ Services Style
 }
 
 
-/* 
+/*
 ---------------------------------------------
 Portfolio
---------------------------------------------- 
+---------------------------------------------
 */
 
 .our-portfolio {
@@ -1474,10 +1474,10 @@ Portfolio
 
 
 
-/* 
+/*
 ---------------------------------------------
 contact
---------------------------------------------- 
+---------------------------------------------
 */
 
 .contact-us {
@@ -1574,6 +1574,27 @@ form#contact textarea {
 form#contact textarea::placeholder {
   color: #aaa;
 }
+form#contact select {
+  width: 100%;
+  min-width: 100%;
+  max-width: 100%;
+  max-height: 180px;
+  min-height: 51px;
+  height: 51px;
+  border-radius: 5px;
+  background-color: transparent;
+  border: 2px solid #efefef;
+  outline: none;
+  font-size: 15px;
+  font-weight: 250;
+  color: #2a2a2a;
+  padding: 15px 20px;
+  margin-bottom: 20px;
+}
+
+form#contact select::placeholder {
+  color: #aaa;
+}
 
 form#contact button {
   display: inline-block;
@@ -1598,10 +1619,10 @@ form#contact button:hover {
   border-bottom: 2px solid #33ccc5!important;
 }
 
-/* 
+/*
 ---------------------------------------------
 Footer Style
---------------------------------------------- 
+---------------------------------------------
 */
 
 footer p {
@@ -1618,10 +1639,10 @@ footer p a:hover {
   color: #4771cb;
 }
 
-/* 
+/*
 ---------------------------------------------
 responsive
---------------------------------------------- 
+---------------------------------------------
 */
 
 @media (max-width: 1200px) {
