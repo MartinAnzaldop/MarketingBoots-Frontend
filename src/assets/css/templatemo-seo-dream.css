@@ -20,7 +20,6 @@ Table of contents
 10. preloader
 11. search
 12. portfolio
-
 --------------------------------------------- */
 /*
 ---------------------------------------------
@@ -1596,7 +1595,7 @@ form#contact select::placeholder {
   color: #aaa;
 }
 
-form#contact button {
+form#contact button{
   display: inline-block;
   background-color: #33ccc5;
   font-size: 15px;
