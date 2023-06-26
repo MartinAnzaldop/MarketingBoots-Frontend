@@ -12,6 +12,12 @@ import { ContactoComponent } from './components/contacto/contacto.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { NavbarAdminComponent } from './components/navbar-admin/navbar-admin.component';
 import { ListaProductoComponent } from './components/lista-producto/lista-producto.component';
+import { PedidoComponent } from './components/pedido/pedido.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+import{HttpClientModule }from '@angular/common/http';
+import { ListaPedidosComponent } from './components/lista-pedidos/lista-pedidos.component';
 
 
 
@@ -27,11 +33,17 @@ import { ListaProductoComponent } from './components/lista-producto/lista-produc
     FooterComponent,
     NavbarAdminComponent,
     ListaProductoComponent,
+    PedidoComponent,
+    ListaPedidosComponent,
     
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot(), // ToastrModule added
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
