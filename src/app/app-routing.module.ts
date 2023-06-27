@@ -13,6 +13,22 @@ const routes: Routes = [
   {path:'listaProducto', component:ListaProductoComponent},
   {path:'pedido', component:PedidoComponent},
   {path:'listaPedidos', component:ListaPedidosComponent},
+  //Martin
+
+
+
+  //Alexandra
+
+
+
+  //Ana
+
+
+
+  //Norma
+
+
+  
   {path:'**', redirectTo:'inicio', pathMatch:"full"}
 ];
 
