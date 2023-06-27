@@ -1,1 +1,27 @@
-<p>lista-configuracion-encuesta works!</p>
+<app-navbar-admin></app-navbar-admin><br><br><br><br>
+<div class="container mt-3">
+  <h1 class="text-center">Lista de encuestas configuradas</h1>
+  <button type="button" class="btn btn-success float-end m-2">agregar</button>
+    <table class="table table-dark table-hover">
+      <thead>
+        <tr>
+          <th>Fecha inicio</th>
+          <th>Fecha final</th>
+          <th>Titulo</th>
+          <th>Población</th>
+          <th>Articulo</th>
+          <th>Número de encuesta</th>
+          <th>Preguntas</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let  of " class="text-center">
+          <td>
+            <button type="button" class="btn btn-warning me-2">editar</button>
+            <button type="button" class="btn btn-danger">eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
