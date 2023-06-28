@@ -15,7 +15,13 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let  of " class="text-center">
+        <tr *ngFor="let encuestaConfigurada of listaEncuestaConfigurada" class="text-center">
+          <td>{{encuestaConfigurada.fechaInicio}}</td>
+          <td>{{encuestaConfigurada.fechaFinal}}</td>
+          <td>{{encuestaConfigurada.titulo}}</td>
+          <td> {{encuestaConfigurada.poblacion}}</td>
+          <td>{{encuestaConfigurada.articulo}}</td>
+          <td>{{encuestaConfigurada.numeroEncuesta}}</td>
           <td>
             <button type="button" class="btn btn-warning me-2">editar</button>
             <button type="button" class="btn btn-danger">eliminar</button>

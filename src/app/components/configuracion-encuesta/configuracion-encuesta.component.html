@@ -14,26 +14,36 @@
               <div class="row">
                 <div class="col-lg-6">
                   <fieldset>
-                    <input type="date" name="fechaInicio" id="date" placeholder="Fecha Inicio" autocomplete="on" required>
+                    <input type="name" formControlName="fechaInicio" name="fechaInicio" id="fechaInicio" placeholder="Fecha Inicio" autocomplete="on" required>
+                    <div class="text-danger" *ngIf="encuestaConfiguradaForm.get('fechaInicio')?.hasError('required') && encuestaConfiguradaForm.get('fechaInicio')?.touched">
+                      <span>La fecha inicial <strong>es obligatoria</strong></span>
+                    </div>
                   </fieldset>
                 </div>
                 <div class="col-lg-6">
                   <fieldset>
-                    <input type="date" name="fechaFinal" id="date1" placeholder="Fecha Final" autocomplete="on" required>
+                    <input type="surname" formControlName="fechaFinal" name="fechaFinal" id="fechaFinal" placeholder="Fecha Final" autocomplete="on" required>
+                    <div class="text-danger" *ngIf="encuestaConfiguradaForm.get('fechaFinal')?.hasError('required') && encuestaConfiguradaForm.get('fechaFinal')?.touched">
+                      <span>La fecha de termino <strong>es obligatoria</strong></span>
+                    </div>
                   </fieldset>
                 </div>
                 <div class="col-lg-6">
                   <fieldset>
-                    <input type="text" name="titulo" id="text" placeholder="Titulo" autocomplete="on" required>
+                    <input class="form-control" formControlName="titulo" type="text" name="titulo" id="titulo" placeholder="Titulo" autocomplete="on" required>
+                    <div class="text-danger" *ngIf="encuestaConfiguradaForm.get('titulo')?.hasError('required') && encuestaConfiguradaForm.get('titulo')?.touched">
+                      <span>El titulo <strong>es obligatorio</strong></span>
+                    </div>
                   </fieldset>
                 </div>
                 <div class="col-lg-6">
                   <fieldset>
-                    <select id="cars" name="poblacion">
+                    <select class="form-control" formControlName="poblacion" type="text" name="poblacion" id="poblacion" required>
                       <option value="niño">Niño</option>
                       <option value="joven">Joven</option>
                       <option value="adulto">Adulto</option>
                       <option value="adultoMayor">Adulto Mayor</option>
+                      <span>La poblacion <strong>es obligatorio</strong></span>
                     </select>
                   </fieldset>
                 </div>
@@ -47,7 +57,10 @@
                 </div>
                 <div class="col-lg-6">
                   <fieldset>
-                    <input type="number" name="numeroEncuesta" id="numero" placeholder="Número de encuesta" autocomplete="on" required>
+                    <input class="form-control" formControlName="numeroEncuesta" type="number" name="numeroEncuesta" id="numeroEncuesta" placeholder="Número de encuesta" autocomplete="on" required>
+                    <div class="text-danger" *ngIf="encuestaConfiguradaForm.get('numeroEncuesta')?.hasError('required') && encuestaConfiguradaForm.get('numeroEncuesta')?.touched">
+                      <span>El número de encuesta  <strong>es obligatorio</strong></span>
+                    </div>
                   </fieldset>
                 </div>
                 <div class="col-lg-12">
@@ -62,7 +75,7 @@
                 </div>
                 <div class="col-lg-12">
                   <fieldset>
-                    <button type="submit" id="form-submit" class="main-button ">Enviar</button>
+                    <button type="submit" [disabled]="encuestaConfiguradaForm.invalid" id="form-submit" class="main-button ">Enviar encuesta configurada</button>
                   </fieldset>
                 </div>
               </div>

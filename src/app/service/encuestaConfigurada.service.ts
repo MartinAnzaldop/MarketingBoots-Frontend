@@ -10,6 +10,10 @@ export class EncuestaConfiguradaService {
 url='http://localhost:4000/api/encuestaConfigurada/';
   constructor(private http: HttpClient) { }
 
+  getEncuestaConfigurada():Observable<any>{
+    return this.http.get(this.url)
+  }
+
   deleteEncuestaConfigurada(id:string):Observable<any>{
     return this.http.delete(this.url+id);
   }
