@@ -23,6 +23,7 @@ import { ListaConfiguracionEncuestaComponent } from './components/lista-configur
 import { EditarConfiguracionEncuestaComponent } from './components/editar-configuracion-encuesta/editar-configuracion-encuesta.component';
 import { RespuestasEncuestasComponent } from './components/respuestas-encuestas/respuestas-encuestas.component';
 import { ListaRespuestasEncuestasComponent } from './components/lista-respuestas-encuestas/lista-respuestas-encuestas.component';
+import { AgregarPedidoComponent } from './components/agregar-pedido/agregar-pedido.component';
 
 
 
@@ -43,6 +44,7 @@ import { ListaRespuestasEncuestasComponent } from './components/lista-respuestas
     EditarConfiguracionEncuestaComponent,
     RespuestasEncuestasComponent,
     ListaRespuestasEncuestasComponent,
+    AgregarPedidoComponent,
     
   ],
   imports: [

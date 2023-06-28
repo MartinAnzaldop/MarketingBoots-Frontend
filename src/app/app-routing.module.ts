@@ -5,6 +5,7 @@ import { NavbarAdminComponent } from './components/navbar-admin/navbar-admin.com
 import { ListaProductoComponent } from './components/lista-producto/lista-producto.component';
 import { PedidoComponent } from './components/pedido/pedido.component';
 import { ListaPedidosComponent } from './components/lista-pedidos/lista-pedidos.component';
+import { AgregarPedidoComponent } from './components/agregar-pedido/agregar-pedido.component';
 
 const routes: Routes = [
   {path:'', redirectTo:'inicio', pathMatch:"full"},
@@ -14,7 +15,8 @@ const routes: Routes = [
   {path:'pedido', component:PedidoComponent},
   {path:'listaPedidos', component:ListaPedidosComponent},
   //Martin
-
+  {path:'agregarPedido', component:AgregarPedidoComponent},
+  {path:'editarPedido/:id', component:AgregarPedidoComponent},
 
 
   //Alexandra
