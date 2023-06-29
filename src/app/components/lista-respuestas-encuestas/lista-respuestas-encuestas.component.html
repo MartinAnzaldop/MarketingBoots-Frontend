@@ -1,1 +1,39 @@
-<p>lista-respuestas-encuestas works!</p>
+<app-navbar-admin></app-navbar-admin><br><br><br><br>
+<div class="container mt-5">
+    <h1 class="text-center">Lista de respuestas de encuestas</h1>
+    <button type="button" class="btn btn-success float-end m-2">agregar</button>
+    <table class="table table-dark table-hover">
+      <thead>
+        <tr class="text-center">
+          <th>Respuesta1</th>
+          <th>Respuesta2</th>
+          <th>Respuesta3</th>
+          <th>Respuesta4</th>
+          <th>Respuesta5</th>
+          <th>Respuesta6</th>
+          <th>Respuesta7</th>
+          <th>Respuesta8</th>
+          <th>Respuesta9</th>
+          <th>Respuesta10</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let respuestas of listaRespuestas" class="text-center">
+          <td>{{respuestas.respuesta1}}</td>
+          <td>{{respuestas.respuesta2}}</td>
+          <td>{{respuestas.respuesta3}}</td>
+          <td>{{respuestas.respuesta4}}</td>
+          <td>{{respuestas.respuesta5}}</td>
+          <td>{{respuestas.respuesta6}}</td>
+          <td>{{respuestas.respuesta7}}</td>
+          <td>{{respuestas.respuesta8}}</td>
+          <td>{{respuestas.respuesta9}}</td>
+          <td>{{respuestas.respuesta10}}</td>
+          <td>
+            <button [routerLink]="['/editarRespuestas', respuestas._id]" type="button" class="btn btn-warning me-2">editar</button>
+            <button (click)="eliminarRespuestas(respuestas._id)" type="button" class="btn btn-danger">eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

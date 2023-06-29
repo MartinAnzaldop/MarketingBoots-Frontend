@@ -1,1 +1,129 @@
-<p>respuestas-encuestas works!</p>
+<app-navbar-admin></app-navbar-admin>
+<div id="contact" class="contact-us section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.25s">
+          <form id="contact" [formGroup]="respuestasForm" (ngSubmit)="agregarRespuestas()">
+            <div class="row">
+              <div class="col-lg-6 offset-lg-3">
+                <div class="section-heading">
+                  <h2>Agregar Respuestas</h2>
+                </div>
+              </div>
+              <div class="col-lg-9">
+                <div class="row">
+                  <div class="col-lg-6">
+                    <fieldset>
+                      <input type="text" formControlName="respuesta1" name="respuesta1" id="respuesta1" placeholder="respuesta1" autocomplete="on" required>
+                    <div class="text-danger" *ngIf="respuestasForm.get('respuesta1')?.hasError('required') && respuestasForm.get('respuesta1')?.touched">
+                      <span>El respuesta 1 <strong>es obligatoria</strong></span>
+                    </div>
+                    </fieldset>
+                  </div>
+                  <div class="col-lg-6">
+                    <fieldset>
+                      <input type="text" formControlName="respuesta2" name="respuesta2" id="respuesta2" placeholder="respuesta2" autocomplete="on" required>
+                    <div class="text-danger" *ngIf="respuestasForm.get('respuesta2')?.hasError('required') && respuestasForm.get('respuesta2')?.touched">
+                      <span>El respuesta 2 <strong>es obligatoria</strong></span>
+                      </div>
+                    </fieldset>
+                  </div>
+                  <div class="col-lg-6">
+                    <fieldset>
+                      <input type="text" formControlName="respuesta3" name="respuesta3" id="respuesta3" placeholder="respuesta3" autocomplete="on" required>
+                    <div class="text-danger" *ngIf="respuestasForm.get('respuesta3')?.hasError('required') && respuestasForm.get('respuesta3')?.touched">
+                      <span>El respuesta 3 <strong>es obligatoria</strong></span>
+                      </div>
+                    </fieldset>
+                  </div>
+                  <div class="col-lg-6">
+                    <fieldset>
+                      <input type="text" formControlName="respuesta4" name="respuesta4" id="respuesta4" placeholder="respuesta4" autocomplete="on" required>
+                    <div class="text-danger" *ngIf="respuestasForm.get('respuesta4')?.hasError('required') && respuestasForm.get('respuesta4')?.touched">
+                      <span>El respuesta 4 <strong>es obligatoria</strong></span>
+                      </div>
+                    </fieldset>
+                  </div>
+                  <div class="col-lg-6">
+                    <fieldset>
+                      <input type="text" formControlName="respuesta5" name="respuesta5" id="respuesta5" placeholder="respuesta5" autocomplete="on" required>
+                    <div class="text-danger" *ngIf="respuestasForm.get('respuesta5')?.hasError('required') && respuestasForm.get('respuesta5')?.touched">
+                      <span>El respuesta 5 <strong>es obligatoria</strong></span>
+                    </div>
+                    </fieldset>
+                  </div>
+                  <div class="col-lg-6">
+                    <fieldset>
+                      <input type="text" formControlName="respuesta6" name="respuesta6" id="respuesta6" placeholder="respuesta6" autocomplete="on" required>
+                    <div class="text-danger" *ngIf="respuestasForm.get('respuesta6')?.hasError('required') && respuestasForm.get('respuesta6')?.touched">
+                      <span>El respuesta 6 <strong>es obligatoria</strong></span>
+                    </div>
+                    </fieldset>
+                  </div>
+                  <div class="col-lg-6">
+                    <fieldset>
+                      <input type="text" formControlName="respuesta7" name="respuesta7" id="respuesta7" placeholder="respuesta7" autocomplete="on" required>
+                    <div class="text-danger" *ngIf="respuestasForm.get('respuesta7')?.hasError('required') && respuestasForm.get('respuesta7')?.touched">
+                      <span>El respuesta 7 <strong>es obligatoria</strong></span>
+                    </div>
+                    </fieldset>
+                  </div>
+                  <div class="col-lg-6">
+                    <fieldset>
+                      <input type="text" formControlName="respuesta8" name="respuesta8" id="respuesta8" placeholder="respuesta8" autocomplete="on" required>
+                    <div class="text-danger" *ngIf="respuestasForm.get('respuesta8')?.hasError('required') && respuestasForm.get('respuesta8')?.touched">
+                      <span>El respuesta 8 <strong>es obligatoria</strong></span>
+                    </div>
+                    </fieldset>
+                  </div>
+                  <div class="col-lg-6">
+                    <fieldset>
+                      <input type="text" formControlName="respuesta9" name="respuesta9" id="respuesta9" placeholder="respuesta9" autocomplete="on" required>
+                    <div class="text-danger" *ngIf="respuestasForm.get('respuesta9')?.hasError('required') && respuestasForm.get('respuesta9')?.touched">
+                      <span>El respuesta 9 <strong>es obligatoria</strong></span>
+                    </div>
+                    </fieldset>
+                  </div>
+                  <div class="col-lg-6">
+                    <fieldset>
+                      <input type="text" formControlName="respuesta10" name="respuesta10" id="respuesta10" placeholder="respuesta10" autocomplete="on" required>
+                    <div class="text-danger" *ngIf="respuestasForm.get('respuesta10')?.hasError('required') && respuestasForm.get('respuesta10')?.touched">
+                      <span>El respuesta 10 <strong>es obligatoria</strong></span>
+                    </div>
+                    </fieldset>
+                  </div>
+                  <!--Boton de enviar-->
+                  <div class="col-lg-12">
+                    <fieldset>
+                      <button type="submit" [disabled]="respuestasForm.invalid" id="form-submit" class="main-button ">Enviar Respuestas</button>
+                    </fieldset>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3">
+                <div class="contact-info">
+                  <ul>
+                    <li>
+                      <div class="icon">
+                        <img src="assets/images/contact-icon-01.png" alt="email icon">
+                      </div>
+                      <a href="#">MarketingB@company.com</a>
+                    </li>
+                    <li>
+                      <div class="icon">
+                        <img src="assets/images/contact-icon-02.png" alt="phone">
+                      </div>
+                      <a href="#">+52 5542190095</a>
+                    </li>
+                    <li>
+
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>

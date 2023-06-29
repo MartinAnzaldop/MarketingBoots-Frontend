@@ -5,6 +5,8 @@ import { NavbarAdminComponent } from './components/navbar-admin/navbar-admin.com
 import { ListaProductoComponent } from './components/lista-producto/lista-producto.component';
 import { PedidoComponent } from './components/pedido/pedido.component';
 import { ListaPedidosComponent } from './components/lista-pedidos/lista-pedidos.component';
+import { ListaRespuestasEncuestasComponent } from './components/lista-respuestas-encuestas/lista-respuestas-encuestas.component';
+import { RespuestasEncuestasComponent } from './components/respuestas-encuestas/respuestas-encuestas.component';
 
 const routes: Routes = [
   {path:'', redirectTo:'inicio', pathMatch:"full"},
@@ -26,9 +28,9 @@ const routes: Routes = [
 
 
   //Norma
+  {path:'respuestasEncuestas', component:RespuestasEncuestasComponent},
+  {path:'listaRespuestasEncuestas', component:ListaRespuestasEncuestasComponent},
 
-
-  
   {path:'**', redirectTo:'inicio', pathMatch:"full"}
 ];
 
