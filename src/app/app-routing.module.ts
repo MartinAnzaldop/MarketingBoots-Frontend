@@ -5,6 +5,7 @@ import { NavbarAdminComponent } from './components/navbar-admin/navbar-admin.com
 import { ListaProductoComponent } from './components/lista-producto/lista-producto.component';
 import { PedidoComponent } from './components/pedido/pedido.component';
 import { ListaPedidosComponent } from './components/lista-pedidos/lista-pedidos.component';
+import { PreguntasSeleccionadasComponent } from './components/preguntas-seleccionadas/preguntas-seleccionadas.component';
 
 const routes: Routes = [
   {path:'', redirectTo:'inicio', pathMatch:"full"},
@@ -13,6 +14,7 @@ const routes: Routes = [
   {path:'listaProducto', component:ListaProductoComponent},
   {path:'pedido', component:PedidoComponent},
   {path:'listaPedidos', component:ListaPedidosComponent},
+  
   //Martin
 
 
@@ -22,6 +24,7 @@ const routes: Routes = [
 
 
   //Ana
+  {path:'preguntasSeleccionadas', component:PreguntasSeleccionadasComponent},
 
 
 
