@@ -1,7 +1,7 @@
 export class encuestaConfigurada{
-  _id?: number;
-  fechaInicio: Date;
-  fechaFinal: Date;
+  _id?:String;
+  fechaInicio: String;
+  fechaFinal: String;
   titulo: string;
   poblacion: string;
   articulo: string;
