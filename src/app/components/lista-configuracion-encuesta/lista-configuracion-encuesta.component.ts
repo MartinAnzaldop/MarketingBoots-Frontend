@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { encuestaConfigurada } from 'src/app/models/encuestaConfigurada';
 import { EncuestaConfiguradaService } from 'src/app/service/encuestaConfigurada.service';
@@ -12,12 +13,12 @@ export class ListaConfiguracionEncuestaComponent implements OnInit {
 listaEncuestaConfigurada:encuestaConfigurada []=[];
 
   constructor(private _EncuestaCondfiguradaService:EncuestaConfiguradaService,
-    private toastr: ToastrService) { }
+    private toastr: ToastrService, private router: Router) { }
 
   ngOnInit(): void {
-    this.obetenerEncuestasConfiguradas();
+    this.obtenerEncuestasConfiguradas();
   }
-  obetenerEncuestasConfiguradas(){
+  obtenerEncuestasConfiguradas(){
     this._EncuestaCondfiguradaService.getEncuestaConfigurada().subscribe(data=>{
       console.log(data);
       this.listaEncuestaConfigurada=data;
@@ -25,12 +26,13 @@ listaEncuestaConfigurada:encuestaConfigurada []=[];
     console.log(error)
     })
   }
-  eliminarEncuestaConfigurada(id: any){
-    this._EncuestaCondfiguradaService.deleteEncuestaConfigurada(id).subscribe(data=>{
-    this.toastr.error('La encuesta configurada fue eliminada con exito', 'Encuesta configurada eliminada');
-    this.obetenerEncuestasConfiguradas();
-    }, error =>{
-      console.log(error);
+  eliminarEncuestaConfigurada(id:any){
+    this._EncuestaCondfiguradaService.deleteEncuestaConfigurada(id).subscribe(data=>  {
+    this.toastr.error('La encuesta configurada fue eliminada con exito','Encuesta configurada eliminada');
+    this.obtenerEncuestasConfiguradas();
+    this.router.navigate(['/listaConfiguracionEncuesta'])
+    },error=>{
+      console.log(error)
     })
   }
 }

@@ -13,9 +13,9 @@ listaPedido:Pedido []=[];
   constructor(private _PedidosService: PedidoService) { }
 
   ngOnInit(): void {
-    this.obetenerPedidos()
+    this.obtenerPedidos()
   }
-obetenerPedidos(){
+obtenerPedidos(){
   this._PedidosService.getPedidos().subscribe(data=>{
     console.log(data);
     this.listaPedido=data;
@@ -23,4 +23,5 @@ obetenerPedidos(){
   console.log(error)
   })
 }
+
 }
