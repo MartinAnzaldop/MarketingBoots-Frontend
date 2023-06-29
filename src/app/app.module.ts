@@ -9,6 +9,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 
 import { NavbarAdminComponent } from './components/navbar-admin/navbar-admin.component';
 import { ListaProductoComponent } from './components/lista-producto/lista-producto.component';
+
+
 import { PedidoComponent } from './components/pedido/pedido.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -24,6 +26,7 @@ import { EditarConfiguracionEncuestaComponent } from './components/editar-config
 import { RespuestasEncuestasComponent } from './components/respuestas-encuestas/respuestas-encuestas.component';
 import { ListaRespuestasEncuestasComponent } from './components/lista-respuestas-encuestas/lista-respuestas-encuestas.component';
 import { AgregarPedidoComponent } from './components/agregar-pedido/agregar-pedido.component';
+
 
 
 
@@ -45,6 +48,7 @@ import { AgregarPedidoComponent } from './components/agregar-pedido/agregar-pedi
     RespuestasEncuestasComponent,
     ListaRespuestasEncuestasComponent,
     AgregarPedidoComponent,
+
     
   ],
   imports: [

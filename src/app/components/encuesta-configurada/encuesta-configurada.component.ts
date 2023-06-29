@@ -7,11 +7,11 @@ import { EncuestaConfiguradaService} from 'src/app/service/encuestaConfigurada.s
 
 @Component({
   selector: 'app-configuracion-encuesta',
-  templateUrl: './configuracion-encuesta.component.html',
-  styleUrls: ['./configuracion-encuesta.component.css']
+  templateUrl: './encuesta-configurada.component.html',
+  styleUrls: ['./encuesta-configurada.component.css']
 })
 export class ConfiguracionEncuestaComponent implements OnInit {
-  encuestaConfiguradaForm: FormGroup;
+encuestaConfiguradaForm: FormGroup;
 constructor(private fb: FormBuilder, private  router: Router, private toastr: ToastrService,
   private _EncuestaCondfiguradaService:EncuestaConfiguradaService) {
       this.encuestaConfiguradaForm = this.fb.group({
@@ -35,7 +35,7 @@ constructor(private fb: FormBuilder, private  router: Router, private toastr: To
       poblacion: this.encuestaConfiguradaForm.get('poblacion')?.value,
       articulo: this.encuestaConfiguradaForm.get('articulo')?.value,
       numeroEncuesta: this.encuestaConfiguradaForm.get('numeroEncuesta')?.value,
-
+    
     }
     console.log(encuestaConfigurada);
     this._EncuestaCondfiguradaService.guardarEncuestaConfigurada(ENCUESTACONFIGURADA).subscribe(dato=>{
