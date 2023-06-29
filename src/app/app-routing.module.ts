@@ -7,9 +7,11 @@ import { ConfiguracionEncuestaComponent } from './components/configuracion-encue
 import { ListaConfiguracionEncuestaComponent } from './components/lista-configuracion-encuesta/lista-configuracion-encuesta.component';
 import { PedidoComponent } from './components/pedido/pedido.component';
 import { ListaPedidosComponent } from './components/lista-pedidos/lista-pedidos.component';
+
 import { AgregarPedidoComponent } from './components/agregar-pedido/agregar-pedido.component';
 import { PreguntasSeleccionadasComponent } from './components/preguntas-seleccionadas/preguntas-seleccionadas.component';
-
+import { ListaRespuestasEncuestasComponent } from './components/lista-respuestas-encuestas/lista-respuestas-encuestas.component';
+import { RespuestasEncuestasComponent } from './components/respuestas-encuestas/respuestas-encuestas.component';
 
 
 const routes: Routes = [
@@ -36,6 +38,10 @@ const routes: Routes = [
 
 
   //Norma
+  {path:'respuestasEncuestas', component:RespuestasEncuestasComponent},
+  {path:'listaRespuestasEncuestas', component:ListaRespuestasEncuestasComponent},
+
+
 
 
 
