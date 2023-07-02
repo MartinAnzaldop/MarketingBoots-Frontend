@@ -28,10 +28,10 @@ export class ListaRespuestasEncuestasComponent implements OnInit {
     })
   }
   eliminarRespuestas(id:any){
-    this._RespuestasService.deleteRespuestas(id).subscribe(data=>{
-    this.toastr.error('La respuesta fue eliminada con exito','Respuesta eliminado');
+    this._RespuestasService.eliminarRespuestas(id).subscribe(data=>{
+    this.toastr.error('La respuesta fue eliminada con exito','Respuesta eliminada');
     this.obetenerRespuestas();
-    this.router.navigate(['/listaRespuestas'])
+    this.router.navigate(['/listaRespuestasEncuestas'])
     },error=>{
       console.log(error);
     })
