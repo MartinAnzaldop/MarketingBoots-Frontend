@@ -14,7 +14,7 @@ export class RespuestasService {
     return this.http.get(this.url);
   }
 
-  deleteRespuestas(id: string): Observable<any> {
+  eliminarRespuestas(id: string): Observable<any> {
     return this.http.delete(this.url + id);
   }
 

@@ -24,7 +24,7 @@
                     <fieldset>
                       <input type="surname" formControlName="direccion" name="direccion" id="direccion" placeholder="Direccion" autocomplete="on" required>
                       <div class="text-danger" *ngIf="pedidoForm.get('direccion')?.hasError('required') && pedidoForm.get('direccion')?.touched">
-                        <span>El nombre della direccion <strong>es obligatorio</strong></span>
+                        <span>El nombre de la direccion <strong>es obligatorio</strong></span>
                       </div>
                     </fieldset>
                   </div>
@@ -40,7 +40,7 @@
                     <fieldset>
                       <input type="subject" formControlName="encargado" name="encargado" id="encargado" placeholder="Encargado" autocomplete="on">
                       <div class="text-danger" *ngIf="pedidoForm.get('encargado')?.hasError('required') && pedidoForm.get('encargado')?.touched">
-                        <span>El nombre del encragado <strong>es obligatorio</strong></span>
+                        <span>El nombre del encargado <strong>es obligatorio</strong></span>
                       </div>
                     </fieldset>
                   </div>
