@@ -25,6 +25,7 @@ export class RespuestasEncuestasComponent implements OnInit {
         respuesta7:['', Validators.required],
         respuesta8:['', Validators.required],
         respuesta9:['', Validators.required],
+        respuesta10:['', Validators.required],
       })
     }
 
@@ -48,10 +49,10 @@ export class RespuestasEncuestasComponent implements OnInit {
     }
     console.log(RESPUESTAS);
     this._RespuestasService.guardarRespuestas(RESPUESTAS).subscribe(dato=>{
-      this.router.navigate(['/acerca'])
+      this.router.navigate(['/listaRespuestasEncuestas'])
     }, error=>{
     console.log(error);
-    this.respuestasForm.reset()
+    this.respuestasForm.reset();
     })
     }
 }
