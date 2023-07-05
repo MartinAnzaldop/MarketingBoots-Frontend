@@ -26,6 +26,8 @@ import { EditarConfiguracionEncuestaComponent } from './components/editar-config
 import { RespuestasEncuestasComponent } from './components/respuestas-encuestas/respuestas-encuestas.component';
 import { ListaRespuestasEncuestasComponent } from './components/lista-respuestas-encuestas/lista-respuestas-encuestas.component';
 import { AgregarPedidoComponent } from './components/agregar-pedido/agregar-pedido.component';
+import { AgregarConfiguracionComponent } from './components/agregar-configuracion/agregar-configuracion.component';
+
 
 
 
@@ -48,6 +50,8 @@ import { AgregarPedidoComponent } from './components/agregar-pedido/agregar-pedi
     RespuestasEncuestasComponent,
     ListaRespuestasEncuestasComponent,
     AgregarPedidoComponent,
+    AgregarConfiguracionComponent
+
 
     
   ],

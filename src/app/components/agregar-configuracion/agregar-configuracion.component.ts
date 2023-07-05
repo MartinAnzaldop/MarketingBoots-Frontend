@@ -1,16 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Toast, ToastrService } from 'ngx-toastr';
+import { ToastrService } from 'ngx-toastr';
 import { encuestaConfigurada } from 'src/app/models/encuestaConfigurada';
-import { EncuestaConfiguradaService} from 'src/app/service/encuestaConfigurada.service';
+import { EncuestaConfiguradaService } from 'src/app/service/encuestaConfigurada.service';
 
 @Component({
-  selector: 'app-configuracion-encuesta',
-  templateUrl: './configuracion-encuesta.component.html',
-  styleUrls: ['./configuracion-encuesta.component.css']
+  selector: 'app-agregar-configuracion',
+  templateUrl: './agregar-configuracion.component.html',
+  styleUrls: ['./agregar-configuracion.component.css']
 })
-export class ConfiguracionEncuestaComponent implements OnInit {
+export class AgregarConfiguracionComponent implements OnInit {
+
   encuestaConfiguradaForm: FormGroup;
 constructor(private fb: FormBuilder, private  router: Router, private toastr: ToastrService,
   private _EncuestaCondfiguradaService:EncuestaConfiguradaService) {
@@ -39,7 +40,7 @@ constructor(private fb: FormBuilder, private  router: Router, private toastr: To
     }
     console.log(ENCUESTACONFIGURADA);
     this._EncuestaCondfiguradaService.guardarEncuestaConfigurada(ENCUESTACONFIGURADA).subscribe(dato=>{
-    this.toastr.success('La encuesta configurada fue eliminada con exito','Encuesta configurada eliminada');
+      this.toastr.success('La encuesta configurada fue agregada con existo','Encuesta configurada agregada');
       this.router.navigate(['/listaConfiguracionEncuesta'])
     }, error=>{
     console.log(error);

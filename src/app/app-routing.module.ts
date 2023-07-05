@@ -1,3 +1,4 @@
+import { AgregarConfiguracionComponent } from './components/agregar-configuracion/agregar-configuracion.component';
 import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { InicioComponent } from './components/inicio/inicio.component';
@@ -7,6 +8,7 @@ import { ConfiguracionEncuestaComponent } from './components/configuracion-encue
 import { ListaConfiguracionEncuestaComponent } from './components/lista-configuracion-encuesta/lista-configuracion-encuesta.component';
 import { PedidoComponent } from './components/pedido/pedido.component';
 import { ListaPedidosComponent } from './components/lista-pedidos/lista-pedidos.component';
+import { AgregarPreguntaComponent } from './components/agregar-pregunta/agregar-pregunta.component';
 
 import { AgregarPedidoComponent } from './components/agregar-pedido/agregar-pedido.component';
 import { PreguntasSeleccionadasComponent } from './components/preguntas-seleccionadas/preguntas-seleccionadas.component';
@@ -30,7 +32,8 @@ const routes: Routes = [
   //Alexandra
   {path:'configuracionEncuesta', component:ConfiguracionEncuestaComponent},
   {path:'listaConfiguracionEncuesta', component:ListaConfiguracionEncuestaComponent},
-
+  {path:'agregarEncuestaConfigurada', component:ConfiguracionEncuestaComponent},
+  {path:'agregarConfiguracion', component:AgregarConfiguracionComponent},
 
   //Ana
   {path:'preguntasSeleccionadas', component:PreguntasSeleccionadasComponent},
