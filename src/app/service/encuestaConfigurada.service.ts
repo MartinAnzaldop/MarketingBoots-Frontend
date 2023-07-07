@@ -21,4 +21,12 @@ url='http://localhost:4000/api/encuestaConfigurada/';
   guardarEncuestaConfigurada(encuestaConfigurada:encuestaConfigurada):Observable<any>{
     return this.http.post(this.url, encuestaConfigurada);
   }
+
+  obtenerEncuestaConfiguradaById(id: string):Observable<any>{
+    return this.http.get(this.url+id);
+  }
+
+  editarEncuestaConfigurada(id: string, encuestaconfigurada:encuestaConfigurada):Observable<any>{
+    return this.http.put(this.url+id, encuestaconfigurada);
+  }
 }

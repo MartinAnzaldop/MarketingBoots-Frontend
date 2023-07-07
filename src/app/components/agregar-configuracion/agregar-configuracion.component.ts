@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { encuestaConfigurada } from 'src/app/models/encuestaConfigurada';
 import { EncuestaConfiguradaService } from 'src/app/service/encuestaConfigurada.service';
@@ -13,8 +13,10 @@ import { EncuestaConfiguradaService } from 'src/app/service/encuestaConfigurada.
 export class AgregarConfiguracionComponent implements OnInit {
 
   encuestaConfiguradaForm: FormGroup;
+  titulo = 'Agregar configuración de encuesta';
+  id:string | null;
 constructor(private fb: FormBuilder, private  router: Router, private toastr: ToastrService,
-  private _EncuestaCondfiguradaService:EncuestaConfiguradaService) {
+  private _EncuestaCondfiguradaService:EncuestaConfiguradaService, private aRouter: ActivatedRoute) {
       this.encuestaConfiguradaForm = this.fb.group({
         fechaInicio:['', Validators.required],
         fechaFinal:['', Validators.required],
@@ -23,8 +25,10 @@ constructor(private fb: FormBuilder, private  router: Router, private toastr: To
         articulo:['', Validators.required],
         numeroEncuesta:['', Validators.required],
       })
+      this.id = this.aRouter.snapshot.paramMap.get('id');
     }
   ngOnInit(): void {
+    this.esEditar()
   }
 
   agregarEncuestaConfigurada(){
@@ -38,14 +42,44 @@ constructor(private fb: FormBuilder, private  router: Router, private toastr: To
       numeroEncuesta: this.encuestaConfiguradaForm.get('numeroEncuesta')?.value,
 
     }
-    console.log(ENCUESTACONFIGURADA);
-    this._EncuestaCondfiguradaService.guardarEncuestaConfigurada(ENCUESTACONFIGURADA).subscribe(dato=>{
-      this.toastr.success('La encuesta configurada fue agregada con existo','Encuesta configurada agregada');
-      this.router.navigate(['/listaConfiguracionEncuesta'])
-    }, error=>{
-    console.log(error);
-    this.encuestaConfiguradaForm.reset()
-    })
+
+    if(this.id !==null){
+      //editamos encuesta configurada//
+      this._EncuestaCondfiguradaService.editarEncuestaConfigurada(this.id, ENCUESTACONFIGURADA).subscribe(data=>{
+        this.router.navigate(['/listaConfiguracionEncuesta'])
+        this.toastr.info('La encuesta configurada fue editada con exito','Encuesta configurada editada');
+      }, error=>{
+        console.log(error);
+        })
+    }else {
+      //agregamos encuesta configurada//
+      console.log(ENCUESTACONFIGURADA);
+      this._EncuestaCondfiguradaService.guardarEncuestaConfigurada(ENCUESTACONFIGURADA).subscribe(dato=>{
+        this.router.navigate(['/listaConfiguracionEncuesta'])
+        this.toastr.success('La configuración de encuesta fue editada con exito', 'Configuración de encuesta agregada');
+      }, error=>{
+        console.log(error);
+        this.encuestaConfiguradaForm.reset()
+      })
+    }
     }
 
-}
+    esEditar(){
+
+      if(this.id !==null){
+        this.titulo='Editar encuesta configurada';
+        this._EncuestaCondfiguradaService.obtenerEncuestaConfiguradaById(this.id).subscribe(data=>{
+        this.encuestaConfiguradaForm.setValue({
+            fechaInicio: data.fechaInicio,
+            fechaFinal: data.fechaFinal,
+            titulo: data.titulo,
+            poblacion: data.poblacion,
+            articulo: data.articulo,
+            numeroEncuesta: data.numeroEncuesta,
+        })
+        },error=>{
+          console.log(error)
+        })
+      }
+    }
+  }

@@ -27,6 +27,7 @@ const routes: Routes = [
   {path:'listaConfiguracionEncuesta', component:ListaConfiguracionEncuestaComponent},
   {path:'agregarEncuestaConfigurada', component:ConfiguracionEncuestaComponent},
   {path:'agregarConfiguracion', component:AgregarConfiguracionComponent},
+  {path: 'editarEncuestaConfigurada/:id', component:AgregarConfiguracionComponent},
 
   //Ana
 

@@ -35,4 +35,7 @@ listaEncuestaConfigurada:encuestaConfigurada []=[];
       console.log(error)
     })
   }
+  editarEncuestaConfigurada(id:any){
+
+  }
 }
