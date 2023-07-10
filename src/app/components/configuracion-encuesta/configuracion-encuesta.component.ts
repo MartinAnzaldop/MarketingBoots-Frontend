@@ -39,7 +39,7 @@ constructor(private fb: FormBuilder, private  router: Router, private toastr: To
     }
     console.log(ENCUESTACONFIGURADA);
     this._EncuestaCondfiguradaService.guardarEncuestaConfigurada(ENCUESTACONFIGURADA).subscribe(dato=>{
-    this.toastr.success('La encuesta configurada fue eliminada con exito','Encuesta configurada eliminada');
+    this.toastr.success('La encuesta configurada fue agregada con exito','Encuesta configurada agregada');
       this.router.navigate(['/listaConfiguracionEncuesta'])
     }, error=>{
     console.log(error);
