@@ -21,4 +21,12 @@ url='http://localhost:4000/api/bancoPregu/';
   guardarBancoPregu(bancoPregu:BancoPregu):Observable<any>{
     return this.http.post(this.url, bancoPregu);
   }
+
+  obtenerBancoPreguById(id: string):Observable<any>{
+    return this.http.get(this.url + id);
+  }
+
+  editarBancoPregu(id: string, bancoPregu:BancoPregu):Observable<any>{
+    return this.http.put(this.url + id, bancoPregu);
+  }
 }

@@ -6,6 +6,9 @@ import { ListaProductoComponent } from './components/lista-producto/lista-produc
 import { PedidoComponent } from './components/pedido/pedido.component';
 import { ListaPedidosComponent } from './components/lista-pedidos/lista-pedidos.component';
 import { PreguntasSeleccionadasComponent } from './components/preguntas-seleccionadas/preguntas-seleccionadas.component';
+import { AgregarPreguntaComponent } from './components/agregar-pregunta/agregar-pregunta.component';
+import { ListaBancoPreguntasComponent } from './components/lista-banco-preguntas/lista-banco-preguntas.component';
+
 
 const routes: Routes = [
   {path:'', redirectTo:'inicio', pathMatch:"full"},
@@ -22,12 +25,13 @@ const routes: Routes = [
   //Alexandra
 
 
-
   //Ana
   {path:'preguntasSeleccionadas', component:PreguntasSeleccionadasComponent},
+  {path:'bancoPreguntas', component:AgregarPreguntaComponent},
+  {path:'listaBancoPreguntas', component:ListaBancoPreguntasComponent},
+  {path:'editarBancoPregu/:id', component:AgregarPreguntaComponent},
 
-
-
+  
   //Norma
 
 

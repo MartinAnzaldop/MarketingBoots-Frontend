@@ -1,1 +1,70 @@
-<p>agregar-pregunta works!</p>
+<app-navbar-admin></app-navbar-admin>
+<div id="contact" class="contact-us section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.25s">
+          <form id="contact" [formGroup]="bancoPreguForm" (ngSubmit)="agregarBancoPregu()">
+            <div class="row">
+              <div class="col-lg-6 offset-lg-3">
+                <div class="section-heading">
+                  <h2>Agregar preguntas</h2>
+                </div>
+              </div>
+              <div class="col-lg-8">
+                <div class="row">
+                    <tr>
+                        <td><label align-items="left" for="campo">Escribe tu pregunta:</label></td>
+                    </tr>
+                  <input type="name" formControlName="pregunta" name="pregunta" id="pregunta" placeholder="Pregunta" autocomplete="on" required>
+                  <div class="text-danger" *ngIf="bancoPreguForm.get('pregunta')?.hasError('required') && bancoPreguForm.get('pregunta')?.touched">
+                    <span>La pregunta <strong>es obligatoria</strong></span>
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                    <tr>
+                        <td><label align-items="left" for="campo">Selecciona la categoría:</label></td>
+                    </tr>
+                    <select class="form-control" formControlName="categoria" type="text" name="categoria"  id="categoria" placeholder="Selecciona la categoría" required>
+                      <option value="categoria"disabled> Selecciona la categoría</option>
+                      <option value="Investigación de mercados">Investigación de mercados</option>
+                      <option value="Producto o Servicio">Producto o Servicio</option>
+                      <option value="Plaza/Distribución">Plaza/Distribución</option>
+                      <option value="Precio">Precio</option>
+                      <option value="Promoción">Promoción</option>
+                      <option value="Personal">Personal</option>
+                      <option value="Procesos">Procesos</option>
+                      <option value="Posicionamiento">Posicionamiento</option>
+                    </select>
+                    <div class="text-danger" *ngIf="bancoPreguForm.get('categoria')?.hasError('required') && bancoPreguForm.get('categoria')?.touched">
+                      <span>La categoría <strong>es obligatoria</strong></span>
+                    </div>
+                </div>
+                  <!--Boton de enviar-->
+                  <div class="col-lg-12">
+                    <fieldset>
+                      <button type="submit" [disabled]="bancoPreguForm.invalid" id="form-submit" class="main-button ">Guardar pregunta</button>
+                    </fieldset>
+                  </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="contact-info">
+                  <ul>
+                    <li>
+                      <div class="icon">
+                        <img src="assets/images/contact-icon-01.png" alt="email icon">
+                      </div>
+                      <a href="#">MarketingB@company.com</a>
+                    </li>
+                    <li>
+                      <div class="icon">
+                        <img src="assets/images/contact-icon-02.png" alt="phone">
+                      </div>
+                      <a href="#">+52 5542190095</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
