@@ -6,8 +6,6 @@ export class Respuestas {
   respuesta4: String;
   respuesta5: String;
   respuesta6: String;
-  respuesta7: String;
-  respuesta8: String;
-  respuesta9: String;
-  respuesta10: String;
+
 }
+
