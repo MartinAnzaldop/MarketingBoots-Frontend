@@ -27,6 +27,15 @@ import { RespuestasEncuestasComponent } from './components/respuestas-encuestas/
 import { ListaRespuestasEncuestasComponent } from './components/lista-respuestas-encuestas/lista-respuestas-encuestas.component';
 import { AgregarPedidoComponent } from './components/agregar-pedido/agregar-pedido.component';
 import { AgregarConfiguracionComponent } from './components/agregar-configuracion/agregar-configuracion.component';
+import { ListaPreguntasSeleccionadasComponent } from './components/lista-preguntas-seleccionadas/lista-preguntas-seleccionadas.component';
+import { AdminIniciarSesionComponent } from './components/admin-iniciar-sesion/admin-iniciar-sesion.component';
+import { AdminVistaComponent } from './components/admin-vista/admin-vista.component';
+import { AdminEncuestaComponent } from './components/admin-encuesta/admin-encuesta.component';
+import { EstadisticasComponent } from './components/estadisticas/estadisticas.component';
+import { UserIniciarSesionComponent } from './components/user-iniciar-sesion/user-iniciar-sesion.component';
+import { UserRegistroComponent } from './components/user-registro/user-registro.component';
+import { UserVistaComponent } from './components/user-vista/user-vista.component';
+import { UserResultadoEncuestaComponent } from './components/user-resultado-encuesta/user-resultado-encuesta.component';
 
 
 @NgModule({
@@ -47,7 +56,16 @@ import { AgregarConfiguracionComponent } from './components/agregar-configuracio
     RespuestasEncuestasComponent,
     ListaRespuestasEncuestasComponent,
     AgregarPedidoComponent,
-    AgregarConfiguracionComponent
+    AgregarConfiguracionComponent,
+    ListaPreguntasSeleccionadasComponent,
+    AdminIniciarSesionComponent,
+    AdminVistaComponent,
+    AdminEncuestaComponent,
+    EstadisticasComponent,
+    UserIniciarSesionComponent,
+    UserRegistroComponent,
+    UserVistaComponent,
+    UserResultadoEncuestaComponent
 
 
     
