@@ -9,6 +9,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 
 import { NavbarAdminComponent } from './components/navbar-admin/navbar-admin.component';
 import { ListaProductoComponent } from './components/lista-producto/lista-producto.component';
+
+
 import { PedidoComponent } from './components/pedido/pedido.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -23,7 +25,17 @@ import { ListaConfiguracionEncuestaComponent } from './components/lista-configur
 import { EditarConfiguracionEncuestaComponent } from './components/editar-configuracion-encuesta/editar-configuracion-encuesta.component';
 import { RespuestasEncuestasComponent } from './components/respuestas-encuestas/respuestas-encuestas.component';
 import { ListaRespuestasEncuestasComponent } from './components/lista-respuestas-encuestas/lista-respuestas-encuestas.component';
-
+import { AgregarPedidoComponent } from './components/agregar-pedido/agregar-pedido.component';
+import { AgregarConfiguracionComponent } from './components/agregar-configuracion/agregar-configuracion.component';
+import { ListaPreguntasSeleccionadasComponent } from './components/lista-preguntas-seleccionadas/lista-preguntas-seleccionadas.component';
+import { AdminIniciarSesionComponent } from './components/admin-iniciar-sesion/admin-iniciar-sesion.component';
+import { AdminVistaComponent } from './components/admin-vista/admin-vista.component';
+import { AdminEncuestaComponent } from './components/admin-encuesta/admin-encuesta.component';
+import { EstadisticasComponent } from './components/estadisticas/estadisticas.component';
+import { UserIniciarSesionComponent } from './components/user-iniciar-sesion/user-iniciar-sesion.component';
+import { UserRegistroComponent } from './components/user-registro/user-registro.component';
+import { UserVistaComponent } from './components/user-vista/user-vista.component';
+import { UserResultadoEncuestaComponent } from './components/user-resultado-encuesta/user-resultado-encuesta.component';
 
 
 @NgModule({
@@ -43,6 +55,19 @@ import { ListaRespuestasEncuestasComponent } from './components/lista-respuestas
     EditarConfiguracionEncuestaComponent,
     RespuestasEncuestasComponent,
     ListaRespuestasEncuestasComponent,
+    AgregarPedidoComponent,
+    AgregarConfiguracionComponent,
+    ListaPreguntasSeleccionadasComponent,
+    AdminIniciarSesionComponent,
+    AdminVistaComponent,
+    AdminEncuestaComponent,
+    EstadisticasComponent,
+    UserIniciarSesionComponent,
+    UserRegistroComponent,
+    UserVistaComponent,
+    UserResultadoEncuestaComponent
+
+
     
   ],
   imports: [

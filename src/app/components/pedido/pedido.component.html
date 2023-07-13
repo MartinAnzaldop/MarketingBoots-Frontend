@@ -7,7 +7,7 @@
             <div class="row">
               <div class="col-lg-6 offset-lg-3">
                 <div class="section-heading">
-                  <h2>Agregar pedido</h2>
+                  <h2>Agregar solicitud</h2>
                 </div>
               </div>
               <div class="col-lg-9">
@@ -24,7 +24,7 @@
                     <fieldset>
                       <input type="surname" formControlName="direccion" name="direccion" id="direccion" placeholder="Direccion" autocomplete="on" required>
                       <div class="text-danger" *ngIf="pedidoForm.get('direccion')?.hasError('required') && pedidoForm.get('direccion')?.touched">
-                        <span>El nombre della direccion <strong>es obligatorio</strong></span>
+                        <span>El nombre de la direccion <strong>es obligatorio</strong></span>
                       </div>
                     </fieldset>
                   </div>
@@ -40,7 +40,7 @@
                     <fieldset>
                       <input type="subject" formControlName="encargado" name="encargado" id="encargado" placeholder="Encargado" autocomplete="on">
                       <div class="text-danger" *ngIf="pedidoForm.get('encargado')?.hasError('required') && pedidoForm.get('encargado')?.touched">
-                        <span>El nombre del encragado <strong>es obligatorio</strong></span>
+                        <span>El nombre del encargado <strong>es obligatorio</strong></span>
                       </div>
                     </fieldset>
                   </div>
@@ -82,7 +82,7 @@
                   </div>
                   <div class="col-lg-12">
                     <fieldset>
-                      <textarea formControlName="descripcionArticulo" name="descripcionArticulo" type="text" class="form-control" id="descripcionArticulo" placeholder="ingresa descripcion del articulo" required=""></textarea>  
+                      <textarea formControlName="descripcionArticulo" name="descripcionArticulo" type="text" class="form-control" id="descripcionArticulo" placeholder="ingresa descripcion del articulo" required=""></textarea>
                       <div class="text-danger" *ngIf="pedidoForm.get('descripcionArticulo')?.hasError('required') && pedidoForm.get('descripcionArticulo')?.touched">
                         <span>La descripcion del articulo <strong>es obligatorio</strong></span>
                       </div>
@@ -112,7 +112,7 @@
                       <a href="#">+52 5542190095</a>
                     </li>
                     <li>
-                      
+
                     </li>
                   </ul>
                 </div>
