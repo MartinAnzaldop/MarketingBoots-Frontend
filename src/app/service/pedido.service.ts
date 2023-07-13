@@ -21,4 +21,12 @@ url='http://localhost:4000/api/pedido/';
   guardarPedido(pedido:Pedido):Observable<any>{
     return this.http.post(this.url, pedido);
   }
+
+  obtenerPedidoById(id: string):Observable<any>{
+    return this.http.get(this.url + id);
+  }
+
+  editarPedido(id: string, pedido:Pedido):Observable<any>{
+    return this.http.put(this.url + id, pedido);
+  }
 }

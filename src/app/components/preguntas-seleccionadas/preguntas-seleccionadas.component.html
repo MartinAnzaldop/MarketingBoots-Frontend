@@ -1,1 +1,230 @@
-<p>preguntas-seleccionadas works!</p>
+<app-navbar-admin></app-navbar-admin>
+<div id="contact" class="contact-us section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.25s">
+          <form id="contact" [formGroup]="preguntaSelecForm" (ngSubmit)="agregarPreguntaSelec()">
+            <div class="row">
+              <div class="col-lg-6 offset-lg-3">
+                <div class="section-heading">
+                  <h2>Selecciona tus preguntas</h2>
+                </div>
+              </div>
+              <div class="col-lg-8">
+                <div class="row">
+                  <select name="preguntaSelec" formControlName="pregunta1" id="preguntaSelec">
+                    <option value="pregunta"></option>
+                    <option value="prueba">¿Cuánto tiempo llevas siendo cliente de nuestra marca?</option>
+                    <option value="pregunta2">¿Qué probabilidades hay de que recomiendes nuestra marca a un amigo y/o familiar?</option>
+                    <option value="pregunta3">¿Qué problema resuelve nuestro (producto o servicio) en tu vida diaria?</option>
+                    <option value="pregunta4">¿Qué te gustaría que tuviera el (producto o servicio) que no tiene actualmente?</option>
+                    <option value="pregunta5">¿Qué es lo que más te gusta de nuestro (producto o servicio)?</option>
+                    <option value="pregunta6">¿Consideras que los medios de comunicación de nuestra marca son los adecuados?</option>
+                    <option value="pregunta7">Del 1 al 5, ¿cómo calificarías tu última experiencia con nosotros?</option>
+                    <option value="pregunta8">Del 1 al 5, ¿qué tan satisfecho estás con nuestro (producto o servicio)?</option>
+                    <option value="pregunta9">¿Nuestro (producto o servicio) cubre tus expectativas?</option>
+                    <option value="pregunta10">¿El precio del producto o servicio va de acorde con los beneficios que te brinda?</option>
+                  </select>
+                  <div class="text-danger" *ngIf="preguntaSelecForm.get('pregunta1')?.hasError('required') && preguntaSelecForm.get('pregunta1')?.touched">
+                    <span>La pregunta 1 <strong>es obligatorio</strong></span>
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                  <select name="preguntaSelec" formControlName="pregunta2" id="preguntaSelec">
+                    <option value="pregunta"></option>
+                    <option value="pregunta1">Del 1 al 10, ¿cuánto calificarías a la calidad del producto o servicio?</option>
+                    <option value="pregunta2">Del 1 al 10, ¿cuánto calificarías a la presentación del producto?</option>
+                    <option value="pregunta3">¿Nuestra tienda es de fácil acceso?</option>
+                    <option value="pregunta4">¿Consideras que la distribución del producto es óptima/ accesible?</option>
+                    <option value="pregunta5">Si pudieras, ¿cambiarías la locación de nuestra tienda?</option>
+                    <option value="pregunta6">¿Nuestro servicio de entrega es rápido?</option>
+                    <option value="pregunta7">¿Nuestro servicio de entrega cubre tus necesidades?</option>
+                    <option value="pregunta8">Del 1 al 10, ¿qué puntaje le pondrías a nuestras plataformas online de venta?</option>
+                    <option value="pregunta9">¿Has tenido algún problema a la hora de comprar nuestros productos, tanto en la tienda física u online?</option>
+                    <option value="pregunta10">¿Consideras que el precio es el adecuado para el producto/servicio que ofrecemos?</option>
+                  </select>
+                  <div class="text-danger" *ngIf="preguntaSelecForm.get('pregunta2')?.hasError('required') && preguntaSelecForm.get('pregunta2')?.touched">
+                    <span>La pregunta 2 <strong>es obligatorio</strong></span>
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                  <select name="preguntaSelec" formControlName="pregunta3" id="preguntaSelec">
+                    <option value="pregunta"></option>
+                    <option value="pregunta1">¿Existe relación entre el precio y la calidad del producto/servicio?</option>
+                    <option value="pregunta2">¿Pagarías un precio adicional por más funcionalidades del servicio?</option>
+                    <option value="pregunta3">¿Cuánto estarías dispuesto a pagar por nuestro producto?</option>
+                    <option value="pregunta4">¿Cuál es el medio que más usas para enterarte de nuestras promociones?</option>
+                    <option value="pregunta5">¿Consideras que el lenguaje de nuestra marca es el adecuado?</option>
+                    <option value="pregunta6">¿Alguna vez has tenido algún inconveniente con una promoción o descuento?</option>
+                    <option value="pregunta7">Del 1 al 10, ¿qué nota le pondrías a nuestra atención al cliente en la tienda física?</option>
+                    <option value="pregunta8">Del 1 al 10, ¿qué nota le pondrías a nuestra?</option>
+                    <option value="pregunta9">¿Consideras que hay un buen trato por nuestro personal a los clientes de la marca?</option>
+                    <option value="pregunta10">¿Consideras que nuestro servicio es eficiente?</option>
+                  </select>
+                  <div class="text-danger" *ngIf="preguntaSelecForm.get('pregunta3')?.hasError('required') && preguntaSelecForm.get('pregunta3')?.touched">
+                    <span>La pregunta 3 <strong>es obligatorio</strong></span>
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                  <select name="preguntaSelec" formControlName="pregunta4" id="preguntaSelec">
+                    <option value="pregunta"></option>
+                    <option value="pregunta1">Del 1 al 10, ¿cómo calificarías a nuestro servicio post-venta?</option>
+                    <option value="pregunta2">¿Alguna vez no te han respondido alguna consulta? ¿En qué medio?</option>
+                    <option value="pregunta3">¿Alguna vez no te han respondido alguna consulta? ¿En qué medio?</option>
+                    <option value="pregunta4">¿Alguna vez no te han respondido alguna consulta? ¿En qué medio?</option>
+                    <option value="pregunta5">¿Alguna vez no te han respondido alguna consulta? ¿En qué medio?</option>
+                    <option value="pregunta6">¿Nuestro proceso de compra online es rápido?</option>
+                    <option value="pregunta7">¿Nuestro proceso de compra online es rápido?</option>
+                    <option value="pregunta8">¿Nuestro proceso de compra online es rápido?</option>
+                    <option value="pregunta9">¿Alguna vez has tenido algún inconveniente con un pedido?</option>
+                    <option value="pregunta10">¿Alguna vez has tenido algún inconveniente con un pedido?</option>
+                  </select>
+                  <div class="text-danger" *ngIf="preguntaSelecForm.get('pregunta4')?.hasError('required') && preguntaSelecForm.get('pregunta4')?.touched">
+                    <span>La pregunta 4 <strong>es obligatorio</strong></span>
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                  <select name="preguntaSelec" formControlName="pregunta5" id="preguntaSelec">
+                    <option value="pregunta"></option>
+                    <option value="pregunta1">Del 1 al 10, ¿qué nota le pondrías a todo nuestro servicio?</option>
+                    <option value="pregunta2">Del 1 al 10, ¿qué nota le pondrías a todo nuestro servicio?</option>
+                    <option value="pregunta3">Del 1 al 10, ¿qué nota le pondrías a todo nuestro servicio?</option>
+                    <option value="pregunta4">Del 1 al 10, ¿qué nota le pondrías a todo nuestro servicio?</option>
+                    <option value="pregunta5">Del 1 al 10, ¿qué nota le pondrías a todo nuestro servicio?</option>
+                    <option value="pregunta6">Del 1 al 10, ¿qué nota le pondrías a todo nuestro servicio?</option>
+                    <option value="pregunta7">Del 1 al 10, ¿qué nota le pondrías a todo nuestro servicio?</option>
+                    <option value="pregunta8">Del 1 al 10, ¿qué nota le pondrías a todo nuestro servicio?</option>
+                    <option value="pregunta9">Del 1 al 10, ¿qué nota le pondrías a todo nuestro servicio?</option>
+                    <option value="pregunta10">Del 1 al 10, ¿qué nota le pondrías a todo nuestro servicio?</option>
+                  </select>
+                  <div class="text-danger" *ngIf="preguntaSelecForm.get('pregunta5')?.hasError('required') && preguntaSelecForm.get('pregunta5')?.touched">
+                    <span>La pregunta 5 <strong>es obligatorio</strong></span>
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                  <select name="preguntaSelec" formControlName="pregunta6" id="preguntaSelec">
+                    <option value="pregunta"></option>
+                    <option value="pregunta1">¿Recomendarías nuestro servicio/producto a un amigo?</option>
+                    <option value="pregunta2">¿Recomendarías nuestro servicio/producto a un amigo?</option>
+                    <option value="pregunta3">¿Recomendarías nuestro servicio/producto a un amigo?</option>
+                    <option value="pregunta4">¿Recomendarías nuestro servicio/producto a un amigo?</option>
+                    <option value="pregunta5">¿Recomendarías nuestro servicio/producto a un amigo?</option>
+                    <option value="pregunta6">¿Recomendarías nuestro servicio/producto a un amigo?</option>
+                    <option value="pregunta7">¿Recomendarías nuestro servicio/producto a un amigo?</option>
+                    <option value="pregunta8">¿Recomendarías nuestro servicio/producto a un amigo?</option>
+                    <option value="pregunta9">¿Recomendarías nuestro servicio/producto a un amigo?</option>
+                    <option value="pregunta10">¿Recomendarías nuestro servicio/producto a un amigo?</option>
+                  </select>
+                  <div class="text-danger" *ngIf="preguntaSelecForm.get('pregunta6')?.hasError('required') && preguntaSelecForm.get('pregunta6')?.touched">
+                    <span>La pregunta 6 <strong>es obligatorio</strong></span>
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                  <select name="preguntaSelec" formControlName="pregunta7" id="preguntaSelec">
+                    <option value="pregunta"></option>
+                    <option value="pregunta1">¿Consideras que somos la empresa líder del sector?</option>
+                    <option value="pregunta2">¿Consideras que somos la empresa líder del sector?</option>
+                    <option value="pregunta3">¿Consideras que somos la empresa líder del sector?</option>
+                    <option value="pregunta4">¿Consideras que somos la empresa líder del sector?</option>
+                    <option value="pregunta5">¿Consideras que somos la empresa líder del sector?</option>
+                    <option value="pregunta6">¿Consideras que somos la empresa líder del sector?</option>
+                    <option value="pregunta7">¿Consideras que somos la empresa líder del sector?</option>
+                    <option value="pregunta8">¿Consideras que somos la empresa líder del sector?</option>
+                    <option value="pregunta9">¿Consideras que somos la empresa líder del sector?</option>
+                    <option value="pregunta10">¿Consideras que somos la empresa líder del sector?</option>
+                  </select>
+                  <div class="text-danger" *ngIf="preguntaSelecForm.get('pregunta7')?.hasError('required') && preguntaSelecForm.get('pregunta7')?.touched">
+                    <span>La pregunta 7 <strong>es obligatorio</strong></span>
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                  <select name="preguntaSelec" formControlName="pregunta8" id="preguntaSelec">
+                    <option value="pregunta"></option>
+                    <option value="pregunta1">¿Qué es lo que más te gusta de nuestro servicio/producto?</option>
+                    <option value="pregunta2">¿Qué es lo que más te gusta de nuestro servicio/producto?</option>
+                    <option value="pregunta3">¿Qué es lo que más te gusta de nuestro servicio/producto?</option>
+                    <option value="pregunta4">¿Qué es lo que más te gusta de nuestro servicio/producto?</option>
+                    <option value="pregunta5">¿Qué es lo que más te gusta de nuestro servicio/producto?</option>
+                    <option value="pregunta6">¿Qué es lo que más te gusta de nuestro servicio/producto?</option>
+                    <option value="pregunta7">¿Qué es lo que más te gusta de nuestro servicio/producto?</option>
+                    <option value="pregunta8">¿Qué es lo que más te gusta de nuestro servicio/producto?</option>
+                    <option value="pregunta9">¿Qué es lo que más te gusta de nuestro servicio/producto?</option>
+                    <option value="pregunta10">¿Qué es lo que más te gusta de nuestro servicio/producto?</option>
+                  </select>
+                  <div class="text-danger" *ngIf="preguntaSelecForm.get('pregunta8')?.hasError('required') && preguntaSelecForm.get('pregunta8')?.touched">
+                    <span>La pregunta 8 <strong>es obligatorio</strong></span>
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                  <select name="preguntaSelec" formControlName="pregunta9" id="preguntaSelec">
+                    <option value="pregunta"></option>
+                    <option value="pregunta1">¿Cuánto estarías dispuesto a pagar por nuestro producto?</option>
+                    <option value="pregunta2">¿Cuánto estarías dispuesto a pagar por nuestro producto?</option>
+                    <option value="pregunta3">¿Cuánto estarías dispuesto a pagar por nuestro producto?</option>
+                    <option value="pregunta4">¿Cuánto estarías dispuesto a pagar por nuestro producto?</option>
+                    <option value="pregunta5">¿Cuánto estarías dispuesto a pagar por nuestro producto?</option>
+                    <option value="pregunta6">¿Cuánto estarías dispuesto a pagar por nuestro producto?</option>
+                    <option value="pregunta7">¿Cuánto estarías dispuesto a pagar por nuestro producto?</option>
+                    <option value="pregunta8">¿Cuánto estarías dispuesto a pagar por nuestro producto?</option>
+                    <option value="pregunta9">¿Cuánto estarías dispuesto a pagar por nuestro producto?</option>
+                    <option value="pregunta10">¿Cuánto estarías dispuesto a pagar por nuestro producto?</option>
+                  </select>
+                  <div class="text-danger" *ngIf="preguntaSelecForm.get('pregunta9')?.hasError('required') && preguntaSelecForm.get('pregunta9')?.touched">
+                    <span>La pregunta 9 <strong>es obligatorio</strong></span>
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                  <select name="preguntaSelec" formControlName="pregunta10" id="preguntaSelec">
+                    <option value="pregunta"></option>
+                    <option value="pregunta1">¿Nuestro servicio de entrega es rápido?</option>
+                    <option value="pregunta2">¿Nuestro servicio de entrega es rápido?</option>
+                    <option value="pregunta3">¿Nuestro servicio de entrega es rápido?</option>
+                    <option value="pregunta4">¿Nuestro servicio de entrega es rápido?</option>
+                    <option value="pregunta5">¿Nuestro servicio de entrega es rápido?</option>
+                    <option value="pregunta6">¿Nuestro servicio de entrega es rápido?</option>
+                    <option value="pregunta7">¿Nuestro servicio de entrega es rápido?</option>
+                    <option value="pregunta8">¿Nuestro servicio de entrega es rápido?</option>
+                    <option value="pregunta9">¿Nuestro servicio de entrega es rápido?</option>
+                    <option value="pregunta10">¿Nuestro servicio de entrega es rápido?</option>
+                  </select>
+                  <div class="text-danger" *ngIf="preguntaSelecForm.get('pregunta10')?.hasError('required') && preguntaSelecForm.get('pregunta10')?.touched">
+                    <span>La pregunta 10 <strong>es obligatorio</strong></span>
+                  </div>
+                </div>
+                  <!--Boton de enviar-->
+                  <div class="col-lg-12">
+                    <fieldset>
+                      <button type="submit" [disabled]="preguntaSelecForm.invalid" id="form-submit" class="main-button ">Enviar Pregunta</button>
+                    </fieldset>
+                  </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="contact-info">
+                  <ul>
+                    <li>
+                      <div class="icon">
+                        <img src="assets/images/contact-icon-01.png" alt="email icon">
+                      </div>
+                      <a href="#">MarketingB@company.com</a>
+                    </li>
+                    <li>
+                      <div class="icon">
+                        <img src="assets/images/contact-icon-02.png" alt="phone">
+                      </div>
+                      <a href="#">+52 5542190095</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
