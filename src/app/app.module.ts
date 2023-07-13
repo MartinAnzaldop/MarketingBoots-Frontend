@@ -29,9 +29,6 @@ import { AgregarPedidoComponent } from './components/agregar-pedido/agregar-pedi
 import { AgregarConfiguracionComponent } from './components/agregar-configuracion/agregar-configuracion.component';
 
 
-
-
-
 @NgModule({
   declarations: [
     AppComponent,

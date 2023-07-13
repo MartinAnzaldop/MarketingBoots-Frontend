@@ -59,7 +59,7 @@ export class AgregarPedidoComponent implements OnInit {
   }else{
     //agregamos pedido
     console.log(PEDIDO);
-  this._PedidoService.guardarPedido(PEDIDO).subscribe(dato=>{
+    this._PedidoService.guardarPedido(PEDIDO).subscribe(dato=>{
     this.router.navigate(['/listaPedidos'])
     this.toastr.success('El pedido fue agregado con exito','Pedido agregado');
   }, error=>{
