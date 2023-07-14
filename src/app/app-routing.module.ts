@@ -14,6 +14,9 @@ import { AgregarPedidoComponent } from './components/agregar-pedido/agregar-pedi
 import { PreguntasSeleccionadasComponent } from './components/preguntas-seleccionadas/preguntas-seleccionadas.component';
 import { ListaRespuestasEncuestasComponent } from './components/lista-respuestas-encuestas/lista-respuestas-encuestas.component';
 import { RespuestasEncuestasComponent } from './components/respuestas-encuestas/respuestas-encuestas.component';
+import { UserVistaComponent } from './components/user-vista/user-vista.component';
+import { AdminEncuestaComponent } from './components/admin-encuesta/admin-encuesta.component';
+import { AdminVistaComponent } from './components/admin-vista/admin-vista.component';
 
 
 const routes: Routes = [
@@ -27,6 +30,8 @@ const routes: Routes = [
   //Martin
   {path:'agregarPedido', component:AgregarPedidoComponent},
   {path:'editarPedido/:id', component:AgregarPedidoComponent},
+  {path:'userVista', component:UserVistaComponent},
+  {path:'adminVista', component:AdminVistaComponent},
 
 
   //Alexandra
