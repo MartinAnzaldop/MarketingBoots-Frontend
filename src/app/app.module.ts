@@ -36,6 +36,10 @@ import { UserIniciarSesionComponent } from './components/user-iniciar-sesion/use
 import { UserRegistroComponent } from './components/user-registro/user-registro.component';
 import { UserVistaComponent } from './components/user-vista/user-vista.component';
 import { UserResultadoEncuestaComponent } from './components/user-resultado-encuesta/user-resultado-encuesta.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { VerificarCorreoComponent } from './components/verificar-correo/verificar-correo.component';
+import { RecuperarPasswordComponent } from './components/recuperar-password/recuperar-password.component';
+import { SpinnerComponent } from './shared/spinner/spinner.component';
 
 
 @NgModule({
@@ -65,10 +69,14 @@ import { UserResultadoEncuestaComponent } from './components/user-resultado-encu
     UserIniciarSesionComponent,
     UserRegistroComponent,
     UserVistaComponent,
-    UserResultadoEncuestaComponent
+    UserResultadoEncuestaComponent,
+    DashboardComponent,
+    VerificarCorreoComponent,
+    RecuperarPasswordComponent,
+    SpinnerComponent
 
 
-    
+
   ],
   imports: [
     BrowserModule,
@@ -82,4 +90,3 @@ import { UserResultadoEncuestaComponent } from './components/user-resultado-encu
   bootstrap: [AppComponent]
 })
 export class AppModule { }
- 

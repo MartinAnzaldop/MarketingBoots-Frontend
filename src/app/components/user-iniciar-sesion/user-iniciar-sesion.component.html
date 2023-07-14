@@ -1,1 +1,21 @@
-<p>user-iniciar-sesion works!</p>
+<div class="wrapper">
+  <div class="body">
+    <img class="logo" src="../../../assets/admin/images/logos/usuario.png" alt="Login">
+    <h1 class="mb-2">Inicio de Sesión</h1>
+    <form>
+      <div class="form-floating mb-3">
+        <input type="email" class="form-control" placeholder="name@example.com">
+        <label>Correo electronico</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="password" class="form-control"  placeholder="Password">
+        <label>Contraseña</label>
+      </div>
+      <div class="d-grid gap-2">
+        <button class="btn btn-primary btn-lg" type="button">Ingresar</button>
+      </div>
+      <p class="mb-3">¿Aun no estas registrado? <a routerLink="/registrarUsuario">Registrar</a></p>
+      <a class="mb-3" routerLink="/recuperarContraseña">Recuperar contraseña</a>
+    </form>
+  </div>
+</div>

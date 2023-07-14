@@ -14,6 +14,12 @@ import { AgregarPedidoComponent } from './components/agregar-pedido/agregar-pedi
 import { PreguntasSeleccionadasComponent } from './components/preguntas-seleccionadas/preguntas-seleccionadas.component';
 import { ListaRespuestasEncuestasComponent } from './components/lista-respuestas-encuestas/lista-respuestas-encuestas.component';
 import { RespuestasEncuestasComponent } from './components/respuestas-encuestas/respuestas-encuestas.component';
+import { UserIniciarSesionComponent } from './components/user-iniciar-sesion/user-iniciar-sesion.component';
+import { UserRegistroComponent } from './components/user-registro/user-registro.component';
+import { AdminIniciarSesionComponent } from './components/admin-iniciar-sesion/admin-iniciar-sesion.component';
+import { RecuperarPasswordComponent } from './components/recuperar-password/recuperar-password.component';
+import { VerificarCorreoComponent } from './components/verificar-correo/verificar-correo.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 
 const routes: Routes = [
@@ -23,7 +29,7 @@ const routes: Routes = [
   {path:'listaProducto', component:ListaProductoComponent},
   {path:'pedido', component:PedidoComponent},
   {path:'listaPedidos', component:ListaPedidosComponent},
-  
+
   //Martin
   {path:'agregarPedido', component:AgregarPedidoComponent},
   {path:'editarPedido/:id', component:AgregarPedidoComponent},
@@ -34,7 +40,13 @@ const routes: Routes = [
   {path:'listaConfiguracionEncuesta', component:ListaConfiguracionEncuestaComponent},
   {path:'agregarEncuestaConfigurada', component:ConfiguracionEncuestaComponent},
   {path:'agregarConfiguracion', component:AgregarConfiguracionComponent},
-  {path: 'editarEncuestaConfigurada/:id', component:AgregarConfiguracionComponent},
+  {path:'editarEncuestaConfigurada/:id', component:AgregarConfiguracionComponent},
+  {path:'inicioUsiario', component:UserIniciarSesionComponent},
+  {path:'registrarUsuario', component:UserRegistroComponent},
+  {path:'inicioAdministrador', component:AdminIniciarSesionComponent},
+  {path:'recuperarContraseña', component:RecuperarPasswordComponent},
+  {path:'verificacionCorreo', component:VerificarCorreoComponent},
+  {path:'dashboard', component:DashboardComponent},
 
   //Ana
   {path:'preguntasSeleccionadas', component:PreguntasSeleccionadasComponent},

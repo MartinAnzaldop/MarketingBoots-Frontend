@@ -1,1 +1,33 @@
-<p>user-registro works!</p>
+<div class="wrapper">
+  <div class="body">
+    <img class="logo" src="../../../assets/admin/images/logos/usuario.png" alt="Login">
+    <h1 class="mb-2">Registro</h1>
+    <form (ngSubmit)="registrar()" [formGroup]="registrarUsuario">
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control"  formControlName="nombre" placeholder="Nombre">
+        <label>Nombre</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="number" class="form-control" formControlName="edad" placeholder="edad">
+        <label>Eleguir paquete</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="email" class="form-control" formControlName="correoElectronico" placeholder="Correo electronico">
+        <label>Correo electronico</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="password" class="form-control" formControlName="contraseña"  placeholder="Contraseña">
+        <label>Contraseña</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="password" class="form-control" formControlName="repetirContraseña" placeholder="Repetir contraseña">
+        <label>Repetir contraseña</label>
+      </div>
+      <div class="d-grid gap-2 mb-3">
+        <button class="btn btn-primary btn-lg" type="submit">Aceptar</button>
+      </div>
+      <a routerLink="/inicioUsiario">Volver</a>
+    </form>
+  </div>
+</div>
+
