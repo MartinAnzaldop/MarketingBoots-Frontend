@@ -36,7 +36,8 @@ import { UserIniciarSesionComponent } from './components/user-iniciar-sesion/use
 import { UserRegistroComponent } from './components/user-registro/user-registro.component';
 import { UserVistaComponent } from './components/user-vista/user-vista.component';
 import { UserResultadoEncuestaComponent } from './components/user-resultado-encuesta/user-resultado-encuesta.component';
-
+import {} from '@angular/fire/compat'
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -76,7 +77,8 @@ import { UserResultadoEncuestaComponent } from './components/user-resultado-encu
     ReactiveFormsModule,
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot(), // ToastrModule added
-    HttpClientModule
+    HttpClientModule,
+      
   ],
   providers: [],
   bootstrap: [AppComponent]
