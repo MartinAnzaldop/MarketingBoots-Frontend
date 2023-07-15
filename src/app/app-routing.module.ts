@@ -17,6 +17,8 @@ import { RespuestasEncuestasComponent } from './components/respuestas-encuestas/
 import { UserVistaComponent } from './components/user-vista/user-vista.component';
 import { AdminEncuestaComponent } from './components/admin-encuesta/admin-encuesta.component';
 import { AdminVistaComponent } from './components/admin-vista/admin-vista.component';
+import { ChatDialogComponent } from './components/chat-dialog/chat-dialog.component';
+import { SolicitudUserComponent } from './components/solicitud-user/solicitud-user.component';
 
 
 const routes: Routes = [
@@ -32,6 +34,9 @@ const routes: Routes = [
   {path:'editarPedido/:id', component:AgregarPedidoComponent},
   {path:'userVista', component:UserVistaComponent},
   {path:'adminVista', component:AdminVistaComponent},
+  {path:'chatbot', component:ChatDialogComponent},
+  {path:'agregarsolicitud', component:SolicitudUserComponent},
+
 
 
   //Alexandra

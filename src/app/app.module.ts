@@ -36,8 +36,11 @@ import { UserIniciarSesionComponent } from './components/user-iniciar-sesion/use
 import { UserRegistroComponent } from './components/user-registro/user-registro.component';
 import { UserVistaComponent } from './components/user-vista/user-vista.component';
 import { UserResultadoEncuestaComponent } from './components/user-resultado-encuesta/user-resultado-encuesta.component';
-import {} from '@angular/fire/compat'
-import { environment } from 'src/environments/environment';
+
+
+import { ChatDialogComponent } from './components/chat-dialog/chat-dialog.component';
+import { NabvarUserComponent } from './components/nabvar-user/nabvar-user.component';
+import { SolicitudUserComponent } from './components/solicitud-user/solicitud-user.component';
 
 @NgModule({
   declarations: [
@@ -66,7 +69,10 @@ import { environment } from 'src/environments/environment';
     UserIniciarSesionComponent,
     UserRegistroComponent,
     UserVistaComponent,
-    UserResultadoEncuestaComponent
+    UserResultadoEncuestaComponent,
+    ChatDialogComponent,
+    NabvarUserComponent,
+    SolicitudUserComponent
 
 
     
