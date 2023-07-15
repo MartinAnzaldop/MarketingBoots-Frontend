@@ -20,25 +20,33 @@
                     <span>La pregunta <strong>es obligatoria</strong></span>
                   </div>
                 </div>
-                <br>
                 <div class="row">
                     <tr>
-                        <td><label align-items="left" for="campo">Selecciona la categoría:</label></td>
+                        <td><label align-items="left">Selecciona la categoría:</label></td>
                     </tr>
                     <select class="form-control" formControlName="categoria" type="text" name="categoria"  id="categoria" placeholder="Selecciona la categoría" required>
                       <option value="categoria"disabled> Selecciona la categoría</option>
-                      <option value="Investigación de mercados">Investigación de mercados</option>
-                      <option value="Producto o Servicio">Producto o Servicio</option>
-                      <option value="Plaza/Distribución">Plaza/Distribución</option>
                       <option value="Precio">Precio</option>
-                      <option value="Promoción">Promoción</option>
-                      <option value="Personal">Personal</option>
-                      <option value="Procesos">Procesos</option>
-                      <option value="Posicionamiento">Posicionamiento</option>
+                      <option value="Calidad">Calidad</option>
+                      <option value="Comunidad">Comunidad</option>
                     </select>
                     <div class="text-danger" *ngIf="bancoPreguForm.get('categoria')?.hasError('required') && bancoPreguForm.get('categoria')?.touched">
                       <span>La categoría <strong>es obligatoria</strong></span>
                     </div>
+                </div>
+                <div class="row">
+                  <tr>
+                      <td><label align-items="left">Selecciona una opción:</label></td>
+                  </tr>
+                  <select class="form-control" formControlName="opcion" type="text" name="opcion"  id="opcion" placeholder="Selecciona una opción" required>
+                    <option value="opcion"disabled> Selecciona una opción</option>
+                    <option value="opcion 1">opcion 1</option>
+                    <option value="opcion 2">opcion 2</option>
+                    <option value="opcion 3">opcion 3</option>
+                  </select>
+                  <div class="text-danger" *ngIf="bancoPreguForm.get('opcion')?.hasError('required') && bancoPreguForm.get('opcion')?.touched">
+                    <span>La opción <strong>es obligatoria</strong></span>
+                  </div>
                 </div>
                   <!--Boton de enviar-->
                   <div class="col-lg-12">

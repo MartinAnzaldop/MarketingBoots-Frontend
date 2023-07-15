@@ -7,6 +7,7 @@
         <tr class="text-center">
           <th>Pregunta</th>
           <th>Categoría</th>
+          <th>Opción</th>
           <th>Operaciones</th>
         </tr>
       </thead>
@@ -14,8 +15,9 @@
         <tr *ngFor="let bancoPregu of listaBancoPregu" class="text-center">
           <td>{{bancoPregu.pregunta}}</td>
           <td>{{bancoPregu.categoria}}</td>
+          <td>{{bancoPregu.opcion}}</td>
           <td>
-            <button [routerLink]="['/editarBancoPregu', bancoPregu._id]" type="button" class="btn btn-warning me-2">editar</button>
+            <button [routerLink]="['/editarBancoPregu', bancoPregu._id]" type="button" class="btn btn-warning">editar</button>
             <button (click)="eliminarBancoPregu(bancoPregu._id)" type="button" class="btn btn-danger">eliminar</button>
           </td>
         </tr>

@@ -19,6 +19,7 @@ export class AgregarPreguntaComponent implements OnInit {
       this.bancoPreguForm=this.fb.group({
         pregunta:['', Validators.required],
         categoria:['', Validators.required],
+        opcion:['', Validators.required],
       })
       this.id=this.aRouter.snapshot.paramMap.get('id')
      }
@@ -32,6 +33,7 @@ export class AgregarPreguntaComponent implements OnInit {
       const BANCOPREGU: BancoPregu ={
         pregunta: this.bancoPreguForm.get('pregunta')?.value,
         categoria: this.bancoPreguForm.get('categoria')?.value,
+        opcion: this.bancoPreguForm.get('opcion')?.value,
       }
       
       if(this.id !==null){
@@ -64,6 +66,7 @@ export class AgregarPreguntaComponent implements OnInit {
           this.bancoPreguForm.setValue({
               pregunta: data.pregunta,
               categoria: data.categoria,
+              opcion: data.opcion,
           })
           },error=>{
             console.log(error)
