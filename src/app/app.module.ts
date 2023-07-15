@@ -36,10 +36,15 @@ import { UserIniciarSesionComponent } from './components/user-iniciar-sesion/use
 import { UserRegistroComponent } from './components/user-registro/user-registro.component';
 import { UserVistaComponent } from './components/user-vista/user-vista.component';
 import { UserResultadoEncuestaComponent } from './components/user-resultado-encuesta/user-resultado-encuesta.component';
+<<<<<<< HEAD
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { VerificarCorreoComponent } from './components/verificar-correo/verificar-correo.component';
 import { RecuperarPasswordComponent } from './components/recuperar-password/recuperar-password.component';
 import { SpinnerComponent } from './shared/spinner/spinner.component';
+=======
+import {} from '@angular/fire/compat'
+import { environment } from 'src/environments/environment';
+>>>>>>> MartinPeña
 
 @NgModule({
   declarations: [
@@ -73,9 +78,6 @@ import { SpinnerComponent } from './shared/spinner/spinner.component';
     VerificarCorreoComponent,
     RecuperarPasswordComponent,
     SpinnerComponent
-
-
-
   ],
   imports: [
     BrowserModule,
