@@ -44,6 +44,7 @@ import { RecuperarPasswordComponent } from './components/recuperar-password/recu
 import { SpinnerComponent } from './shared/spinner/spinner.component';
 import {AngularFireModule} from '@angular/fire/compat';
 import { environment } from 'src/environments/environment';
+import { ConfiguracionEncuestaUsuarioComponent } from './components/configuracion-encuesta-usuario/configuracion-encuesta-usuario.component';
 
 @NgModule({
   declarations: [
@@ -78,7 +79,8 @@ import { environment } from 'src/environments/environment';
     SolicitudUserComponent,
     VerificarCorreoComponent,
     RecuperarPasswordComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    ConfiguracionEncuestaUsuarioComponent
   ],
   imports: [
     BrowserModule,
