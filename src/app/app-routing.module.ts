@@ -19,7 +19,6 @@ import { UserRegistroComponent } from './components/user-registro/user-registro.
 import { AdminIniciarSesionComponent } from './components/admin-iniciar-sesion/admin-iniciar-sesion.component';
 import { RecuperarPasswordComponent } from './components/recuperar-password/recuperar-password.component';
 import { VerificarCorreoComponent } from './components/verificar-correo/verificar-correo.component';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { UserVistaComponent } from './components/user-vista/user-vista.component';
 import { AdminEncuestaComponent } from './components/admin-encuesta/admin-encuesta.component';
 import { AdminVistaComponent } from './components/admin-vista/admin-vista.component';
@@ -56,7 +55,6 @@ const routes: Routes = [
   {path:'inicioAdministrador', component:AdminIniciarSesionComponent},
   {path:'recuperarContraseña', component:RecuperarPasswordComponent},
   {path:'verificacionCorreo', component:VerificarCorreoComponent},
-  {path:'dashboard', component:DashboardComponent},
 
   //Ana
   {path:'preguntasSeleccionadas', component:PreguntasSeleccionadasComponent},
