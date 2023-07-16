@@ -73,9 +73,6 @@ import { SolicitudUserComponent } from './components/solicitud-user/solicitud-us
     ChatDialogComponent,
     NabvarUserComponent,
     SolicitudUserComponent
-
-
-    
   ],
   imports: [
     BrowserModule,
