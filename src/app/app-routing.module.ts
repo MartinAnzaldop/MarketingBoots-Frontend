@@ -14,18 +14,15 @@ import { AgregarPedidoComponent } from './components/agregar-pedido/agregar-pedi
 import { PreguntasSeleccionadasComponent } from './components/preguntas-seleccionadas/preguntas-seleccionadas.component';
 import { ListaRespuestasEncuestasComponent } from './components/lista-respuestas-encuestas/lista-respuestas-encuestas.component';
 import { RespuestasEncuestasComponent } from './components/respuestas-encuestas/respuestas-encuestas.component';
-<<<<<<< HEAD
 import { UserIniciarSesionComponent } from './components/user-iniciar-sesion/user-iniciar-sesion.component';
 import { UserRegistroComponent } from './components/user-registro/user-registro.component';
 import { AdminIniciarSesionComponent } from './components/admin-iniciar-sesion/admin-iniciar-sesion.component';
 import { RecuperarPasswordComponent } from './components/recuperar-password/recuperar-password.component';
 import { VerificarCorreoComponent } from './components/verificar-correo/verificar-correo.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
-=======
 import { UserVistaComponent } from './components/user-vista/user-vista.component';
 import { AdminEncuestaComponent } from './components/admin-encuesta/admin-encuesta.component';
 import { AdminVistaComponent } from './components/admin-vista/admin-vista.component';
->>>>>>> MartinPeña
 
 
 const routes: Routes = [
