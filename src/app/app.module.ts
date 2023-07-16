@@ -36,11 +36,14 @@ import { UserIniciarSesionComponent } from './components/user-iniciar-sesion/use
 import { UserRegistroComponent } from './components/user-registro/user-registro.component';
 import { UserVistaComponent } from './components/user-vista/user-vista.component';
 import { UserResultadoEncuestaComponent } from './components/user-resultado-encuesta/user-resultado-encuesta.component';
-
-
 import { ChatDialogComponent } from './components/chat-dialog/chat-dialog.component';
 import { NabvarUserComponent } from './components/nabvar-user/nabvar-user.component';
 import { SolicitudUserComponent } from './components/solicitud-user/solicitud-user.component';
+import { VerificarCorreoComponent } from './components/verificar-correo/verificar-correo.component';
+import { RecuperarPasswordComponent } from './components/recuperar-password/recuperar-password.component';
+import { SpinnerComponent } from './shared/spinner/spinner.component';
+import {AngularFireModule} from '@angular/fire/compat';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -72,7 +75,10 @@ import { SolicitudUserComponent } from './components/solicitud-user/solicitud-us
     UserResultadoEncuestaComponent,
     ChatDialogComponent,
     NabvarUserComponent,
-    SolicitudUserComponent
+    SolicitudUserComponent,
+    VerificarCorreoComponent,
+    RecuperarPasswordComponent,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,
@@ -81,9 +87,11 @@ import { SolicitudUserComponent } from './components/solicitud-user/solicitud-us
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot(), // ToastrModule added
     HttpClientModule,
+
+    AngularFireModule.initializeApp(environment.firebaseConfig)
+
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
- 
