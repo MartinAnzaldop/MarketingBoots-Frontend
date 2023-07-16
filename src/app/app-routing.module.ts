@@ -55,6 +55,7 @@ const routes: Routes = [
   {path:'inicioAdministrador', component:AdminIniciarSesionComponent},
   {path:'recuperarContraseña', component:RecuperarPasswordComponent},
   {path:'verificacionCorreo', component:VerificarCorreoComponent},
+  {path:'configuracionUsuario', component:ConfiguracionEncuestaComponent},
 
   //Ana
   {path:'preguntasSeleccionadas', component:PreguntasSeleccionadasComponent},
