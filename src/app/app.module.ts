@@ -81,7 +81,6 @@ import { SolicitudUserComponent } from './components/solicitud-user/solicitud-us
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot(), // ToastrModule added
     HttpClientModule,
-      
   ],
   providers: [],
   bootstrap: [AppComponent]
