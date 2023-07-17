@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { BancoPregu } from 'src/app/models/bancoPregu';
@@ -8,11 +8,11 @@ import { BancoPreguService } from 'src/app/service/bancoPregu.service';
 import { PreguntaSelecService } from 'src/app/service/preguntaSelec.service';
 
 @Component({
-  selector: 'app-preguntaSelec',
-  templateUrl: './preguntas-seleccionadas.component.html',
-  styleUrls: ['./preguntas-seleccionadas.component.css']
+  selector: 'app-encuestas-user',
+  templateUrl: './encuestas-user.component.html',
+  styleUrls: ['./encuestas-user.component.css']
 })
-export class PreguntasSeleccionadasComponent implements OnInit {
+export class EncuestasUserComponent implements OnInit {
   preguntaSelecForm: FormGroup;
   listaBancoPregu:BancoPregu []=[];
   titulo = 'Pregunta Seleccionada';

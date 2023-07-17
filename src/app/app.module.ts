@@ -46,6 +46,11 @@ import {AngularFireModule} from '@angular/fire/compat';
 import { environment } from 'src/environments/environment';
 import { ConfiguracionEncuestaUsuarioComponent } from './components/configuracion-encuesta-usuario/configuracion-encuesta-usuario.component';
 
+import { PreguntasSeleccionadasUserComponent } from './components/preguntas-seleccionadas-user/preguntas-seleccionadas-user.component';
+import { ListaPreguntasUserComponent } from './components/lista-preguntas-user/lista-preguntas-user.component';
+import { EncuestasUserComponent } from './components/encuestas-user/encuestas-user.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -74,13 +79,22 @@ import { ConfiguracionEncuestaUsuarioComponent } from './components/configuracio
     UserRegistroComponent,
     UserVistaComponent,
     UserResultadoEncuestaComponent,
+
     ChatDialogComponent,
     NabvarUserComponent,
     SolicitudUserComponent,
     VerificarCorreoComponent,
     RecuperarPasswordComponent,
     SpinnerComponent,
-    ConfiguracionEncuestaUsuarioComponent
+    ConfiguracionEncuestaUsuarioComponent,
+    PreguntasSeleccionadasUserComponent,
+    ListaPreguntasUserComponent,
+    EncuestasUserComponent,
+   
+
+
+    
+
   ],
   imports: [
     BrowserModule,

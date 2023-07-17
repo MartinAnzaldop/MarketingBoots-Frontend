@@ -7,7 +7,7 @@
           <div class="row">
             <div class="col-lg-6 offset-lg-3">
               <div class="section-heading">
-                <h6>CONFIGURACIÓN ENCUESTA Usuario</h6>
+                <h2>CONFIGURACIÓN ENCUESTA</h2>
               </div>
             </div>
             <div class="col-lg-9">
@@ -29,7 +29,7 @@
                   </fieldset>
                 </div>
                 <div class="col-lg-6">
-                  <fieldset>
+                  <fieldset><br>
                     <input class="form-control" formControlName="titulo" type="text" name="titulo" id="titulo" placeholder="Titulo" autocomplete="on" required>
                     <div class="text-danger" *ngIf="encuestaConfiguradaForm.get('titulo')?.hasError('required') && encuestaConfiguradaForm.get('titulo')?.touched">
                       <span>El titulo <strong>es obligatorio</strong></span>
@@ -38,6 +38,7 @@
                 </div>
                 <div class="col-lg-6">
                   <fieldset>
+                    <label>Eliga tipo de poblacion</label>
                     <select name="poblacion" formControlName="poblacion" id="poblacion" class="form-control" placeholder="Poblacion">
                         <option value="opcion2" disabled>-- Seleccione poblacion a encuestar --</option>
                         <option value="nino">Niño</option>

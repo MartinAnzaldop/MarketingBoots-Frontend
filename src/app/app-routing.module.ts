@@ -9,9 +9,9 @@ import { ListaConfiguracionEncuestaComponent } from './components/lista-configur
 import { PedidoComponent } from './components/pedido/pedido.component';
 import { ListaPedidosComponent } from './components/lista-pedidos/lista-pedidos.component';
 import { AgregarPreguntaComponent } from './components/agregar-pregunta/agregar-pregunta.component';
-
 import { AgregarPedidoComponent } from './components/agregar-pedido/agregar-pedido.component';
 import { PreguntasSeleccionadasComponent } from './components/preguntas-seleccionadas/preguntas-seleccionadas.component';
+import { ListaBancoPreguntasComponent } from './components/lista-banco-preguntas/lista-banco-preguntas.component';
 import { ListaRespuestasEncuestasComponent } from './components/lista-respuestas-encuestas/lista-respuestas-encuestas.component';
 import { RespuestasEncuestasComponent } from './components/respuestas-encuestas/respuestas-encuestas.component';
 import { UserIniciarSesionComponent } from './components/user-iniciar-sesion/user-iniciar-sesion.component';
@@ -25,6 +25,12 @@ import { AdminVistaComponent } from './components/admin-vista/admin-vista.compon
 import { ChatDialogComponent } from './components/chat-dialog/chat-dialog.component';
 import { SolicitudUserComponent } from './components/solicitud-user/solicitud-user.component';
 import { ConfiguracionEncuestaUsuarioComponent } from './components/configuracion-encuesta-usuario/configuracion-encuesta-usuario.component';
+import { ListaPreguntasSeleccionadasComponent } from './components/lista-preguntas-seleccionadas/lista-preguntas-seleccionadas.component';
+import { PreguntasSeleccionadasUserComponent } from './components/preguntas-seleccionadas-user/preguntas-seleccionadas-user.component';
+import { ListaPreguntasUserComponent } from './components/lista-preguntas-user/lista-preguntas-user.component';
+import { EncuestasUserComponent } from './components/encuestas-user/encuestas-user.component';
+
+
 
 
 const routes: Routes = [
@@ -42,6 +48,7 @@ const routes: Routes = [
   {path:'adminVista', component:AdminVistaComponent},
   {path:'chatbot', component:ChatDialogComponent},
   {path:'agregarsolicitud', component:SolicitudUserComponent},
+  {path:'encuestasUser/:id', component:EncuestasUserComponent},
 
 
 
@@ -59,19 +66,21 @@ const routes: Routes = [
   {path:'configuracionUsuario', component:ConfiguracionEncuestaUsuarioComponent},
 
   //Ana
+  {path:'bancoPreguntas', component:AgregarPreguntaComponent},
+  {path:'listaBancoPreguntas', component:ListaBancoPreguntasComponent},
+  {path:'editarBancoPregu/:id', component:AgregarPreguntaComponent},
+  {path:'listaPreguntasUser', component:ListaPreguntasUserComponent},
+ 
+
   {path:'preguntasSeleccionadas', component:PreguntasSeleccionadasComponent},
-
-
+  {path:'listaPreguntasSeleccionadas', component:ListaPreguntasSeleccionadasComponent},
+  {path:'editarPreguntaSelec/:id', component:PreguntasSeleccionadasComponent},
+  {path:'listaPreguntasSeleccionadasUser', component:ListaPreguntasUserComponent},
+  {path:'preguntasSeleccionadasUser', component:PreguntasSeleccionadasUserComponent},
 
   //Norma
   {path:'respuestasEncuestas', component:RespuestasEncuestasComponent},
   {path:'listaRespuestasEncuestas', component:ListaRespuestasEncuestasComponent},
-
-
-
-
-
-
   {path:'**', redirectTo:'inicio', pathMatch:"full"}
 ];
 

@@ -1,0 +1,318 @@
+<app-nabvar-user></app-nabvar-user> <br><br><br><br>
+
+<br />
+<div class="container">
+  <section class="row">
+    <div class="col-md-12">
+      <h1 class="text-center">Encuesta.</h1>
+    </div>
+  </section>
+  <hr><br />
+  <section class="row">
+    <section class="col-md-12">
+      <h3>Datos basicos</h3>
+      <p></p>
+    </section>
+  </section>
+  <section class="row">
+    <section class="col-md-12">
+    
+      <section class="row">
+        <div class="col-md-8">
+          <div class="form-group">
+            <label for="nombreCompleto">Nombre Completo: *</label>
+            <input type="text" class="form-control" id="nombreCompleto" maxlength="128" placeholder="Nombre Compelto" required>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form_group">
+            <label for="edadEncuestado">Edad:*</label>
+            <input type="number" class="form-control" id="edadEncuestado" placeholder="Edad" maxlength="3" required/>
+          </div>
+        </div>
+      </section>
+      <section class="row">
+        <div class="col-md-4">
+          <div class="form-group"> <br>
+            <label for="idIdentificacion">Ubicacion: *</label>
+            <input type="number" id="idIdentificacion" class="form-control" placeholder="Google" maxlength="15" required/>
+          </div>
+        </div>
+        
+        <br>
+      </section>
+      <br>
+    </section>
+ <br>
+  <hr />
+  <form [formGroup]="preguntaSelecForm" (ngSubmit)="agregarPreguntaSelec()">
+  <!--  Servicios  -->
+  <section class="row">
+    <div class="col-md-12">
+      <h3>Preguntas.</h3>
+      <p></p>
+    </div>
+  </section>
+  <!--  PREGUNTA 1  -->
+  <section class="row">
+    <div class="col-md-6">
+      <p formControlName="pregunta1"></p>
+    </div>
+    <div class="col-md-2">
+      <label class="radio">
+      <input type="radio" name="pregunta1" id="pregunta1a" value="1"> 1
+    </label>
+    </div>
+    <div class="col-md-2">
+      <label class="radio">
+      <input type="radio" name="pregunta1" id="preguntab" value="5"> 5
+    </label>
+    </div>
+    <div class="col-md-2">
+      <label class="radio">
+      <input type="radio" name="pregunta1" id="preguntac" value="10"> 10
+    </label>
+    </div>
+  </section>
+  <!--  PREGUNTA 2  -->
+  <section class="row">
+    <div class="col-md-6">
+      <p formControlName="pregunta2"></p>
+    </div>
+    <div class="col-md-2">
+      <label class="radio">
+      <input type="radio" name="pregunta2" id="pregunta1a" value="1"> 1
+    </label>
+    </div>
+    <div class="col-md-2">
+      <label class="radio">
+      <input type="radio" name="pregunta2" id="preguntab" value="5">5
+    </label>
+    </div>
+    <div class="col-md-2">
+      <label class="radio">
+      <input type="radio" name="pregunta2" id="preguntac" value="10"> 10
+    </label>
+    </div>
+  </section>
+  <!--  PREGUNTA 3  -->
+  <section class="row">
+    <div class="col-md-6">
+      <p formControlName="pregunta3"></p>
+    </div>
+    <div class="col-md-2">
+      <label class="radio">
+      <input type="radio" name="pregunta2" id="pregunta1a" value="1"> 1
+    </label>
+    </div>
+    <div class="col-md-2">
+      <label class="radio">
+      <input type="radio" name="pregunta2" id="preguntab" value="5">5
+    </label>
+    </div>
+    <div class="col-md-2">
+      <label class="radio">
+      <input type="radio" name="pregunta2" id="preguntac" value="10"> 10
+    </label>
+    </div>
+  </section>
+  <!--  PREGUNTA 4  -->
+  <section class="row">
+    <div class="col-md-6">
+      <p formControlName="pregunta4"></p>
+    </div>
+    <div class="col-md-2">
+      <label class="radio">
+      <input type="radio" name="pregunta2" id="pregunta1a" value="1"> 1
+    </label>
+    </div>
+    <div class="col-md-2">
+      <label class="radio">
+      <input type="radio" name="pregunta2" id="preguntab" value="5">5
+    </label>
+    </div>
+    <div class="col-md-2">
+      <label class="radio">
+      <input type="radio" name="pregunta2" id="preguntac" value="10"> 10
+    </label>
+    </div>
+  </section>
+  <!--  Durante la Atención  -->
+  <section class="row">
+    <div class="col-md-6">
+      <p>4- ¿A su llegada al hospital los tramites de ingreso y atención fueron claros? </p>
+    </div>
+    <div class="col-md-2">
+      <label class="radio">
+      <input type="radio" name="pregunta2" id="pregunta1a" value="1"> 1
+    </label>
+    </div>
+    <div class="col-md-2">
+      <label class="radio">
+      <input type="radio" name="pregunta2" id="preguntab" value="5">5
+    </label>
+    </div>
+    <div class="col-md-2">
+      <label class="radio">
+      <input type="radio" name="pregunta2" id="preguntac" value="10"> 10
+    </label>
+    </div>
+  </section>
+  <!--  PREGUNTA 5  -->
+  section class="row">
+  <div class="col-md-6">
+    <p>5- ¿A su llegada al hospital los tramites de ingreso y atención fueron claros? </p>
+  </div>
+  <div class="col-md-2">
+    <label class="radio">
+    <input type="radio" name="pregunta2" id="pregunta1a" value="1"> 1
+  </label>
+  </div>
+  <div class="col-md-2">
+    <label class="radio">
+    <input type="radio" name="pregunta2" id="preguntab" value="5">5
+  </label>
+  </div>
+  <div class="col-md-2">
+    <label class="radio">
+    <input type="radio" name="pregunta2" id="preguntac" value="10"> 10
+  </label>
+  </div>
+
+  <!--  PREGUNTA 6  -->
+  <section class="row">
+    <div class="col-md-6">
+      <p>6- ¿A su llegada al hospital los tramites de ingreso y atención fueron claros? </p>
+    </div>
+    <div class="col-md-2">
+      <label class="radio">
+      <input type="radio" name="pregunta2" id="pregunta1a" value="1"> 1
+    </label>
+    </div>
+    <div class="col-md-2">
+      <label class="radio">
+      <input type="radio" name="pregunta2" id="preguntab" value="5">5
+    </label>
+    </div>
+    <div class="col-md-2">
+      <label class="radio">
+      <input type="radio" name="pregunta2" id="preguntac" value="10"> 10
+    </label>
+    </div>
+  </section>
+  <!--  PREGUNTA 7  -->
+  <section class="row">
+    <div class="col-md-6">
+      <p>7- ¿A su llegada al hospital los tramites de ingreso y atención fueron claros? </p>
+    </div>
+    <div class="col-md-2">
+      <label class="radio">
+      <input type="radio" name="pregunta2" id="pregunta1a" value="1"> 1
+    </label>
+    </div>
+    <div class="col-md-2">
+      <label class="radio">
+      <input type="radio" name="pregunta2" id="preguntab" value="5">5
+    </label>
+    </div>
+    <div class="col-md-2">
+      <label class="radio">
+      <input type="radio" name="pregunta2" id="preguntac" value="10"> 10
+    </label>
+    </div>
+  </section>
+  <!--  PREGUNTA 8  -->
+  <section class="row">
+    <div class="col-md-6">
+      <p>8- ¿A su llegada al hospital los tramites de ingreso y atención fueron claros? </p>
+    </div>
+    <div class="col-md-2">
+      <label class="radio">
+      <input type="radio" name="pregunta2" id="pregunta1a" value="1"> 1
+    </label>
+    </div>
+    <div class="col-md-2">
+      <label class="radio">
+      <input type="radio" name="pregunta2" id="preguntab" value="5">5
+    </label>
+    </div>
+    <div class="col-md-2">
+      <label class="radio">
+      <input type="radio" name="pregunta2" id="preguntac" value="10"> 10
+    </label>
+    </div>
+  </section>
+  <!--  PREGUNTA 9  -->
+  <section class="row">
+    <div class="col-md-6">
+      <p>9- ¿A su llegada al hospital los tramites de ingreso y atención fueron claros? </p>
+    </div>
+    <div class="col-md-2">
+      <label class="radio">
+      <input type="radio" name="pregunta2" id="pregunta1a" value="1"> 1
+    </label>
+    </div>
+    <div class="col-md-2">
+      <label class="radio">
+      <input type="radio" name="pregunta2" id="preguntab" value="5">5
+    </label>
+    </div>
+    <div class="col-md-2">
+      <label class="radio">
+      <input type="radio" name="pregunta2" id="preguntac" value="10"> 10
+    </label>
+    </div>
+  </section>
+  
+  <!--  PREGUNTA 10  -->
+  <section class="row">
+    <div class="col-md-6">
+      <p>10- ¿A su llegada al hospital los tramites de ingreso y atención fueron claros? </p>
+    </div>
+    <div class="col-md-2">
+      <label class="radio">
+      <input type="radio" name="pregunta2" id="pregunta1a" value="1"> 1
+    </label>
+    </div>
+    <div class="col-md-2">
+      <label class="radio">
+      <input type="radio" name="pregunta2" id="preguntab" value="5">5
+    </label>
+    </div>
+    <div class="col-md-2">
+      <label class="radio">
+      <input type="radio" name="pregunta2" id="preguntac" value="10"> 10
+    </label>
+    </div>
+  </section>
+ 
+
+
+
+</form>
+
+
+
+  <!--  Comentarios  -->
+  <section class="row">
+    <div class="col-md-12">
+      <h3>Comentarios.</h3>
+      <p></p>
+    </div>
+  </section>
+  <section class="row">
+    <div class="col-md-12">
+      <div class="form-group">
+        <label for="comment">Comentarios:</label>
+        <textarea class="form-control" rows="6" id="comentarios"></textarea>
+      </div>
+    </div>
+  </section>
+  <section class="row">
+    <div class="col-md-12">
+      <button type="button" class="btn btn-info" id="saveForm" onclick="saveForm">Guardar Encuesta</button>
+      <button type="button" class="btn btn-danger" id="clearForm">Limpiar formulario</button>
+    </div>
+  </section>
+
+<br> <br>

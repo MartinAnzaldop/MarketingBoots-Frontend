@@ -1,4 +1,4 @@
-export class PreguntaSelec{
+export class PreguntaSelecUser{
     _id?: number;
     pregunta1: string;
     pregunta2: string;
