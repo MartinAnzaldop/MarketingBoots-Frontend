@@ -7,14 +7,14 @@
           <div class="row">
             <div class="col-lg-6 offset-lg-3">
               <div class="section-heading">
-                <h6>Encuesta Configurada</h6>
+                <h2>Encuesta configurada usuario</h2>
               </div>
             </div>
             <div class="col-lg-9">
               <div class="row">
                 <div class="col-lg-6">
                   <fieldset>
-                    <input type="name" formControlName="fechaInicio" name="fechaInicio" id="fechaInicio" placeholder="Fecha Inicio" autocomplete="on" required>
+                    <input type="date" formControlName="fechaInicio" name="fechaInicio" id="fechaInicio" placeholder="Fecha Inicio" autocomplete="on" required>
                     <div class="text-danger" *ngIf="encuestaConfiguradaForm.get('fechaInicio')?.hasError('required') && encuestaConfiguradaForm.get('fechaInicio')?.touched">
                       <span>La fecha inicial <strong>es obligatoria</strong></span>
                     </div>
@@ -22,13 +22,15 @@
                 </div>
                 <div class="col-lg-6">
                   <fieldset>
-                    <input type="surname" formControlName="fechaFinal" name="fechaFinal" id="fechaFinal" placeholder="Fecha Final" autocomplete="on" required>
+                    <div class="row">
+                    <input type="date" formControlName="fechaFinal" name="fechaFinal" id="fechaFinal" placeholder="Fecha Final" autocomplete="on" required>
                     <div class="text-danger" *ngIf="encuestaConfiguradaForm.get('fechaFinal')?.hasError('required') && encuestaConfiguradaForm.get('fechaFinal')?.touched">
                       <span>La fecha de termino <strong>es obligatoria</strong></span>
                     </div>
+                  </div>
                   </fieldset>
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-6 g-4">
                   <fieldset>
                     <input class="form-control" formControlName="titulo" type="text" name="titulo" id="titulo" placeholder="Titulo" autocomplete="on" required>
                     <div class="text-danger" *ngIf="encuestaConfiguradaForm.get('titulo')?.hasError('required') && encuestaConfiguradaForm.get('titulo')?.touched">
@@ -48,7 +50,7 @@
                     </select>
                   </fieldset>
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-12">
                   <fieldset>
                     <input class="form-control" formControlName="numeroEncuesta" type="number" name="numeroEncuesta" id="numeroEncuesta" placeholder="Número de encuesta" autocomplete="on" required>
                     <div class="text-danger" *ngIf="encuestaConfiguradaForm.get('numeroEncuesta')?.hasError('required') && encuestaConfiguradaForm.get('numeroEncuesta')?.touched">
