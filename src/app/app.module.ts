@@ -39,6 +39,7 @@ import { UserResultadoEncuestaComponent } from './components/user-resultado-encu
 import { PreguntasSeleccionadasUserComponent } from './components/preguntas-seleccionadas-user/preguntas-seleccionadas-user.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -67,7 +68,8 @@ import { PreguntasSeleccionadasUserComponent } from './components/preguntas-sele
     UserRegistroComponent,
     UserVistaComponent,
     UserResultadoEncuestaComponent,
-    PreguntasSeleccionadasUserComponent
+    PreguntasSeleccionadasUserComponent,
+   
 
 
     

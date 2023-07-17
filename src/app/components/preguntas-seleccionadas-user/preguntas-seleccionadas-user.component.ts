@@ -2,7 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { BancoPregu } from 'src/app/models/bancoPregu';
+import { PreguntaSelec } from 'src/app/models/preguntaSelec';
 import { PreguntaSelecUser } from 'src/app/models/preguntaSelecUser';
+import { BancoPreguService } from 'src/app/service/bancoPregu.service';
+import { PreguntaSelecService } from 'src/app/service/preguntaSelec.service';
 import { PreguntaSelecUserService } from 'src/app/service/preguntaSelecUser.service';
 
 @Component({
@@ -12,12 +16,14 @@ import { PreguntaSelecUserService } from 'src/app/service/preguntaSelecUser.serv
 })
 
 export class PreguntasSeleccionadasUserComponent implements OnInit {
-  preguntaSelecUserForm: FormGroup;
-  titulo = 'Pregunta Seleccionada User';
+  preguntaSelecForm: FormGroup;
+  listaBancoPregu:BancoPregu []=[];
+  titulo = 'Pregunta Seleccionada';
   id:string | null;
   constructor(private fb: FormBuilder, private  router: Router, private toastr: ToastrService,
-    private _PreguntaSelecUserService:PreguntaSelecUserService, private aRouter: ActivatedRoute) {
-    this.preguntaSelecUserForm=this.fb.group({
+    private _PreguntaSelecService:PreguntaSelecService, private aRouter: ActivatedRoute,
+    private _BancoPreguService: BancoPreguService) {
+    this.preguntaSelecForm=this.fb.group({
       pregunta1:['', Validators.required],
       pregunta2:['', Validators.required],
       pregunta3:['', Validators.required],
@@ -33,41 +39,52 @@ export class PreguntasSeleccionadasUserComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    this.obtenerBancoPregu()
     this.esEditar()
   }
 
-  agregarPreguntaSelecUser(){
-  console.log(this.preguntaSelecUserForm)
-  const PREGUNTASELECUSER: PreguntaSelecUser ={
-    pregunta1: this.preguntaSelecUserForm.get('pregunta1')?.value,
-    pregunta2: this.preguntaSelecUserForm.get('pregunta2')?.value,
-    pregunta3: this.preguntaSelecUserForm.get('pregunta3')?.value,
-    pregunta4: this.preguntaSelecUserForm.get('pregunta4')?.value,
-    pregunta5: this.preguntaSelecUserForm.get('pregunta5')?.value,
-    pregunta6: this.preguntaSelecUserForm.get('pregunta6')?.value,
-    pregunta7: this.preguntaSelecUserForm.get('pregunta7')?.value,
-    pregunta8: this.preguntaSelecUserForm.get('pregunta8')?.value,
-    pregunta9: this.preguntaSelecUserForm.get('pregunta9')?.value,
-    pregunta10: this.preguntaSelecUserForm.get('pregunta10')?.value,
+  obtenerBancoPregu(){
+    this._BancoPreguService.getBancoPregu().subscribe(data=>{
+      console.log(data);
+      this.listaBancoPregu=data;
+    },error=>{
+    console.log(error)
+    })
+  }
+
+
+  agregarPreguntaSelec(){
+  console.log(this.preguntaSelecForm)
+  const PREGUNTASELEC: PreguntaSelec ={
+    pregunta1: this.preguntaSelecForm.get('pregunta1')?.value,
+    pregunta2: this.preguntaSelecForm.get('pregunta2')?.value,
+    pregunta3: this.preguntaSelecForm.get('pregunta3')?.value,
+    pregunta4: this.preguntaSelecForm.get('pregunta4')?.value,
+    pregunta5: this.preguntaSelecForm.get('pregunta5')?.value,
+    pregunta6: this.preguntaSelecForm.get('pregunta6')?.value,
+    pregunta7: this.preguntaSelecForm.get('pregunta7')?.value,
+    pregunta8: this.preguntaSelecForm.get('pregunta8')?.value,
+    pregunta9: this.preguntaSelecForm.get('pregunta9')?.value,
+    pregunta10: this.preguntaSelecForm.get('pregunta10')?.value,
   }
 
   if(this.id !==null){
     //editamos pregunta seleccionada
-    this._PreguntaSelecUserService.editarPreguntaSelecUser(this.id, PREGUNTASELECUSER).subscribe(data=>{
-      this.router.navigate(['/listaPreguntasSeleccionadasUser'])
+    this._PreguntaSelecService.editarPreguntaSelec(this.id, PREGUNTASELEC).subscribe(data=>{
+      this.router.navigate(['/listaPreguntasSeleccionadas'])
       this.toastr.info('La pregunta seleccionada fue editada con exito','Pregunta editada');
     },error=>{
   console.log(error)
     })
   }else{
   //agregamos pregunta seleccionada
-  console.log(PREGUNTASELECUSER);
-  this._PreguntaSelecUserService.guardarPreguntaSelecUser(PREGUNTASELECUSER).subscribe(dato=>{
-    this.router.navigate(['/listaPreguntasSeleccionadasUser'])
+  console.log(PREGUNTASELEC);
+  this._PreguntaSelecService.guardarPreguntaSelec(PREGUNTASELEC).subscribe(dato=>{
+    this.router.navigate(['/listaPreguntasSeleccionadas'])
     this.toastr.success('La pregunta seleccionada fue registrada con exito!','Pregunta agregada');
   }, error=>{
   console.log(error);
-  this.preguntaSelecUserForm.reset()
+  this.preguntaSelecForm.reset()
   })
   }
   
@@ -76,8 +93,8 @@ export class PreguntasSeleccionadasUserComponent implements OnInit {
   esEditar(){
     if(this.id !==null){
       this.titulo='Editar pregunta seleccionada';
-      this._PreguntaSelecUserService.obtenerPreguntaSelecUserById(this.id).subscribe(data=>{
-      this.preguntaSelecUserForm.setValue({
+      this._PreguntaSelecService.obtenerPreguntaSelecById(this.id).subscribe(data=>{
+      this.preguntaSelecForm.setValue({
           pregunta1: data.pregunta1,
           pregunta2: data.pregunta2,
           pregunta3: data.pregunta3,
@@ -94,5 +111,8 @@ export class PreguntasSeleccionadasUserComponent implements OnInit {
       })
     }
   }
+
+
+  
 
 }

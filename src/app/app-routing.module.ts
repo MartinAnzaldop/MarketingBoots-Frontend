@@ -42,6 +42,7 @@ const routes: Routes = [
   {path:'bancoPreguntas', component:AgregarPreguntaComponent},
   {path:'listaBancoPreguntas', component:ListaBancoPreguntasComponent},
   {path:'editarBancoPregu/:id', component:AgregarPreguntaComponent},
+ 
 
   {path:'preguntasSeleccionadas', component:PreguntasSeleccionadasComponent},
   {path:'listaPreguntasSeleccionadas', component:ListaPreguntasSeleccionadasComponent},

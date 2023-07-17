@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { BancoPregu } from 'src/app/models/bancoPregu';
 import { PreguntaSelec } from 'src/app/models/preguntaSelec';
+import { BancoPreguService } from 'src/app/service/bancoPregu.service';
 import { PreguntaSelecService } from 'src/app/service/preguntaSelec.service';
 
 @Component({
@@ -12,10 +14,12 @@ import { PreguntaSelecService } from 'src/app/service/preguntaSelec.service';
 })
 export class PreguntasSeleccionadasComponent implements OnInit {
   preguntaSelecForm: FormGroup;
+  listaBancoPregu:BancoPregu []=[];
   titulo = 'Pregunta Seleccionada';
   id:string | null;
   constructor(private fb: FormBuilder, private  router: Router, private toastr: ToastrService,
-    private _PreguntaSelecService:PreguntaSelecService, private aRouter: ActivatedRoute) {
+    private _PreguntaSelecService:PreguntaSelecService, private aRouter: ActivatedRoute,
+    private _BancoPreguService: BancoPreguService) {
     this.preguntaSelecForm=this.fb.group({
       pregunta1:['', Validators.required],
       pregunta2:['', Validators.required],
@@ -32,8 +36,19 @@ export class PreguntasSeleccionadasComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    this.obtenerBancoPregu()
     this.esEditar()
   }
+
+  obtenerBancoPregu(){
+    this._BancoPreguService.getBancoPregu().subscribe(data=>{
+      console.log(data);
+      this.listaBancoPregu=data;
+    },error=>{
+    console.log(error)
+    })
+  }
+
 
   agregarPreguntaSelec(){
   console.log(this.preguntaSelecForm)
@@ -93,5 +108,8 @@ export class PreguntasSeleccionadasComponent implements OnInit {
       })
     }
   }
+
+
+  
 
 }
