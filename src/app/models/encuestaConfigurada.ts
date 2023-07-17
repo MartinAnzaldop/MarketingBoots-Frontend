@@ -4,6 +4,5 @@ export class encuestaConfigurada{
   fechaFinal: String;
   titulo: string;
   poblacion: string;
-  articulo: string;
   numeroEncuesta: number;
 }

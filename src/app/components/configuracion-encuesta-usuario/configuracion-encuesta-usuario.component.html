@@ -3,11 +3,11 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-12 wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.25s">
-        <form id="contact">
+        <form id="contact" [formGroup]="encuestaConfiguradaForm" (ngSubmit)="agregarEncuestaConfigurada()">
           <div class="row">
             <div class="col-lg-6 offset-lg-3">
               <div class="section-heading">
-                <h2>Encuesta configurada usuario</h2>
+                <h6>CONFIGURACIÓN ENCUESTA Usuario</h6>
               </div>
             </div>
             <div class="col-lg-9">
@@ -22,15 +22,13 @@
                 </div>
                 <div class="col-lg-6">
                   <fieldset>
-                    <div class="row">
                     <input type="date" formControlName="fechaFinal" name="fechaFinal" id="fechaFinal" placeholder="Fecha Final" autocomplete="on" required>
                     <div class="text-danger" *ngIf="encuestaConfiguradaForm.get('fechaFinal')?.hasError('required') && encuestaConfiguradaForm.get('fechaFinal')?.touched">
                       <span>La fecha de termino <strong>es obligatoria</strong></span>
                     </div>
-                  </div>
                   </fieldset>
                 </div>
-                <div class="col-lg-6 g-4">
+                <div class="col-lg-6">
                   <fieldset>
                     <input class="form-control" formControlName="titulo" type="text" name="titulo" id="titulo" placeholder="Titulo" autocomplete="on" required>
                     <div class="text-danger" *ngIf="encuestaConfiguradaForm.get('titulo')?.hasError('required') && encuestaConfiguradaForm.get('titulo')?.touched">
@@ -40,17 +38,23 @@
                 </div>
                 <div class="col-lg-6">
                   <fieldset>
-                    <label for="">Elegir tipo de población</label>
-                    <select class="form-control" formControlName="poblacion" type="text" name="poblacion" id="poblacion" required>
-                      <option value="niño">Niño</option>
-                      <option value="joven">Joven</option>
-                      <option value="adulto">Adulto</option>
-                      <option value="adultoMayor">Adulto Mayor</option>
-                      <span>La poblacion <strong>es obligatorio</strong></span>
-                    </select>
-                  </fieldset>
+                    <select name="poblacion" formControlName="poblacion" id="poblacion" class="form-control" placeholder="Poblacion">
+                        <option value="opcion2" disabled>-- Seleccione poblacion a encuestar --</option>
+                        <option value="nino">Niño</option>
+                        <option value="joven">Joven</option>
+                        <option value="adulto">Adulto</option>
+                        <option value="anciano">Anciano</option>
+                        <option value="mujer">Mujer</option>
+                        <option value="hombre">Hombre</option>
+                        <option value="binario">Binario</option>
+                      </select>
+                      <div class="text-danger" *ngIf="encuestaConfiguradaForm.get('poblacion')?.hasError('required') && encuestaConfiguradaForm.get('poblacion')?.touched">
+                        <span>La categoria <strong>es obligatoria</strong></span>
+                      </div>
+                </fieldset>
                 </div>
-                <div class="col-lg-12">
+                
+                <div class="col-lg-6">
                   <fieldset>
                     <input class="form-control" formControlName="numeroEncuesta" type="number" name="numeroEncuesta" id="numeroEncuesta" placeholder="Número de encuesta" autocomplete="on" required>
                     <div class="text-danger" *ngIf="encuestaConfiguradaForm.get('numeroEncuesta')?.hasError('required') && encuestaConfiguradaForm.get('numeroEncuesta')?.touched">
@@ -58,9 +62,10 @@
                     </div>
                   </fieldset>
                 </div>
+                
                 <div class="col-lg-12">
                   <fieldset>
-                    <button type="submit" [disabled]="encuestaConfiguradaForm.invalid" id="form-submit" class="main-button ">Enviar encuesta configurada</button>
+                    <button type="submit"  id="form-submit" class="main-button">Enviar encuesta configurada</button>
                   </fieldset>
                 </div>
               </div>
@@ -81,6 +86,7 @@
                     <a href="#">++52 5542190095</a>
                   </li>
                   <li>
+
                   </li>
                 </ul>
               </div>
@@ -91,4 +97,3 @@
     </div>
   </div>
 </div>
-

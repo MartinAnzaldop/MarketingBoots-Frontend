@@ -58,7 +58,7 @@
                     </fieldset>
                   </div>
                   <div class="col-lg-6">
-                    <fieldset>
+                    <fieldset> <br>
                       <input class="form-control" formControlName="nombreArticulo" type="text" name="nombreArticulo" id="nombreArticulo" placeholder="Nombre del articulo" required>
                       <div class="text-danger" *ngIf="pedidoForm.get('nombreArticulo')?.hasError('required') && pedidoForm.get('nombreArticulo')?.touched">
                         <span>El nombre del articulo <strong>es obligatorio</strong></span>
