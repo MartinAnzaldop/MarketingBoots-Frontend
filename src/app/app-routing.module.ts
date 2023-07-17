@@ -15,6 +15,7 @@ import { ListaBancoPreguntasComponent } from './components/lista-banco-preguntas
 import { ListaRespuestasEncuestasComponent } from './components/lista-respuestas-encuestas/lista-respuestas-encuestas.component';
 import { RespuestasEncuestasComponent } from './components/respuestas-encuestas/respuestas-encuestas.component';
 import { ListaPreguntasSeleccionadasComponent } from './components/lista-preguntas-seleccionadas/lista-preguntas-seleccionadas.component';
+import { PreguntasSeleccionadasUserComponent } from './components/preguntas-seleccionadas-user/preguntas-seleccionadas-user.component';
 
 
 
@@ -46,7 +47,8 @@ const routes: Routes = [
   {path:'listaPreguntasSeleccionadas', component:ListaPreguntasSeleccionadasComponent},
   {path:'editarPreguntaSelec/:id', component:PreguntasSeleccionadasComponent},
 
-  
+  {path:'preguntasSeleccionadasUser', component:PreguntasSeleccionadasUserComponent},
+
   //Norma
   {path:'respuestasEncuestas', component:RespuestasEncuestasComponent},
   {path:'listaRespuestasEncuestas', component:ListaRespuestasEncuestasComponent},

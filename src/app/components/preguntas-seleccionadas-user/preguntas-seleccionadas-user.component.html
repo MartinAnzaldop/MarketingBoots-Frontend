@@ -1,0 +1,190 @@
+<app-navbar-admin></app-navbar-admin>
+<div id="contact" class="contact-us section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.25s">
+          <form id="contact" [formGroup]="preguntaSelecUserForm" (ngSubmit)="agregarPreguntaSelecUser()">
+            <div class="row">
+              <div class="col-lg-6 offset-lg-3">
+                <div class="section-heading">
+                  <h2>Selecciona tus preguntas usuario</h2>
+                </div>
+              </div>
+              <div class="col-lg-8">
+                <div class="row">
+                  <tr>
+                    <td><label align-items="left" for="campo-select">Seleccione la pregunta 1 sobre el precio:</label></td>
+                  </tr>
+                  <select class="form-control" formControlName="pregunta1" type="text" name="pregunta1"  id="pregunta1" placeholder="Selecciona la pregunta 1" required>
+                    <option value="pregunta"disabled> Selecciona la pregunta 1</option>
+                    <option value="¿Qué tan razonable consideras el precio de este producto/servicio en comparación con otros en el mercado?">¿Qué tan razonable consideras el precio de este producto/servicio en comparación con otros en el mercado?</option>
+                    <option value="¿Qué tan accesible crees que es el precio de este producto/servicio para la mayoría de las personas?">¿Qué tan accesible crees que es el precio de este producto/servicio para la mayoría de las personas?</option>
+                    <option value="¿Qué tan justo te parece el precio de este producto/servicio en relación a su calidad y características?">¿Qué tan justo te parece el precio de este producto/servicio en relación a su calidad y características?</option>
+                  </select>
+                  <div class="text-danger" *ngIf="preguntaSelecUserForm.get('pregunta1')?.hasError('required') && preguntaSelecUserForm.get('pregunta1')?.touched">
+                    <span>La pregunta 1 <strong>es obligatorio</strong></span>
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                  <tr>
+                    <td><label align-items="left" for="campo-select">Selecciona la pregunta 2 sobre el precio:</label></td>
+                  </tr>
+                  <select class="form-control" formControlName="pregunta2" type="text" name="pregunta2"  id="pregunta2" placeholder="Selecciona la pregunta 2" required>
+                    <option value="pregunta"disabled> Selecciona la pregunta 2</option>
+                    <option value="¿Qué tan costoso te parece este producto/servicio en comparación con las alternativas disponibles?">¿Qué tan costoso te parece este producto/servicio en comparación con las alternativas disponibles?</option>
+                    <option value="¿Qué tan económico consideras este producto/servicio en relación a los beneficios que ofrece?">¿Qué tan económico consideras este producto/servicio en relación a los beneficios que ofrece?</option>
+                    <option value="¿Qué tan competitivo crees que es el precio de este producto/servicio en relación a otros en el mercado?">¿Qué tan competitivo crees que es el precio de este producto/servicio en relación a otros en el mercado?</option>
+                  </select>
+                  <div class="text-danger" *ngIf="preguntaSelecUserForm.get('pregunta2')?.hasError('required') && preguntaSelecUserForm.get('pregunta2')?.touched">
+                    <span>La pregunta 2 <strong>es obligatorio</strong></span>
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                  <tr>
+                    <td><label align-items="left" for="campo-select">Selecciona la pregunta 3 sobre el precio:</label></td>
+                  </tr>
+                  <select class="form-control" formControlName="pregunta3" type="text" name="pregunta3"  id="pregunta3" placeholder="Selecciona la pregunta 3" required>
+                    <option value="pregunta"disabled> Selecciona la pregunta 3</option>
+                    <option value="¿Qué te parece el precio de este producto/servicio considerando los costos y materiales involucrados?">¿Qué te parece el precio de este producto/servicio considerando los costos y materiales involucrados?</option>
+                    <option value="¿Qué tan asequible crees que es este producto/servicio para el valor que proporciona a los clientes?">¿Qué tan asequible crees que es este producto/servicio para el valor que proporciona a los clientes?</option>
+                    <option value="¿Qué tan razonable parece el precio de este producto/servicio en comparación con su durabilidad y vida útil?">¿Qué tan razonable parece el precio de este producto/servicio en comparación con su durabilidad y vida útil?</option>
+                    <option value="¿Qué tan satisfactorio consideras el precio de este producto/servicio con las expectativas que tenías sobre él?">¿Qué tan satisfactorio consideras el precio de este producto/servicio con las expectativas que tenías sobre él?</option>
+                  </select>
+                  <div class="text-danger" *ngIf="preguntaSelecUserForm.get('pregunta3')?.hasError('required') && preguntaSelecUserForm.get('pregunta3')?.touched">
+                    <span>La pregunta 3 <strong>es obligatorio</strong></span>
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                  <tr>
+                    <td><label align-items="left" for="campo-select">Selecciona la pregunta 4 sobre la calidad:</label></td>
+                  </tr>
+                  <select class="form-control" formControlName="pregunta4" type="text" name="pregunta4"  id="pregunta4" placeholder="Selecciona la pregunta 4" required>
+                    <option value="pregunta"disabled> Selecciona la pregunta 4</option>
+                    <option value="¿Está satisfecho/a con la calidad del producto/servicio que recibió?">¿Está satisfecho/a con la calidad del producto/servicio que recibió?</option>
+                    <option value="¿Recomendaría nuestro producto/servicio a otros?">¿Recomendaría nuestro producto/servicio a otros?</option>
+                  </select>
+                  <div class="text-danger" *ngIf="preguntaSelecUserForm.get('pregunta4')?.hasError('required') && preguntaSelecUserForm.get('pregunta4')?.touched">
+                    <span>La pregunta 4 <strong>es obligatorio</strong></span>
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                  <tr>
+                    <td><label align-items="left" for="campo-select">Selecciona la pregunta 5 sobre la calidad:</label></td>
+                  </tr>
+                  <select class="form-control" formControlName="pregunta5" type="text" name="pregunta5"  id="pregunta5" placeholder="Selecciona la pregunta 5" required>
+                    <option value="pregunta"disabled> Selecciona la pregunta 5</option>
+                    <option value="¿El producto/servicio cumplió con sus expectativas?">¿El producto/servicio cumplió con sus expectativas?</option>
+                    <option value="¿Cuál es su nivel de satisfacción general con nuestro producto/servicio?">¿Cuál es su nivel de satisfacción general con nuestro producto/servicio?</option>
+                  </select>
+                  <div class="text-danger" *ngIf="preguntaSelecUserForm.get('pregunta5')?.hasError('required') && preguntaSelecUserForm.get('pregunta5')?.touched">
+                    <span>La pregunta 5 <strong>es obligatorio</strong></span>
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                  <tr>
+                    <td><label align-items="left" for="campo-select">Selecciona la pregunta 6 sobre la calidad:</label></td>
+                  </tr>
+                  <select class="form-control" formControlName="pregunta6" type="text" name="pregunta6"  id="pregunta6" placeholder="Selecciona la pregunta 6" required>
+                    <option value="pregunta"disabled> Selecciona la pregunta 6 </option>
+                    <option value="¿Ha tenido algún problema o dificultad al utilizar nuestro producto/servicio?">¿Ha tenido algún problema o dificultad al utilizar nuestro producto/servicio?</option>
+                    <option value="¿Cuánto tiempo le llevó a resolver el problema o dificultad?">¿Cuánto tiempo le llevó a resolver el problema o dificultad?</option>
+                    <option value="¿Cuál es el aspecto que más valora de nuestro producto/servicio?">¿Cuál es el aspecto que más valora de nuestro producto/servicio?</option>
+                  </select>
+                  <div class="text-danger" *ngIf="preguntaSelecUserForm.get('pregunta6')?.hasError('required') && preguntaSelecUserForm.get('pregunta6')?.touched">
+                    <span>La pregunta 6 <strong>es obligatorio</strong></span>
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                  <tr>
+                    <td><label align-items="left" for="campo-select">Selecciona la pregunta 7 sobre la calidad:</label></td>
+                  </tr>
+                  <select class="form-control" formControlName="pregunta7" type="text" name="pregunta7"  id="pregunta7" placeholder="Selecciona la pregunta 7" required>
+                    <option value="pregunta"disabled> Selecciona la pregunta 7</option>
+                    <option value="¿Ha experimentado alguna mejora notable en su vida o trabajo gracias a nuestro producto/servicio?">¿Ha experimentado alguna mejora notable en su vida o trabajo gracias a nuestro producto/servicio?</option>
+                    <option value="¿Qué tan probable es que vuelva a adquirir nuestro producto/servicio en el futuro?">¿Qué tan probable es que vuelva a adquirir nuestro producto/servicio en el futuro?</option>
+                    <option value="¿Ha tenido alguna experiencia negativa con nuestro producto/servicio que desearía que mejoráramos?">¿Ha tenido alguna experiencia negativa con nuestro producto/servicio que desearía que mejoráramos?</option>
+                  </select>
+                  <div class="text-danger" *ngIf="preguntaSelecUserForm.get('pregunta7')?.hasError('required') && preguntaSelecUserForm.get('pregunta7')?.touched">
+                    <span>La pregunta 7 <strong>es obligatorio</strong></span>
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                  <tr>
+                    <td><label align-items="left" for="campo-select">Selecciona la pregunta 8 sobre la comunidad:</label></td>
+                  </tr>
+                  <select class="form-control" formControlName="pregunta8" type="text" name="pregunta8"  id="pregunta8" placeholder="Selecciona la pregunta 8" required>
+                    <option value="pregunta"disabled> Selecciona la pregunta 8</option>
+                    <option value="¿El producto/servicio se enfoca en mejorar la comunicación dentro de una comunidad?">¿El producto/servicio se enfoca en mejorar la comunicación dentro de una comunidad?</option>
+                    <option value="¿El producto/servicio promueve la participación activa de los miembros de la comunidad?">¿El producto/servicio promueve la participación activa de los miembros de la comunidad?</option>
+                    <option value="¿Se puede utilizar este producto/servicio en comunidades en línea?">¿Se puede utilizar este producto/servicio en comunidades en línea?</option>
+                  </select>
+                  <div class="text-danger" *ngIf="preguntaSelecUserForm.get('pregunta8')?.hasError('required') && preguntaSelecUserForm.get('pregunta8')?.touched">
+                    <span>La pregunta 8 <strong>es obligatorio</strong></span>
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                  <tr>
+                    <td><label align-items="left" for="campo-select">Selecciona la pregunta 9 sobre la comunidad:</label></td>
+                  </tr>
+                  <select class="form-control" formControlName="pregunta9" type="text" name="pregunta9"  id="pregunta9" placeholder="Selecciona la pregunta 9" required>
+                    <option value="pregunta"disabled> Selecciona la pregunta 9</option>
+                    <option value="¿El producto/servicio ofrece herramientas para organizar eventos comunitarios?">¿El producto/servicio ofrece herramientas para organizar eventos comunitarios?</option>
+                    <option value="¿El producto/servicio ofrece herramientas para organizar eventos comunitarios?">¿El producto/servicio ofrece herramientas para organizar eventos comunitarios?</option>
+                    <option value="¿El producto/servicio proporciona recursos educativos para fortalecer la comunidad?">¿El producto/servicio proporciona recursos educativos para fortalecer la comunidad?</option>
+                  </select>
+                  <div class="text-danger" *ngIf="preguntaSelecUserForm.get('pregunta9')?.hasError('required') && preguntaSelecUserForm.get('pregunta9')?.touched">
+                    <span>La pregunta 9 <strong>es obligatorio</strong></span>
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                  <tr>
+                    <td><label align-items="left" for="campo-select">Selecciona la pregunta 10 sobre la comunidad:</label></td>
+                  </tr>
+                  <select class="form-control" formControlName="pregunta10" type="text" name="pregunta10"  id="pregunta10" placeholder="Selecciona la pregunta 10" required>
+                    <option value="pregunta"disabled> Selecciona la pregunta 10 </option>
+                    <option value="¿Se puede personalizar este producto/servicio según las necesidades de una comunidad específica?">¿Se puede personalizar este producto/servicio según las necesidades de una comunidad específica?</option>
+                    <option value="¿El producto/servicio incluye funciones de seguimiento de la participación de los miembros de la comunidad?">¿El producto/servicio incluye funciones de seguimiento de la participación de los miembros de la comunidad?</option>
+                    <option value="¿Este producto/servicio ha sido utilizado con éxito en otras comunidades similares?">¿Este producto/servicio ha sido utilizado con éxito en otras comunidades similares?</option>
+                    <option value="¿El producto/servicio tiene una opción de membresía para acceder a funciones con la comunidad?">¿El producto/servicio tiene una opción de membresía para acceder a funciones con la comunidad?</option>
+                  </select>
+                  <div class="text-danger" *ngIf="preguntaSelecUserForm.get('pregunta10')?.hasError('required') && preguntaSelecUserForm.get('pregunta10')?.touched">
+                    <span>La pregunta 10 <strong>es obligatorio</strong></span>
+                  </div>
+                </div>
+                  <!--Boton de enviar-->
+                  <div class="col-lg-12">
+                    <fieldset>
+                      <button type="submit" [disabled]="preguntaSelecUserForm.invalid" id="form-submit" class="main-button ">Enviar Pregunta</button>
+                    </fieldset>
+                  </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="contact-info">
+                  <ul>
+                    <li>
+                      <div class="icon">
+                        <img src="assets/images/contact-icon-01.png" alt="email icon">
+                      </div>
+                      <a href="#">MarketingB@company.com</a>
+                    </li>
+                    <li>
+                      <div class="icon">
+                        <img src="assets/images/contact-icon-02.png" alt="phone">
+                      </div>
+                      <a href="#">+52 5542190095</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
