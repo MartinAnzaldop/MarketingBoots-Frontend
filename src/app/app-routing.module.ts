@@ -24,6 +24,7 @@ import { AdminEncuestaComponent } from './components/admin-encuesta/admin-encues
 import { AdminVistaComponent } from './components/admin-vista/admin-vista.component';
 import { ChatDialogComponent } from './components/chat-dialog/chat-dialog.component';
 import { SolicitudUserComponent } from './components/solicitud-user/solicitud-user.component';
+import { ConfiguracionEncuestaUsuarioComponent } from './components/configuracion-encuesta-usuario/configuracion-encuesta-usuario.component';
 
 
 const routes: Routes = [
@@ -55,7 +56,7 @@ const routes: Routes = [
   {path:'inicioAdministrador', component:AdminIniciarSesionComponent},
   {path:'recuperarContraseña', component:RecuperarPasswordComponent},
   {path:'verificacionCorreo', component:VerificarCorreoComponent},
-  {path:'configuracionUsuario', component:ConfiguracionEncuestaComponent},
+  {path:'configuracionUsuario', component:ConfiguracionEncuestaUsuarioComponent},
 
   //Ana
   {path:'preguntasSeleccionadas', component:PreguntasSeleccionadasComponent},

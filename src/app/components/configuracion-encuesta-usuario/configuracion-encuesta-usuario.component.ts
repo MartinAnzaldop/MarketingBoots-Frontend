@@ -39,7 +39,7 @@ export class ConfiguracionEncuestaUsuarioComponent implements OnInit {
       }
       console.log(encuestaConfigurada);
       this._EncuestaCondfiguradaService.guardarEncuestaConfigurada(ENCUESTACONFIGURADA).subscribe(dato=>{
-        this.router.navigate(['/acerca'])
+        this.router.navigate(['/seleccionPreguntasUser'])
       }, error=>{
       console.log(error);
       this.encuestaConfiguradaForm.reset()
