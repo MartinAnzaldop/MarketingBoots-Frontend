@@ -12,7 +12,7 @@ import { PedidoService } from 'src/app/service/pedido.service';
 })
 export class AgregarPedidoComponent implements OnInit {
   pedidoForm: FormGroup;
-  titulo = 'Agregar Pedido';
+  titulo = 'Agregar solicitud';
   id:string | null;
   constructor(private fb: FormBuilder, private  router: Router, private toastr: ToastrService,
     private _PedidoService:PedidoService, private aRouter: ActivatedRoute) {
@@ -73,7 +73,7 @@ export class AgregarPedidoComponent implements OnInit {
   esEditar(){
   
     if(this.id !==null){
-      this.titulo='Editar pedido';
+      this.titulo='Editar solicitud';
       this._PedidoService.obtenerPedidoById(this.id).subscribe(data=>{
       this.pedidoForm.setValue({
           empresa: data.empresa,

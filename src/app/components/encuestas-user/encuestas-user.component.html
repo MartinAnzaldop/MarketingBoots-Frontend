@@ -45,7 +45,6 @@
     </section>
  <br>
   <hr />
-  <form [formGroup]="preguntaSelecForm" (ngSubmit)="agregarPreguntaSelec()">
   <!--  Servicios  -->
   <section class="row">
     <div class="col-md-12">
@@ -53,266 +52,220 @@
       <p></p>
     </div>
   </section>
-  <!--  PREGUNTA 1  -->
-  <section class="row">
-    <div class="col-md-6">
-      <p formControlName="pregunta1"></p>
-    </div>
-    <div class="col-md-2">
-      <label class="radio">
-      <input type="radio" name="pregunta1" id="pregunta1a" value="1"> 1
-    </label>
-    </div>
-    <div class="col-md-2">
-      <label class="radio">
-      <input type="radio" name="pregunta1" id="preguntab" value="5"> 5
-    </label>
-    </div>
-    <div class="col-md-2">
-      <label class="radio">
-      <input type="radio" name="pregunta1" id="preguntac" value="10"> 10
-    </label>
-    </div>
-  </section>
-  <!--  PREGUNTA 2  -->
-  <section class="row">
-    <div class="col-md-6">
-      <p formControlName="pregunta2"></p>
-    </div>
-    <div class="col-md-2">
-      <label class="radio">
-      <input type="radio" name="pregunta2" id="pregunta1a" value="1"> 1
-    </label>
-    </div>
-    <div class="col-md-2">
-      <label class="radio">
-      <input type="radio" name="pregunta2" id="preguntab" value="5">5
-    </label>
-    </div>
-    <div class="col-md-2">
-      <label class="radio">
-      <input type="radio" name="pregunta2" id="preguntac" value="10"> 10
-    </label>
-    </div>
-  </section>
-  <!--  PREGUNTA 3  -->
-  <section class="row">
-    <div class="col-md-6">
-      <p formControlName="pregunta3"></p>
-    </div>
-    <div class="col-md-2">
-      <label class="radio">
-      <input type="radio" name="pregunta2" id="pregunta1a" value="1"> 1
-    </label>
-    </div>
-    <div class="col-md-2">
-      <label class="radio">
-      <input type="radio" name="pregunta2" id="preguntab" value="5">5
-    </label>
-    </div>
-    <div class="col-md-2">
-      <label class="radio">
-      <input type="radio" name="pregunta2" id="preguntac" value="10"> 10
-    </label>
-    </div>
-  </section>
-  <!--  PREGUNTA 4  -->
-  <section class="row">
-    <div class="col-md-6">
-      <p formControlName="pregunta4"></p>
-    </div>
-    <div class="col-md-2">
-      <label class="radio">
-      <input type="radio" name="pregunta2" id="pregunta1a" value="1"> 1
-    </label>
-    </div>
-    <div class="col-md-2">
-      <label class="radio">
-      <input type="radio" name="pregunta2" id="preguntab" value="5">5
-    </label>
-    </div>
-    <div class="col-md-2">
-      <label class="radio">
-      <input type="radio" name="pregunta2" id="preguntac" value="10"> 10
-    </label>
-    </div>
-  </section>
-  <!--  Durante la Atención  -->
-  <section class="row">
-    <div class="col-md-6">
-      <p>4- ¿A su llegada al hospital los tramites de ingreso y atención fueron claros? </p>
-    </div>
-    <div class="col-md-2">
-      <label class="radio">
-      <input type="radio" name="pregunta2" id="pregunta1a" value="1"> 1
-    </label>
-    </div>
-    <div class="col-md-2">
-      <label class="radio">
-      <input type="radio" name="pregunta2" id="preguntab" value="5">5
-    </label>
-    </div>
-    <div class="col-md-2">
-      <label class="radio">
-      <input type="radio" name="pregunta2" id="preguntac" value="10"> 10
-    </label>
-    </div>
-  </section>
-  <!--  PREGUNTA 5  -->
-  section class="row">
-  <div class="col-md-6">
-    <p>5- ¿A su llegada al hospital los tramites de ingreso y atención fueron claros? </p>
+<form [formGroup]="preguntaSelecForm"><br>
+  <label>Pregunta 1:</label>
+  <select formControlName="pregunta1" >
+    <option disabled *ngFor="let bancoPregu of listaBancoPregu" [value]="bancoPregu.pregunta ? bancoPregu.pregunta.toString() : ''">
+      {{ bancoPregu.pregunta }}
+    </option>
+  </select><br>
+  <label> Respuesta 1:</label>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input ms-2"  type="checkbox" id="inlineCheckbox1" value="1" >
+    <label class="form-check-label" for="inlineCheckbox1">1</label>
   </div>
-  <div class="col-md-2">
-    <label class="radio">
-    <input type="radio" name="pregunta2" id="pregunta1a" value="1"> 1
-  </label>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input " type="checkbox" id="inlineCheckbox2" value="5">
+    <label class="form-check-label" for="inlineCheckbox2">5</label>
   </div>
-  <div class="col-md-2">
-    <label class="radio">
-    <input type="radio" name="pregunta2" id="preguntab" value="5">5
-  </label>
-  </div>
-  <div class="col-md-2">
-    <label class="radio">
-    <input type="radio" name="pregunta2" id="preguntac" value="10"> 10
-  </label>
-  </div>
-
-  <!--  PREGUNTA 6  -->
-  <section class="row">
-    <div class="col-md-6">
-      <p>6- ¿A su llegada al hospital los tramites de ingreso y atención fueron claros? </p>
-    </div>
-    <div class="col-md-2">
-      <label class="radio">
-      <input type="radio" name="pregunta2" id="pregunta1a" value="1"> 1
-    </label>
-    </div>
-    <div class="col-md-2">
-      <label class="radio">
-      <input type="radio" name="pregunta2" id="preguntab" value="5">5
-    </label>
-    </div>
-    <div class="col-md-2">
-      <label class="radio">
-      <input type="radio" name="pregunta2" id="preguntac" value="10"> 10
-    </label>
-    </div>
-  </section>
-  <!--  PREGUNTA 7  -->
-  <section class="row">
-    <div class="col-md-6">
-      <p>7- ¿A su llegada al hospital los tramites de ingreso y atención fueron claros? </p>
-    </div>
-    <div class="col-md-2">
-      <label class="radio">
-      <input type="radio" name="pregunta2" id="pregunta1a" value="1"> 1
-    </label>
-    </div>
-    <div class="col-md-2">
-      <label class="radio">
-      <input type="radio" name="pregunta2" id="preguntab" value="5">5
-    </label>
-    </div>
-    <div class="col-md-2">
-      <label class="radio">
-      <input type="radio" name="pregunta2" id="preguntac" value="10"> 10
-    </label>
-    </div>
-  </section>
-  <!--  PREGUNTA 8  -->
-  <section class="row">
-    <div class="col-md-6">
-      <p>8- ¿A su llegada al hospital los tramites de ingreso y atención fueron claros? </p>
-    </div>
-    <div class="col-md-2">
-      <label class="radio">
-      <input type="radio" name="pregunta2" id="pregunta1a" value="1"> 1
-    </label>
-    </div>
-    <div class="col-md-2">
-      <label class="radio">
-      <input type="radio" name="pregunta2" id="preguntab" value="5">5
-    </label>
-    </div>
-    <div class="col-md-2">
-      <label class="radio">
-      <input type="radio" name="pregunta2" id="preguntac" value="10"> 10
-    </label>
-    </div>
-  </section>
-  <!--  PREGUNTA 9  -->
-  <section class="row">
-    <div class="col-md-6">
-      <p>9- ¿A su llegada al hospital los tramites de ingreso y atención fueron claros? </p>
-    </div>
-    <div class="col-md-2">
-      <label class="radio">
-      <input type="radio" name="pregunta2" id="pregunta1a" value="1"> 1
-    </label>
-    </div>
-    <div class="col-md-2">
-      <label class="radio">
-      <input type="radio" name="pregunta2" id="preguntab" value="5">5
-    </label>
-    </div>
-    <div class="col-md-2">
-      <label class="radio">
-      <input type="radio" name="pregunta2" id="preguntac" value="10"> 10
-    </label>
-    </div>
-  </section>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="10">
+    <label class="form-check-label" for="inlineCheckbox3">10</label>
   
-  <!--  PREGUNTA 10  -->
-  <section class="row">
-    <div class="col-md-6">
-      <p>10- ¿A su llegada al hospital los tramites de ingreso y atención fueron claros? </p>
-    </div>
-    <div class="col-md-2">
-      <label class="radio">
-      <input type="radio" name="pregunta2" id="pregunta1a" value="1"> 1
-    </label>
-    </div>
-    <div class="col-md-2">
-      <label class="radio">
-      <input type="radio" name="pregunta2" id="preguntab" value="5">5
-    </label>
-    </div>
-    <div class="col-md-2">
-      <label class="radio">
-      <input type="radio" name="pregunta2" id="preguntac" value="10"> 10
-    </label>
-    </div>
-  </section>
- 
+  </div><br> <br>
+  
+  <label>Pregunta 2:</label>
+  <select formControlName="pregunta2" >
+    
+    <option disabled *ngFor="let bancoPregu of listaBancoPregu" [value]="bancoPregu.pregunta ? bancoPregu.pregunta.toString() : ''">
+      {{ bancoPregu.pregunta }}
+    </option>
+  </select><br>
+  <label> Respuesta 2:</label>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input ms-2" type="checkbox" id="inlineCheckbox1" value="1">
+    <label class="form-check-label" for="inlineCheckbox1">1</label>
+  </div>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input " type="checkbox" id="inlineCheckbox2" value="5">
+    <label class="form-check-label" for="inlineCheckbox2">5</label>
+  </div>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="10">
+    <label class="form-check-label" for="inlineCheckbox3">10</label>
+  
+  </div><br> <br>
 
-
-
+  
+  <label>Pregunta 3:</label>
+  <select formControlName="pregunta3" >
+    
+    <option disabled *ngFor="let bancoPregu of listaBancoPregu" [value]="bancoPregu.pregunta ? bancoPregu.pregunta.toString() : ''">
+      {{ bancoPregu.pregunta }}
+    </option>
+  </select><br>
+  <label> Respuesta 3:</label>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input ms-2" type="checkbox" id="inlineCheckbox1" value="1">
+    <label class="form-check-label" for="inlineCheckbox1">1</label>
+  </div>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input " type="checkbox" id="inlineCheckbox2" value="5">
+    <label class="form-check-label" for="inlineCheckbox2">5</label>
+  </div>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="10">
+    <label class="form-check-label" for="inlineCheckbox3">10</label>
+  
+  </div><br> <br>
+  <label>Pregunta 4:</label>
+  <select formControlName="pregunta4" >
+    
+    <option disabled *ngFor="let bancoPregu of listaBancoPregu" [value]="bancoPregu.pregunta ? bancoPregu.pregunta.toString() : ''">
+      {{ bancoPregu.pregunta }}
+    </option>
+  </select><br>
+  <label> Respuesta 4:</label>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input ms-2" type="checkbox" id="inlineCheckbox1" value="1">
+    <label class="form-check-label" for="inlineCheckbox1">1</label>
+  </div>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input " type="checkbox" id="inlineCheckbox2" value="5">
+    <label class="form-check-label" for="inlineCheckbox2">5</label>
+  </div>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="10">
+    <label class="form-check-label" for="inlineCheckbox3">10</label>
+  
+  </div><br> <br>
+  <label>Pregunta 5:</label>
+  <select formControlName="pregunta5" >
+    
+    <option disabled *ngFor="let bancoPregu of listaBancoPregu" [value]="bancoPregu.pregunta ? bancoPregu.pregunta.toString() : ''">
+      {{ bancoPregu.pregunta }}
+    </option>
+  </select><br>
+  <label> Respuesta 5:</label>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input ms-2" type="checkbox" id="inlineCheckbox1" value="1">
+    <label class="form-check-label" for="inlineCheckbox1">1</label>
+  </div>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input " type="checkbox" id="inlineCheckbox2" value="5">
+    <label class="form-check-label" for="inlineCheckbox2">5</label>
+  </div>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="10">
+    <label class="form-check-label" for="inlineCheckbox3">10</label>
+  
+  </div><br> <br>
+  <label>Pregunta 6:</label>
+  <select formControlName="pregunta6" >
+    
+    <option disabled *ngFor="let bancoPregu of listaBancoPregu" [value]="bancoPregu.pregunta ? bancoPregu.pregunta.toString() : ''">
+      {{ bancoPregu.pregunta }}
+    </option>
+  </select><br>
+  <label> Respuesta 6:</label>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input ms-2" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="1">
+    <label class="form-check-label" for="inlineRadio1" with="100px">1</label>
+  </div>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input " type="radio" name="inlineRadioOptions" id="inlineRadio2" value="5">
+    <label class="form-check-label" for="inlineRadio2">5</label>
+  </div>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="10">
+    <label class="form-check-label" for="inlineRadio1" with="100px">10</label>
+  </div><br> <br>
+  <label>Pregunta 7:</label>
+  <select formControlName="pregunta7" >
+    
+    <option disabled *ngFor="let bancoPregu of listaBancoPregu" [value]="bancoPregu.pregunta ? bancoPregu.pregunta.toString() : ''">
+      {{ bancoPregu.pregunta }}
+    </option>
+  </select><br>
+  <label> Respuesta 7:</label>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input ms-2" type="checkbox" id="inlineCheckbox1" value="1">
+    <label class="form-check-label" for="inlineCheckbox1">1</label>
+  </div>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input " type="checkbox" id="inlineCheckbox2" value="5">
+    <label class="form-check-label" for="inlineCheckbox2">5</label>
+  </div>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="10">
+    <label class="form-check-label" for="inlineCheckbox3">10</label>
+  
+  </div><br> <br>
+  <label>Pregunta 8:</label>
+  <select formControlName="pregunta8" >
+    
+    <option disabled *ngFor="let bancoPregu of listaBancoPregu" [value]="bancoPregu.pregunta ? bancoPregu.pregunta.toString() : ''">
+      {{ bancoPregu.pregunta }}
+    </option>
+  </select><br>
+  <label> Respuesta 8:</label>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input ms-2" type="checkbox" id="inlineCheckbox1" value="1">
+    <label class="form-check-label" for="inlineCheckbox1">1</label>
+  </div>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input " type="checkbox" id="inlineCheckbox2" value="5">
+    <label class="form-check-label" for="inlineCheckbox2">5</label>
+  </div>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="10">
+    <label class="form-check-label" for="inlineCheckbox3">10</label>
+  
+  </div><br> <br>
+  <label>Pregunta 9:</label>
+  <select formControlName="pregunta9" >
+    
+    <option disabled *ngFor="let bancoPregu of listaBancoPregu" [value]="bancoPregu.pregunta ? bancoPregu.pregunta.toString() : ''">
+      {{ bancoPregu.pregunta }}
+    </option>
+  </select><br><label> Respuesta 9:</label>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input ms-2" type="checkbox" id="inlineCheckbox1" value="1">
+    <label class="form-check-label" for="inlineCheckbox1">1</label>
+  </div>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input " type="checkbox" id="inlineCheckbox2" value="5">
+    <label class="form-check-label" for="inlineCheckbox2">5</label>
+  </div>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="10">
+    <label class="form-check-label" for="inlineCheckbox3">10</label>
+  
+  </div><br> <br>
+  <label>Pregunta 10:</label>
+  <select formControlName="pregunta10" >
+    <option disabled *ngFor="let bancoPregu of listaBancoPregu" [value]="bancoPregu.pregunta ? bancoPregu.pregunta.toString() : ''">
+      {{ bancoPregu.pregunta }}
+    </option>
+  </select><br>
+  <label> Respuesta 10:</label>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input ms-2" type="checkbox" id="inlineCheckbox1" value="1">
+    <label class="form-check-label" for="inlineCheckbox1">1</label>
+  </div>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input " type="checkbox" id="inlineCheckbox2" value="5">
+    <label class="form-check-label" for="inlineCheckbox2">5</label>
+  </div>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="10">
+    <label class="form-check-label" for="inlineCheckbox3">10</label>
+  
+  </div><br> <br>
+  <fieldset>
+    <button type="submit"  id="form-submit" class="main-button ">Enviar Pregunta</button>
+  </fieldset>
 </form>
 
-
-
-  <!--  Comentarios  -->
-  <section class="row">
-    <div class="col-md-12">
-      <h3>Comentarios.</h3>
-      <p></p>
-    </div>
-  </section>
-  <section class="row">
-    <div class="col-md-12">
-      <div class="form-group">
-        <label for="comment">Comentarios:</label>
-        <textarea class="form-control" rows="6" id="comentarios"></textarea>
-      </div>
-    </div>
-  </section>
-  <section class="row">
-    <div class="col-md-12">
-      <button type="button" class="btn btn-info" id="saveForm" onclick="saveForm">Guardar Encuesta</button>
-      <button type="button" class="btn btn-danger" id="clearForm">Limpiar formulario</button>
-    </div>
-  </section>
 
 <br> <br>
