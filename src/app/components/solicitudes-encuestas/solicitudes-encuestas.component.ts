@@ -17,16 +17,14 @@ import { PreguntaSelecService } from 'src/app/service/preguntaSelec.service';
   styleUrls: ['./solicitudes-encuestas.component.css']
 })
 export class SolicitudesEncuestasComponent implements OnInit {
-  pedidoForm: FormGroup;
-  encuestaConfiguradaForm: FormGroup;
-  preguntaSelecForm: FormGroup;
+  solicitudEncuestaForm: FormGroup;
   listaBancoPregu:BancoPregu []=[];
   titulo = 'Pregunta Seleccionada';
   id:string | null;
   constructor(private fb: FormBuilder, private  router: Router, private toastr: ToastrService,
     private _PedidoService:PedidoService, private _EncuestaCondfiguradaService:EncuestaConfiguradaService,     private _PreguntaSelecService:PreguntaSelecService, private aRouter: ActivatedRoute,
     private _BancoPreguService: BancoPreguService) {
-    this.pedidoForm=this.fb.group({
+    this.solicitudEncuestaForm=this.fb.group({
       empresa:['', Validators.required],
       direccion:['', Validators.required],
       contacto:['', Validators.required],
@@ -38,17 +36,15 @@ export class SolicitudesEncuestasComponent implements OnInit {
       descripcionArticulo:['', Validators.required],
     })
     //Encuesta configurada
-    const questions: FormArray = this.encuestaConfiguradaForm.get('questions') as FormArray
-    this.encuestaConfiguradaForm = this.fb.group({
+    this.solicitudEncuestaForm = this.fb.group({
       fechaInicio:['', Validators.required],
       fechaFinal:['', Validators.required],
       titulo:['', Validators.required],
       poblacion:['', Validators.required],
-
       numeroEncuesta:['', Validators.required],
     })
     //Selección de preguntas
-    this.preguntaSelecForm=this.fb.group({
+    this.solicitudEncuestaForm=this.fb.group({
       pregunta1:['', Validators.required],
       pregunta2:['', Validators.required],
       pregunta3:['', Validators.required],
@@ -69,36 +65,36 @@ export class SolicitudesEncuestasComponent implements OnInit {
   }
 
   agregarPedido(){
-    console.log(this.pedidoForm)
+    console.log(this.solicitudEncuestaForm)
     const PEDIDO: Pedido ={
-      empresa: this.pedidoForm.get('empresa')?.value,
-      direccion: this.pedidoForm.get('direccion')?.value,
-      contacto: this.pedidoForm.get('contacto')?.value,
-      encargado: this.pedidoForm.get('encargado')?.value,
-      categoria: this.pedidoForm.get('categoria')?.value,
-      nombreArticulo: this.pedidoForm.get('nombreArticulo')?.value,
-      precioArticulo: this.pedidoForm.get('precioArticulo')?.value,
-      marcaArticulo: this.pedidoForm.get('marcaArticulo')?.value,
-      descripcionArticulo: this.pedidoForm.get('descripcionArticulo')?.value,
+      empresa: this.solicitudEncuestaForm.get('empresa')?.value,
+      direccion: this.solicitudEncuestaForm.get('direccion')?.value,
+      contacto: this.solicitudEncuestaForm.get('contacto')?.value,
+      encargado: this.solicitudEncuestaForm.get('encargado')?.value,
+      categoria: this.solicitudEncuestaForm.get('categoria')?.value,
+      nombreArticulo: this.solicitudEncuestaForm.get('nombreArticulo')?.value,
+      precioArticulo: this.solicitudEncuestaForm.get('precioArticulo')?.value,
+      marcaArticulo: this.solicitudEncuestaForm.get('marcaArticulo')?.value,
+      descripcionArticulo: this.solicitudEncuestaForm.get('descripcionArticulo')?.value,
     }
     console.log(PEDIDO);
     this._PedidoService.guardarPedido(PEDIDO).subscribe(dato=>{
       this.router.navigate(['/acerca'])
     }, error=>{
     console.log(error);
-    this.pedidoForm.reset()
+    this.solicitudEncuestaForm.reset()
     })
     }
     //Encuesta configurada
     agregarEncuestaConfigurada(){
-      console.log(this.encuestaConfiguradaForm)
+      console.log(this.solicitudEncuestaForm)
       const ENCUESTACONFIGURADA: encuestaConfigurada ={
-        fechaInicio: this.encuestaConfiguradaForm.get('fechaInicio')?.value,
-        fechaFinal: this.encuestaConfiguradaForm.get('fechaFinal')?.value,
-        titulo: this.encuestaConfiguradaForm.get('titulo')?.value,
-        poblacion: this.encuestaConfiguradaForm.get('poblacion')?.value,
+        fechaInicio: this.solicitudEncuestaForm.get('fechaInicio')?.value,
+        fechaFinal: this.solicitudEncuestaForm.get('fechaFinal')?.value,
+        titulo: this.solicitudEncuestaForm.get('titulo')?.value,
+        poblacion: this.solicitudEncuestaForm.get('poblacion')?.value,
 
-        numeroEncuesta: this.encuestaConfiguradaForm.get('numeroEncuesta')?.value,
+        numeroEncuesta: this.solicitudEncuestaForm.get('numeroEncuesta')?.value,
 
       }
       console.log(ENCUESTACONFIGURADA);
@@ -107,7 +103,7 @@ export class SolicitudesEncuestasComponent implements OnInit {
         this.router.navigate(['/preguntasSeleccionadasUser'])
       }, error=>{
       console.log(error);
-      this.encuestaConfiguradaForm.reset()
+      this.solicitudEncuestaForm.reset()
       })
       }
       //Selección de preguntas
@@ -120,18 +116,18 @@ export class SolicitudesEncuestasComponent implements OnInit {
         })
       }
       agregarPreguntaSelec(){
-        console.log(this.preguntaSelecForm)
+        console.log(this.solicitudEncuestaForm)
         const PREGUNTASELEC: PreguntaSelec ={
-          pregunta1: this.preguntaSelecForm.get('pregunta1')?.value,
-          pregunta2: this.preguntaSelecForm.get('pregunta2')?.value,
-          pregunta3: this.preguntaSelecForm.get('pregunta3')?.value,
-          pregunta4: this.preguntaSelecForm.get('pregunta4')?.value,
-          pregunta5: this.preguntaSelecForm.get('pregunta5')?.value,
-          pregunta6: this.preguntaSelecForm.get('pregunta6')?.value,
-          pregunta7: this.preguntaSelecForm.get('pregunta7')?.value,
-          pregunta8: this.preguntaSelecForm.get('pregunta8')?.value,
-          pregunta9: this.preguntaSelecForm.get('pregunta9')?.value,
-          pregunta10: this.preguntaSelecForm.get('pregunta10')?.value,
+          pregunta1: this.solicitudEncuestaForm.get('pregunta1')?.value,
+          pregunta2: this.solicitudEncuestaForm.get('pregunta2')?.value,
+          pregunta3: this.solicitudEncuestaForm.get('pregunta3')?.value,
+          pregunta4: this.solicitudEncuestaForm.get('pregunta4')?.value,
+          pregunta5: this.solicitudEncuestaForm.get('pregunta5')?.value,
+          pregunta6: this.solicitudEncuestaForm.get('pregunta6')?.value,
+          pregunta7: this.solicitudEncuestaForm.get('pregunta7')?.value,
+          pregunta8: this.solicitudEncuestaForm.get('pregunta8')?.value,
+          pregunta9: this.solicitudEncuestaForm.get('pregunta9')?.value,
+          pregunta10: this.solicitudEncuestaForm.get('pregunta10')?.value,
         }
 
         if(this.id !==null){
@@ -150,7 +146,7 @@ export class SolicitudesEncuestasComponent implements OnInit {
           this.toastr.success('Listo, ya esta realizada su encuesta','La preguntas seleccionadas fueron registradas con exito!');
         }, error=>{
         console.log(error);
-        this.preguntaSelecForm.reset()
+        this.solicitudEncuestaForm.reset()
         })
         }
 
@@ -160,7 +156,7 @@ export class SolicitudesEncuestasComponent implements OnInit {
           if(this.id !==null){
             this.titulo='Editar pregunta seleccionada';
             this._PreguntaSelecService.obtenerPreguntaSelecById(this.id).subscribe(data=>{
-            this.preguntaSelecForm.setValue({
+            this.solicitudEncuestaForm.setValue({
                 pregunta1: data.pregunta1,
                 pregunta2: data.pregunta2,
                 pregunta3: data.pregunta3,
