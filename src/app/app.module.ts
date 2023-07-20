@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { InicioComponent } from './components/inicio/inicio.component';
@@ -68,18 +69,21 @@ import { UserResultadoEncuestaComponent } from './components/user-resultado-encu
     UserResultadoEncuestaComponent
 
 
-    
+
   ],
   imports: [
     BrowserModule,
+
     AppRoutingModule,
     ReactiveFormsModule,
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot(), // ToastrModule added
     HttpClientModule
+
+
   ],
+
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
- 

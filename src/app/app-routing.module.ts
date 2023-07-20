@@ -14,7 +14,8 @@ import { AgregarPedidoComponent } from './components/agregar-pedido/agregar-pedi
 import { PreguntasSeleccionadasComponent } from './components/preguntas-seleccionadas/preguntas-seleccionadas.component';
 import { ListaRespuestasEncuestasComponent } from './components/lista-respuestas-encuestas/lista-respuestas-encuestas.component';
 import { RespuestasEncuestasComponent } from './components/respuestas-encuestas/respuestas-encuestas.component';
-
+import { UserResultadoEncuestaComponent } from './components/user-resultado-encuesta/user-resultado-encuesta.component';
+import { EstadisticasComponent } from './components/estadisticas/estadisticas.component';
 
 const routes: Routes = [
   {path:'', redirectTo:'inicio', pathMatch:"full"},
@@ -23,7 +24,8 @@ const routes: Routes = [
   {path:'listaProducto', component:ListaProductoComponent},
   {path:'pedido', component:PedidoComponent},
   {path:'listaPedidos', component:ListaPedidosComponent},
-  
+  {path:'chart', component:UserResultadoEncuestaComponent},
+
   //Martin
   {path:'agregarPedido', component:AgregarPedidoComponent},
   {path:'editarPedido/:id', component:AgregarPedidoComponent},
@@ -43,9 +45,8 @@ const routes: Routes = [
   //Norma
   {path:'respuestasEncuestas', component:RespuestasEncuestasComponent},
   {path:'listaRespuestasEncuestas', component:ListaRespuestasEncuestasComponent},
-
-
-
+  {path:'userResultadoEncuesta', component:UserResultadoEncuestaComponent},
+  {path:'estadisticas', component:EstadisticasComponent},
 
 
 
