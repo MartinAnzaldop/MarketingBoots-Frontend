@@ -44,6 +44,12 @@ import { RecuperarPasswordComponent } from './components/recuperar-password/recu
 import { SpinnerComponent } from './shared/spinner/spinner.component';
 import {AngularFireModule} from '@angular/fire/compat';
 import { environment } from 'src/environments/environment';
+import { ConfiguracionEncuestaUsuarioComponent } from './components/configuracion-encuesta-usuario/configuracion-encuesta-usuario.component';
+
+import { PreguntasSeleccionadasUserComponent } from './components/preguntas-seleccionadas-user/preguntas-seleccionadas-user.component';
+import { ListaPreguntasUserComponent } from './components/lista-preguntas-user/lista-preguntas-user.component';
+import { EncuestasUserComponent } from './components/encuestas-user/encuestas-user.component';
+
 
 @NgModule({
   declarations: [
@@ -73,12 +79,22 @@ import { environment } from 'src/environments/environment';
     UserRegistroComponent,
     UserVistaComponent,
     UserResultadoEncuestaComponent,
+
     ChatDialogComponent,
     NabvarUserComponent,
     SolicitudUserComponent,
     VerificarCorreoComponent,
     RecuperarPasswordComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    ConfiguracionEncuestaUsuarioComponent,
+    PreguntasSeleccionadasUserComponent,
+    ListaPreguntasUserComponent,
+    EncuestasUserComponent,
+   
+
+
+    
+
   ],
   imports: [
     BrowserModule,

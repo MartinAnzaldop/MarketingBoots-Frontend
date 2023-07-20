@@ -11,7 +11,7 @@ import { PedidoService } from 'src/app/service/pedido.service';
   styleUrls: ['./solicitud-user.component.css']
 })export class SolicitudUserComponent implements OnInit {
   pedidoForm: FormGroup;
-  titulo = 'Agregar Pedido';
+  titulo = 'Agregar Solicitud';
   id:string | null;
   constructor(private fb: FormBuilder, private  router: Router, private toastr: ToastrService,
     private _PedidoService:PedidoService, private aRouter: ActivatedRoute) {
@@ -59,14 +59,13 @@ import { PedidoService } from 'src/app/service/pedido.service';
     //agregamos pedido
     console.log(PEDIDO);
     this._PedidoService.guardarPedido(PEDIDO).subscribe(dato=>{
-    this.router.navigate(['/listaPedidos'])
+    this.router.navigate(['/configuracionUsuario'])
     this.toastr.success('El pedido fue agregado con exito','Pedido agregado');
   }, error=>{
   console.log(error);
   this.pedidoForm.reset()
   })
   }
-  
   }
 
   esEditar(){

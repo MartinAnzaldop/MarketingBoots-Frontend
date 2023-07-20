@@ -22,7 +22,7 @@ constructor(private fb: FormBuilder, private  router: Router, private toastr: To
         fechaFinal:['', Validators.required],
         titulo:['', Validators.required],
         poblacion:['', Validators.required],
-        articulo:['', Validators.required],
+        
         numeroEncuesta:['', Validators.required],
       })
       this.id = this.aRouter.snapshot.paramMap.get('id');
@@ -38,7 +38,6 @@ constructor(private fb: FormBuilder, private  router: Router, private toastr: To
       fechaFinal: this.encuestaConfiguradaForm.get('fechaFinal')?.value,
       titulo: this.encuestaConfiguradaForm.get('titulo')?.value,
       poblacion: this.encuestaConfiguradaForm.get('poblacion')?.value,
-      articulo: this.encuestaConfiguradaForm.get('articulo')?.value,
       numeroEncuesta: this.encuestaConfiguradaForm.get('numeroEncuesta')?.value,
 
     }
@@ -74,7 +73,7 @@ constructor(private fb: FormBuilder, private  router: Router, private toastr: To
             fechaFinal: data.fechaFinal,
             titulo: data.titulo,
             poblacion: data.poblacion,
-            articulo: data.articulo,
+            
             numeroEncuesta: data.numeroEncuesta,
         })
         },error=>{

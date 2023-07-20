@@ -21,4 +21,12 @@ url='http://localhost:4000/api/preguntaSelec/';
   guardarPreguntaSelec(preguntaSelec:PreguntaSelec):Observable<any>{
     return this.http.post(this.url, preguntaSelec);
   }
+
+  obtenerPreguntaSelecById(id: string):Observable<any>{
+    return this.http.get(this.url + id);
+  }
+
+  editarPreguntaSelec(id: string, preguntaSelec:PreguntaSelec):Observable<any>{
+    return this.http.put(this.url + id, preguntaSelec);
+  }
 }

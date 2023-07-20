@@ -4,15 +4,18 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { BancoPregu } from 'src/app/models/bancoPregu';
 import { PreguntaSelec } from 'src/app/models/preguntaSelec';
+import { PreguntaSelecUser } from 'src/app/models/preguntaSelecUser';
 import { BancoPreguService } from 'src/app/service/bancoPregu.service';
 import { PreguntaSelecService } from 'src/app/service/preguntaSelec.service';
+import { PreguntaSelecUserService } from 'src/app/service/preguntaSelecUser.service';
 
 @Component({
-  selector: 'app-preguntaSelec',
-  templateUrl: './preguntas-seleccionadas.component.html',
-  styleUrls: ['./preguntas-seleccionadas.component.css']
+  selector: 'app-preguntas-seleccionadas-user',
+  templateUrl: './preguntas-seleccionadas-user.component.html',
+  styleUrls: ['./preguntas-seleccionadas-user.component.css']
 })
-export class PreguntasSeleccionadasComponent implements OnInit {
+
+export class PreguntasSeleccionadasUserComponent implements OnInit {
   preguntaSelecForm: FormGroup;
   listaBancoPregu:BancoPregu []=[];
   titulo = 'Pregunta Seleccionada';
@@ -68,8 +71,8 @@ export class PreguntasSeleccionadasComponent implements OnInit {
   if(this.id !==null){
     //editamos pregunta seleccionada
     this._PreguntaSelecService.editarPreguntaSelec(this.id, PREGUNTASELEC).subscribe(data=>{
-      this.router.navigate(['/listaPreguntasSeleccionadas'])
-      this.toastr.info('La pregunta seleccionada fue editada con exito','Pregunta editada');
+      this.router.navigate(['/uservista'])
+      this.toastr.info('La preguntas seleccionada fue editada con exito','Pregunta editada');
     },error=>{
   console.log(error)
     })
@@ -77,8 +80,8 @@ export class PreguntasSeleccionadasComponent implements OnInit {
   //agregamos pregunta seleccionada
   console.log(PREGUNTASELEC);
   this._PreguntaSelecService.guardarPreguntaSelec(PREGUNTASELEC).subscribe(dato=>{
-    this.router.navigate(['/listaPreguntasSeleccionadas'])
-    this.toastr.success('La pregunta seleccionada fue registrada con exito!','Pregunta agregada');
+    this.router.navigate(['/userVista'])
+    this.toastr.success('Listo, ya esta realizada su encuesta','La preguntas seleccionadas fueron registradas con exito!');
   }, error=>{
   console.log(error);
   this.preguntaSelecForm.reset()
