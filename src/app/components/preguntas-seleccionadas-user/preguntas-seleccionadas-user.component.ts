@@ -87,7 +87,7 @@ export class PreguntasSeleccionadasUserComponent implements OnInit {
   this.preguntaSelecForm.reset()
   })
   }
-  
+
   }
 
   esEditar(){
@@ -113,6 +113,6 @@ export class PreguntasSeleccionadasUserComponent implements OnInit {
   }
 
 
-  
+
 
 }

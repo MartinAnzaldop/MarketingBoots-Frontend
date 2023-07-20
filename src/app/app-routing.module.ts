@@ -29,6 +29,7 @@ import { ListaPreguntasSeleccionadasComponent } from './components/lista-pregunt
 import { PreguntasSeleccionadasUserComponent } from './components/preguntas-seleccionadas-user/preguntas-seleccionadas-user.component';
 import { ListaPreguntasUserComponent } from './components/lista-preguntas-user/lista-preguntas-user.component';
 import { EncuestasUserComponent } from './components/encuestas-user/encuestas-user.component';
+import { SolicitudesEncuestasComponent } from './components/solicitudes-encuestas/solicitudes-encuestas.component';
 
 
 
@@ -64,13 +65,14 @@ const routes: Routes = [
   {path:'recuperarContraseña', component:RecuperarPasswordComponent},
   {path:'verificacionCorreo', component:VerificarCorreoComponent},
   {path:'configuracionUsuario', component:ConfiguracionEncuestaUsuarioComponent},
+  {path:'solicitudEncuesta', component:SolicitudesEncuestasComponent},
 
   //Ana
   {path:'bancoPreguntas', component:AgregarPreguntaComponent},
   {path:'listaBancoPreguntas', component:ListaBancoPreguntasComponent},
   {path:'editarBancoPregu/:id', component:AgregarPreguntaComponent},
   {path:'listaPreguntasUser', component:ListaPreguntasUserComponent},
- 
+
 
   {path:'preguntasSeleccionadas', component:PreguntasSeleccionadasComponent},
   {path:'listaPreguntasSeleccionadas', component:ListaPreguntasSeleccionadasComponent},

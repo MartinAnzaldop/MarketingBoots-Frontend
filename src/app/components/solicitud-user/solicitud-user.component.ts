@@ -69,7 +69,7 @@ import { PedidoService } from 'src/app/service/pedido.service';
   }
 
   esEditar(){
-  
+
     if(this.id !==null){
       this.titulo='Editar pedido';
       this._PedidoService.obtenerPedidoById(this.id).subscribe(data=>{
@@ -91,4 +91,4 @@ import { PedidoService } from 'src/app/service/pedido.service';
   }
 }
 
- 
+

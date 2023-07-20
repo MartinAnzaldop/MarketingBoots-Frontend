@@ -19,7 +19,7 @@ constructor(private fb: FormBuilder, private  router: Router, private toastr: To
         fechaFinal:['', Validators.required],
         titulo:['', Validators.required],
         poblacion:['', Validators.required],
-        
+
         numeroEncuesta:['', Validators.required],
       })
     }

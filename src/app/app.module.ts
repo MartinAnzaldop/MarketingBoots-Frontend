@@ -49,6 +49,7 @@ import { ConfiguracionEncuestaUsuarioComponent } from './components/configuracio
 import { PreguntasSeleccionadasUserComponent } from './components/preguntas-seleccionadas-user/preguntas-seleccionadas-user.component';
 import { ListaPreguntasUserComponent } from './components/lista-preguntas-user/lista-preguntas-user.component';
 import { EncuestasUserComponent } from './components/encuestas-user/encuestas-user.component';
+import { SolicitudesEncuestasComponent } from './components/solicitudes-encuestas/solicitudes-encuestas.component';
 
 
 @NgModule({
@@ -90,10 +91,11 @@ import { EncuestasUserComponent } from './components/encuestas-user/encuestas-us
     PreguntasSeleccionadasUserComponent,
     ListaPreguntasUserComponent,
     EncuestasUserComponent,
-   
+    SolicitudesEncuestasComponent,
 
 
-    
+
+
 
   ],
   imports: [
@@ -105,7 +107,6 @@ import { EncuestasUserComponent } from './components/encuestas-user/encuestas-us
     HttpClientModule,
 
     AngularFireModule.initializeApp(environment.firebaseConfig)
-
   ],
   providers: [],
   bootstrap: [AppComponent]
