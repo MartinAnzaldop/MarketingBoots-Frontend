@@ -1,5 +1,6 @@
 export class Respuestas {
   _id?: number;
+
   respuesta1: String;
   respuesta2: String;
   respuesta3: String;

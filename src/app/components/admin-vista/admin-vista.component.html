@@ -1,1 +1,77 @@
-<p>admin-vista works!</p>
+<app-navbar-admin></app-navbar-admin>
+<br><br><br><br>
+<div class="container px-4 py-5" id="featured-3" >
+    <h2 class="pb-2 border-bottom text-center fw-bold">Bienvenido administrador</h2>
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3  " >
+      <div class="feature col " >
+        <div class="d-flex align-items-center justify-content-center">
+            <img src="assets/images/solicitud.png" alt="email icon" class="img-fluid" style="max-width: 80px;">
+          </div>
+        <h3 class="fs-2 text-body-emphasis">Solicitudes</h3>
+        <p class="text-justify">En este apartado se gestiona las solicitudes de parte del usuario, permitiendo eliminar, crear y editar una solicitud</p>
+        <a  class="icon-link" routerLink="/listaPedidos">
+          Gestionar
+        </a>
+      </div>
+      <div class="feature col">
+        <div class="d-flex align-items-center justify-content-center">
+            <img src="assets/images/configuracion.png" alt="email icon" class="img-fluid" style="max-width: 80px;">
+          </div>
+
+        <h3 class="fs-2 text-body-emphasis">Configuraciones</h3>
+        <p class="text-justify">En este apartado se gestiona las configuraciones de encuesta, permitiendo eliminar, crear y editar una configuración</p>
+        <a routerLink="/listaConfiguracionEncuesta" class="icon-link">
+          Gestionar
+
+        </a>
+      </div>
+      <div class="feature col">
+        <div class="d-flex align-items-center justify-content-center">
+            <img src="assets/images/banco.png" alt="email icon" class="img-fluid" style="max-width: 80px;">
+          </div>
+
+        <h3 class="fs-2 text-body-emphasis">Banco de preguntas</h3>
+        <p class="text-justify">En este apartado se gestiona el banco de preguntas, permitiendo eliminar, crear y editar una pregunta</p>
+        <a routerLink="/listaBancoPreguntas" class="icon-link">
+            Gestionar
+
+        </a>
+      </div>
+      <div class="feature col">
+        <div class="d-flex align-items-center justify-content-center">
+            <img src="assets/images/seleccion.png" alt="email icon" class="img-fluid" style="max-width: 80px;">
+          </div>
+
+        <h3 class="fs-2 text-body-emphasis">Selecciones</h3>
+        <p class="text-justify">En este apartado se gestiona las preguntas seleccionadas por el usuario, permitiendo eliminar, crear y editar preguntas</p>
+        <a routerLink="/listaPreguntasSeleccionadas" class="icon-link">
+            Gestionar
+        </a>
+      </div>
+      <div class="feature col">
+        <div class="d-flex align-items-center justify-content-center">
+            <img src="assets/images/encuesta.png" alt="email icon" class="img-fluid" style="max-width: 80px;">
+          </div>
+
+        <h3 class="fs-2 text-body-emphasis">Encuestas</h3>
+        <p class="text-justify">En este apartado se gestiona las encuestas a realizar, permitiendo eliminar, crear y conusltar las encuestas</p>
+        <a routerLink="/listaPreguntasUser" class="icon-link">
+            Gestionar
+
+        </a>
+      </div>
+      <div class="feature col">
+        <div class="d-flex align-items-center justify-content-center">
+            <img src="assets/images/estadisticas.png" alt="email icon" class="img-fluid" style="max-width: 80px;">
+          </div>
+
+        <h3 class="fs-2 text-body-emphasis">Estadisticas</h3>
+        <p class="text-justify">En este apartado se gestiona las estadisticas, permitiendo crear, eliminar y consultar las encuestas</p>
+        <a href="#" class="icon-link">
+            Gestionar
+        </a>
+      </div>
+
+
+    </div>
+  </div>

@@ -37,6 +37,19 @@ import { UserIniciarSesionComponent } from './components/user-iniciar-sesion/use
 import { UserRegistroComponent } from './components/user-registro/user-registro.component';
 import { UserVistaComponent } from './components/user-vista/user-vista.component';
 import { UserResultadoEncuestaComponent } from './components/user-resultado-encuesta/user-resultado-encuesta.component';
+import { ChatDialogComponent } from './components/chat-dialog/chat-dialog.component';
+import { NabvarUserComponent } from './components/nabvar-user/nabvar-user.component';
+import { SolicitudUserComponent } from './components/solicitud-user/solicitud-user.component';
+import { VerificarCorreoComponent } from './components/verificar-correo/verificar-correo.component';
+import { RecuperarPasswordComponent } from './components/recuperar-password/recuperar-password.component';
+import { SpinnerComponent } from './shared/spinner/spinner.component';
+import {AngularFireModule} from '@angular/fire/compat';
+import { environment } from 'src/environments/environment';
+import { ConfiguracionEncuestaUsuarioComponent } from './components/configuracion-encuesta-usuario/configuracion-encuesta-usuario.component';
+
+import { PreguntasSeleccionadasUserComponent } from './components/preguntas-seleccionadas-user/preguntas-seleccionadas-user.component';
+import { ListaPreguntasUserComponent } from './components/lista-preguntas-user/lista-preguntas-user.component';
+import { EncuestasUserComponent } from './components/encuestas-user/encuestas-user.component';
 
 
 @NgModule({
@@ -66,7 +79,19 @@ import { UserResultadoEncuestaComponent } from './components/user-resultado-encu
     UserIniciarSesionComponent,
     UserRegistroComponent,
     UserVistaComponent,
-    UserResultadoEncuestaComponent
+    UserResultadoEncuestaComponent,
+
+    ChatDialogComponent,
+    NabvarUserComponent,
+    SolicitudUserComponent,
+    VerificarCorreoComponent,
+    RecuperarPasswordComponent,
+    SpinnerComponent,
+    ConfiguracionEncuestaUsuarioComponent,
+    PreguntasSeleccionadasUserComponent,
+    ListaPreguntasUserComponent,
+    EncuestasUserComponent,
+
 
 
 
@@ -78,7 +103,10 @@ import { UserResultadoEncuestaComponent } from './components/user-resultado-encu
     ReactiveFormsModule,
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot(), // ToastrModule added
-    HttpClientModule
+
+    HttpClientModule,
+
+    AngularFireModule.initializeApp(environment.firebaseConfig)
 
 
   ],

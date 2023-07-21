@@ -19,7 +19,7 @@ constructor(private fb: FormBuilder, private  router: Router, private toastr: To
         fechaFinal:['', Validators.required],
         titulo:['', Validators.required],
         poblacion:['', Validators.required],
-        articulo:['', Validators.required],
+        
         numeroEncuesta:['', Validators.required],
       })
     }
@@ -33,13 +33,13 @@ constructor(private fb: FormBuilder, private  router: Router, private toastr: To
       fechaFinal: this.encuestaConfiguradaForm.get('fechaFinal')?.value,
       titulo: this.encuestaConfiguradaForm.get('titulo')?.value,
       poblacion: this.encuestaConfiguradaForm.get('poblacion')?.value,
-      articulo: this.encuestaConfiguradaForm.get('articulo')?.value,
+
       numeroEncuesta: this.encuestaConfiguradaForm.get('numeroEncuesta')?.value,
 
     }
     console.log(ENCUESTACONFIGURADA);
     this._EncuestaCondfiguradaService.guardarEncuestaConfigurada(ENCUESTACONFIGURADA).subscribe(dato=>{
-    this.toastr.success('La encuesta configurada fue eliminada con exito','Encuesta configurada eliminada');
+    this.toastr.success('La encuesta configurada fue agregada con exito','Encuesta configurada agregada');
       this.router.navigate(['/listaConfiguracionEncuesta'])
     }, error=>{
     console.log(error);
