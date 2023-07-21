@@ -9,8 +9,6 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 
 import { NavbarAdminComponent } from './components/navbar-admin/navbar-admin.component';
 import { ListaProductoComponent } from './components/lista-producto/lista-producto.component';
-
-
 import { PedidoComponent } from './components/pedido/pedido.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -50,6 +48,7 @@ import { PreguntasSeleccionadasUserComponent } from './components/preguntas-sele
 import { ListaPreguntasUserComponent } from './components/lista-preguntas-user/lista-preguntas-user.component';
 import { EncuestasUserComponent } from './components/encuestas-user/encuestas-user.component';
 import { SolicitudesEncuestasComponent } from './components/solicitudes-encuestas/solicitudes-encuestas.component';
+import { ListaSolicitudesComponent } from './components/lista-solicitudes/lista-solicitudes.component';
 
 
 @NgModule({
@@ -80,7 +79,6 @@ import { SolicitudesEncuestasComponent } from './components/solicitudes-encuesta
     UserRegistroComponent,
     UserVistaComponent,
     UserResultadoEncuestaComponent,
-
     ChatDialogComponent,
     NabvarUserComponent,
     SolicitudUserComponent,
@@ -92,6 +90,7 @@ import { SolicitudesEncuestasComponent } from './components/solicitudes-encuesta
     ListaPreguntasUserComponent,
     EncuestasUserComponent,
     SolicitudesEncuestasComponent,
+    ListaSolicitudesComponent,
 
 
 

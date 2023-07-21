@@ -16,6 +16,7 @@ export class AgregarPedidoComponent implements OnInit {
   id:string | null;
   constructor(private fb: FormBuilder, private  router: Router, private toastr: ToastrService,
     private _PedidoService:PedidoService, private aRouter: ActivatedRoute) {
+      
     this.pedidoForm=this.fb.group({
       empresa:['', Validators.required],
       direccion:['', Validators.required],

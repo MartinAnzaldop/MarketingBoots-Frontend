@@ -30,6 +30,7 @@ import { PreguntasSeleccionadasUserComponent } from './components/preguntas-sele
 import { ListaPreguntasUserComponent } from './components/lista-preguntas-user/lista-preguntas-user.component';
 import { EncuestasUserComponent } from './components/encuestas-user/encuestas-user.component';
 import { SolicitudesEncuestasComponent } from './components/solicitudes-encuestas/solicitudes-encuestas.component';
+import { ListaSolicitudesComponent } from './components/lista-solicitudes/lista-solicitudes.component';
 
 
 
@@ -83,6 +84,8 @@ const routes: Routes = [
   //Norma
   {path:'respuestasEncuestas', component:RespuestasEncuestasComponent},
   {path:'listaRespuestasEncuestas', component:ListaRespuestasEncuestasComponent},
+  {path:'listaSolicitud', component:ListaSolicitudesComponent},
+  {path:'editarSolicitud/:id', component:SolicitudesEncuestasComponent},
   {path:'**', redirectTo:'inicio', pathMatch:"full"}
 ];
 
