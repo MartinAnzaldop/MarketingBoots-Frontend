@@ -16,7 +16,7 @@ export class AgregarPedidoComponent implements OnInit {
   id:string | null;
   constructor(private fb: FormBuilder, private  router: Router, private toastr: ToastrService,
     private _PedidoService:PedidoService, private aRouter: ActivatedRoute) {
-      
+
     this.pedidoForm=this.fb.group({
       empresa:['', Validators.required],
       direccion:['', Validators.required],
@@ -68,11 +68,11 @@ export class AgregarPedidoComponent implements OnInit {
   this.pedidoForm.reset()
   })
   }
-  
+
   }
 
   esEditar(){
-  
+
     if(this.id !==null){
       this.titulo='Editar solicitud';
       this._PedidoService.obtenerPedidoById(this.id).subscribe(data=>{
@@ -94,4 +94,3 @@ export class AgregarPedidoComponent implements OnInit {
   }
 }
 
- 

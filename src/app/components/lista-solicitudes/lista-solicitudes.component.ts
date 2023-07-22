@@ -36,6 +36,6 @@ obetenerSolicitud(){
     })
   }
   editarSolicitud(id:any){
-
+    
   }
 }

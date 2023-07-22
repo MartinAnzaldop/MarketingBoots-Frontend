@@ -84,7 +84,7 @@ export class SolicitudesEncuestasComponent implements OnInit {
       pregunta8: this.solicitudEncuestaForm.get('pregunta8')?.value,
       pregunta9: this.solicitudEncuestaForm.get('pregunta9')?.value,
       pregunta10: this.solicitudEncuestaForm.get('pregunta10')?.value,
-      
+
     }
     if(this.id !==null){
       //editamos pedido
@@ -115,7 +115,7 @@ export class SolicitudesEncuestasComponent implements OnInit {
     console.log(error)
     })
   }
-    
+
   esEditar(){
     if(this.id !==null){
       this.titulo='Editar solicitud';
@@ -153,8 +153,8 @@ export class SolicitudesEncuestasComponent implements OnInit {
       })
     }
   }
-  
+
+
   }
 
 
-  
