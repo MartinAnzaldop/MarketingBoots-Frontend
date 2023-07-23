@@ -8,7 +8,8 @@
  
   <section class="row">
     <section class="col-md-12">
-      <form [formGroup]="solicitudEncuestaForm">
+      <form [formGroup]="EncuestaForm">
+     
       <h1  class="text-center"><strong><input type="text"  formControlName="titulo" style="border: none; text-transform: uppercase" ></strong></h1>  <br><br> 
       <section class="row">
         <div class="col-md-8">
@@ -30,7 +31,7 @@
         <div class="col-md-4">
           <div class="form_group">
             <label for="edadEncuestado">Edad:*</label>
-            <input type="number"  class="form-control" id="edadEncuestado" placeholder="Edad" maxlength="3" required/>
+            <input type="number" formControlName="edad" class="form-control" id="edadEncuestado" placeholder="Edad" maxlength="3" required/>
           </div>
         </div>
       </section>
@@ -38,7 +39,7 @@
         <div class="col-md-4">
           <div class="form-group"> <br>
             <label for="idIdentificacion">Ubicacion: *</label>
-            <input type="texto"  id="idIdentificacion" class="form-control" placeholder="Ingrese su domicilio" maxlength="15" required/>
+            <input type="texto"  formControlName="Ubicacion" id="idIdentificacion" class="form-control" placeholder="Ingrese su domicilio" maxlength="15" required/>
           </div>
         </div>
 
@@ -55,7 +56,7 @@
       <p></p>
     </div>
   </section>
-
+  
   <label>Pregunta 1:</label>
   <select formControlName="pregunta1" style="border: none;" >
     <option ng-disabled="disabled" disabled *ngFor="let bancoPregu of listaBancoPregu" [value]="bancoPregu.pregunta ? bancoPregu.pregunta.toString() : ''">
@@ -67,7 +68,7 @@
       <div class="col-md-6">
         <div class="form-group">
           <label for="opcionSelect">Selecciona su respuesta:</label>
-          <select class="form-control" id="opcionSelect" >
+          <select class="form-control" id="res0" >
             <option value="5">Totalmente de acuerdo</option>
             <option value="3">De acuerdo</option>
             <option value="0">En desacuerdo</option>
@@ -90,7 +91,7 @@
       <div class="col-md-6">
         <div class="form-group">
           <label for="opcionSelect">Selecciona su respuesta:</label>
-          <select class="form-control" id="opcionSelect" >
+          <select class="form-control" id="res2" >
             <option value="5">Totalmente de acuerdo</option>
             <option value="3">De acuerdo</option>
             <option value="0">En desacuerdo</option>
@@ -114,7 +115,7 @@
       <div class="col-md-6">
         <div class="form-group">
           <label for="opcionSelect">Selecciona su respuesta:</label>
-          <select class="form-control" id="opcionSelect" >
+          <select class="form-control" id="res3" >
             <option value="5">Totalmente de acuerdo</option>
             <option value="3">De acuerdo</option>
             <option value="0">En desacuerdo</option>
@@ -135,7 +136,7 @@
       <div class="col-md-6">
         <div class="form-group">
           <label for="opcionSelect">Selecciona su respuesta:</label>
-          <select class="form-control" id="opcionSelect" >
+          <select class="form-control" id="r1" >
             <option value="5">Totalmente de acuerdo</option>
             <option value="3">De acuerdo</option>
             <option value="0">En desacuerdo</option>
@@ -198,7 +199,7 @@
       <div class="col-md-6">
         <div class="form-group">
           <label for="opcionSelect">Selecciona su respuesta:</label>
-          <select class="form-control" id="opcionSelect" >
+          <select class="form-control" id="opcionSelect" formControlName="respuesta7">
             <option value="5">Totalmente de acuerdo</option>
             <option value="3">De acuerdo</option>
             <option value="0">En desacuerdo</option>
@@ -219,7 +220,7 @@
       <div class="col-md-6">
         <div class="form-group">
           <label for="opcionSelect">Selecciona su respuesta:</label>
-          <select class="form-control" id="opcionSelect" >
+          <select class="form-control" id="opcionSelect" formControlName="respuesta8">
             <option value="5">Totalmente de acuerdo</option>
             <option value="3">De acuerdo</option>
             <option value="0">En desacuerdo</option>
@@ -234,12 +235,13 @@
     <option disabled *ngFor="let bancoPregu of listaBancoPregu" [value]="bancoPregu.pregunta ? bancoPregu.pregunta.toString() : ''">
       {{ bancoPregu.pregunta }}
     </option>
+  </select><br>
     <div class="container mt-4">
       <div class="row justify-content-center">
         <div class="col-md-6">
           <div class="form-group">
             <label for="opcionSelect">Selecciona su respuesta:</label>
-            <select class="form-control" id="opcionSelect" >
+            <select class="form-control" id="opcionSelect" formControlName="respuesta9">
               <option value="5">Totalmente de acuerdo</option>
               <option value="3">De acuerdo</option>
               <option value="0">En desacuerdo</option>
@@ -248,7 +250,7 @@
         </div>
       </div>
     </div><br> <br>
-  </select><br>
+ 
   <label>Pregunta 10:</label>
   <select formControlName="pregunta10" style="border: none;">
     <option disabled *ngFor="let bancoPregu of listaBancoPregu" [value]="bancoPregu.pregunta ? bancoPregu.pregunta.toString() : ''">
@@ -260,7 +262,7 @@
       <div class="col-md-6">
         <div class="form-group">
           <label for="opcionSelect">Selecciona su respuesta:</label>
-          <select class="form-control" id="opcionSelect" >
+          <select class="form-control" id="opcionSelect" formControlName="respuesta10">
             <option value="5">Totalmente de acuerdo</option>
             <option value="3">De acuerdo</option>
             <option value="0">En desacuerdo</option>
@@ -273,6 +275,7 @@
     <button type="submit" id="form-submit" class="main-button ">Enviar Pedido</button>
   </fieldset>
 </form>
+
 
 
 <br> <br>

@@ -32,6 +32,7 @@ import { EncuestasUserComponent } from './components/encuestas-user/encuestas-us
 import { SolicitudesEncuestasComponent } from './components/solicitudes-encuestas/solicitudes-encuestas.component';
 import { ListaSolicitudesComponent } from './components/lista-solicitudes/lista-solicitudes.component';
 import { ListaEncuestasAdminComponent } from './components/lista-encuestas-admin/lista-encuestas-admin.component';
+import { PruebaComponent } from './components/prueba/prueba.component';
 
 
 
@@ -52,6 +53,7 @@ const routes: Routes = [
   {path:'chatbot', component:ChatDialogComponent},
   {path:'agregarsolicitud', component:SolicitudUserComponent},
   {path:'encuestasUser/:id', component:EncuestasUserComponent},
+  {path:'prueba/:id', component:PruebaComponent},
 
 
 
