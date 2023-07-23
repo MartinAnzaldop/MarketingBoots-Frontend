@@ -31,6 +31,7 @@ import { ListaPreguntasUserComponent } from './components/lista-preguntas-user/l
 import { EncuestasUserComponent } from './components/encuestas-user/encuestas-user.component';
 import { SolicitudesEncuestasComponent } from './components/solicitudes-encuestas/solicitudes-encuestas.component';
 import { ListaSolicitudesComponent } from './components/lista-solicitudes/lista-solicitudes.component';
+import { ListaEncuestasAdminComponent } from './components/lista-encuestas-admin/lista-encuestas-admin.component';
 
 
 
@@ -86,6 +87,7 @@ const routes: Routes = [
   {path:'listaRespuestasEncuestas', component:ListaRespuestasEncuestasComponent},
   {path:'listaSolicitud', component:ListaSolicitudesComponent},
   {path:'editarSolicitud/:id', component:SolicitudesEncuestasComponent},
+  {path:'listaEncuestasAdmin', component:ListaEncuestasAdminComponent},
   {path:'**', redirectTo:'inicio', pathMatch:"full"}
 ];
 

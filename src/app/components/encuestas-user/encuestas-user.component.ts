@@ -4,8 +4,10 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { BancoPregu } from 'src/app/models/bancoPregu';
 import { PreguntaSelec } from 'src/app/models/preguntaSelec';
+import { solicitudEncuesta } from 'src/app/models/solicitudEncuesta';
 import { BancoPreguService } from 'src/app/service/bancoPregu.service';
 import { PreguntaSelecService } from 'src/app/service/preguntaSelec.service';
+import { SolicitudService } from 'src/app/service/solicitud.service';
 
 @Component({
   selector: 'app-encuestas-user',
@@ -13,15 +15,31 @@ import { PreguntaSelecService } from 'src/app/service/preguntaSelec.service';
   styleUrls: ['./encuestas-user.component.css']
 })
 export class EncuestasUserComponent implements OnInit {
-  preguntaSelecForm: FormGroup;
-  listaBancoPregu:BancoPregu []=[];
-  titulo = 'Pregunta Seleccionada';
+  solicitudEncuestaForm: FormGroup;
   id:string | null;
-  constructor(private fb: FormBuilder, private  router: Router, private toastr: ToastrService,
-    private _PreguntaSelecService:PreguntaSelecService, private aRouter: ActivatedRoute,
-    private _BancoPreguService: BancoPreguService) {
-    this.preguntaSelecForm=this.fb.group({
-      pregunta1:['', Validators.required],
+  titulo: string='Agregar solicitud';
+  listaBancoPregu:BancoPregu []=[];
+
+    constructor(private _BancoPreguService: BancoPreguService, private fb: FormBuilder, private  router: Router, private toastr: ToastrService,
+     private aRouter: ActivatedRoute, private _Solicitud: SolicitudService) {
+
+  this.solicitudEncuestaForm=this.fb.group({
+    empresa:['', Validators.required],
+    direccion:['', Validators.required],
+    contacto:['', Validators.required],
+    encargado:['', Validators.required],
+    categoria:['', Validators.required],
+    nombreArticulo:['', Validators.required],
+    precioArticulo:['', Validators.required],
+    marcaArticulo:['', Validators.required],
+    descripcionArticulo:['', Validators.required],
+    fechaInicio:['', Validators.required],
+    fechaFinal:['', Validators.required],
+    titulo:['', Validators.required],
+    objetivo:['', Validators.required],
+    numeroEncuesta:['', Validators.required],
+    poblacion:['', Validators.required],
+    pregunta1:['', Validators.required],
       pregunta2:['', Validators.required],
       pregunta3:['', Validators.required],
       pregunta4:['', Validators.required],
@@ -31,13 +49,64 @@ export class EncuestasUserComponent implements OnInit {
       pregunta8:['', Validators.required],
       pregunta9:['', Validators.required],
       pregunta10:['', Validators.required],
-    })
-    this.id=this.aRouter.snapshot.paramMap.get('id')
-   }
+  })
+  this.id=this.aRouter.snapshot.paramMap.get('id')
+ }
 
   ngOnInit(): void {
     this.obtenerBancoPregu()
-    this.esEditar()
+    this. esEditar()
+  }
+
+  agregarSolicitud(){
+    console.log(this.solicitudEncuestaForm)
+    const SOLICITUD: solicitudEncuesta ={
+      empresa: this.solicitudEncuestaForm.get('empresa')?.value,
+      direccion: this.solicitudEncuestaForm.get('direccion')?.value,
+      contacto: this.solicitudEncuestaForm.get('contacto')?.value,
+      encargado: this.solicitudEncuestaForm.get('encargado')?.value,
+      categoria: this.solicitudEncuestaForm.get('categoria')?.value,
+      nombreArticulo: this.solicitudEncuestaForm.get('nombreArticulo')?.value,
+      precioArticulo: this.solicitudEncuestaForm.get('precioArticulo')?.value,
+      marcaArticulo: this.solicitudEncuestaForm.get('marcaArticulo')?.value,
+      descripcionArticulo: this.solicitudEncuestaForm.get('descripcionArticulo')?.value,
+      fechaInicio: this.solicitudEncuestaForm.get('fechaInicio')?.value,
+      fechaFinal: this.solicitudEncuestaForm.get('fechaFinal')?.value,
+      titulo: this.solicitudEncuestaForm.get('titulo')?.value,
+      objetivo: this.solicitudEncuestaForm.get('objetivo')?.value,
+      numeroEncuesta: this.solicitudEncuestaForm.get('numeroEncuesta')?.value,
+      poblacion: this.solicitudEncuestaForm.get('poblacion')?.value,
+      pregunta1: this.solicitudEncuestaForm.get('pregunta1')?.value,
+      pregunta2: this.solicitudEncuestaForm.get('pregunta2')?.value,
+      pregunta3: this.solicitudEncuestaForm.get('pregunta3')?.value,
+      pregunta4: this.solicitudEncuestaForm.get('pregunta4')?.value,
+      pregunta5: this.solicitudEncuestaForm.get('pregunta5')?.value,
+      pregunta6: this.solicitudEncuestaForm.get('pregunta6')?.value,
+      pregunta7: this.solicitudEncuestaForm.get('pregunta7')?.value,
+      pregunta8: this.solicitudEncuestaForm.get('pregunta8')?.value,
+      pregunta9: this.solicitudEncuestaForm.get('pregunta9')?.value,
+      pregunta10: this.solicitudEncuestaForm.get('pregunta10')?.value,
+      
+    }
+    if(this.id !==null){
+      //editamos pedido
+      this._Solicitud.editarSolicitud(this.id, SOLICITUD).subscribe(data=>{
+        this.router.navigate(['/listaSolicitud'])
+        this.toastr.info('La solicitud fue editado con exito','Pedido editado');
+      },error=>{
+    console.log(error)
+      })
+    }else{
+      //agregamos pedido
+      console.log(SOLICITUD);
+      this._Solicitud.guardarSolicitud(SOLICITUD).subscribe(dato=>{
+      this.router.navigate(['/listasSolicitud'])
+      this.toastr.success('La solicitud fue agregado con exito','Pedido agregado');
+    }, error=>{
+    console.log(error);
+    this.solicitudEncuestaForm.reset()
+    })
+    }
   }
 
   obtenerBancoPregu(){
@@ -48,50 +117,27 @@ export class EncuestasUserComponent implements OnInit {
     console.log(error)
     })
   }
-
-
-  agregarPreguntaSelec(){
-  console.log(this.preguntaSelecForm)
-  const PREGUNTASELEC: PreguntaSelec ={
-    pregunta1: this.preguntaSelecForm.get('pregunta1')?.value,
-    pregunta2: this.preguntaSelecForm.get('pregunta2')?.value,
-    pregunta3: this.preguntaSelecForm.get('pregunta3')?.value,
-    pregunta4: this.preguntaSelecForm.get('pregunta4')?.value,
-    pregunta5: this.preguntaSelecForm.get('pregunta5')?.value,
-    pregunta6: this.preguntaSelecForm.get('pregunta6')?.value,
-    pregunta7: this.preguntaSelecForm.get('pregunta7')?.value,
-    pregunta8: this.preguntaSelecForm.get('pregunta8')?.value,
-    pregunta9: this.preguntaSelecForm.get('pregunta9')?.value,
-    pregunta10: this.preguntaSelecForm.get('pregunta10')?.value,
-  }
-
-  if(this.id !==null){
-    //editamos pregunta seleccionada
-    this._PreguntaSelecService.editarPreguntaSelec(this.id, PREGUNTASELEC).subscribe(data=>{
-      this.router.navigate(['/listaPreguntasSeleccionadas'])
-      this.toastr.info('La pregunta seleccionada fue editada con exito','Pregunta editada');
-    },error=>{
-  console.log(error)
-    })
-  }else{
-  //agregamos pregunta seleccionada
-  console.log(PREGUNTASELEC);
-  this._PreguntaSelecService.guardarPreguntaSelec(PREGUNTASELEC).subscribe(dato=>{
-    this.router.navigate(['/listaPreguntasSeleccionadas'])
-    this.toastr.success('La pregunta seleccionada fue registrada con exito!','Pregunta agregada');
-  }, error=>{
-  console.log(error);
-  this.preguntaSelecForm.reset()
-  })
-  }
-  
-  }
-
+    
   esEditar(){
     if(this.id !==null){
-      this.titulo='Editar pregunta seleccionada';
-      this._PreguntaSelecService.obtenerPreguntaSelecById(this.id).subscribe(data=>{
-      this.preguntaSelecForm.setValue({
+      this.titulo='Editar solicitud';
+      this._Solicitud.obtenerSolicitudById(this.id).subscribe(data=>{
+      this.solicitudEncuestaForm.setValue({
+          empresa: data.empresa,
+          direccion: data.direccion,
+          contacto: data.contacto,
+          encargado: data.encargado,
+          categoria: data.categoria,
+          nombreArticulo: data.nombreArticulo,
+          precioArticulo: data.precioArticulo,
+          marcaArticulo: data.marcaArticulo,
+          descripcionArticulo: data.descripcionArticulo,
+          fechaInicio: data.fechaInicio,
+          fechaFinal: data.fechaFinal,
+          titulo: data.titulo,
+          objetivo: data.objetivo,
+          numeroEncuesta: data.numeroEncuesta,
+          poblacion: data.poblacion,
           pregunta1: data.pregunta1,
           pregunta2: data.pregunta2,
           pregunta3: data.pregunta3,
@@ -102,14 +148,15 @@ export class EncuestasUserComponent implements OnInit {
           pregunta8: data.pregunta8,
           pregunta9: data.pregunta9,
           pregunta10: data.pregunta10,
+
       })
       },error=>{
         console.log(error)
       })
     }
   }
+  
+  }
 
 
   
-
-}

@@ -54,6 +54,7 @@ export class SolicitudesEncuestasComponent implements OnInit {
 
   ngOnInit(): void {
     this.obtenerBancoPregu()
+    this. esEditar()
   }
 
   agregarSolicitud(){

@@ -49,6 +49,7 @@ import { ListaPreguntasUserComponent } from './components/lista-preguntas-user/l
 import { EncuestasUserComponent } from './components/encuestas-user/encuestas-user.component';
 import { SolicitudesEncuestasComponent } from './components/solicitudes-encuestas/solicitudes-encuestas.component';
 import { ListaSolicitudesComponent } from './components/lista-solicitudes/lista-solicitudes.component';
+import { ListaEncuestasAdminComponent } from './components/lista-encuestas-admin/lista-encuestas-admin.component';
 
 
 @NgModule({
@@ -91,6 +92,8 @@ import { ListaSolicitudesComponent } from './components/lista-solicitudes/lista-
     EncuestasUserComponent,
     SolicitudesEncuestasComponent,
     ListaSolicitudesComponent,
+    ListaEncuestasAdminComponent,
+   
 
 
 
