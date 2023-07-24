@@ -47,12 +47,6 @@ export class RespuestasEncuestasComponent implements OnInit {
       respuesta10: this.respuestasForm.get('respuesta10')?.value,
 
     }
-    console.log(RESPUESTAS);
-    this._RespuestasService.guardarRespuestas(RESPUESTAS).subscribe(dato=>{
-      this.router.navigate(['/listaRespuestasEncuestas'])
-    }, error=>{
-    console.log(error);
-    this.respuestasForm.reset();
-    })
+    
     }
 }

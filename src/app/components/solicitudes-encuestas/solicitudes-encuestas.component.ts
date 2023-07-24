@@ -54,6 +54,7 @@ export class SolicitudesEncuestasComponent implements OnInit {
 
   ngOnInit(): void {
     this.obtenerBancoPregu()
+    this. esEditar()
   }
 
   agregarSolicitud(){
@@ -89,7 +90,7 @@ export class SolicitudesEncuestasComponent implements OnInit {
     if(this.id !==null){
       //editamos pedido
       this._Solicitud.editarSolicitud(this.id, SOLICITUD).subscribe(data=>{
-        this.router.navigate(['/listaSolicitud'])
+        this.router.navigate(['/userVista'])
         this.toastr.info('La solicitud fue editado con exito','Pedido editado');
       },error=>{
     console.log(error)
