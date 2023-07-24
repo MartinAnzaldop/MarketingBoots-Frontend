@@ -1,8 +1,7 @@
-<app-navbar-admin></app-navbar-admin><br><br><br><br>
+<app-nabvar-user></app-nabvar-user><br><br><br><br>
 <div class="container mt-5 table-responsive">
 
-    <h1 class="text-center">Lista de solicitudes</h1>
-    <button type="button" class="btn btn-success float-end m-2" routerLink="/solicitudEncuestaAdmin">agregar</button>
+    <h1 class="text-center">Lista de Encuestas</h1>
     <table class="table table-bordered border-primary table-hover">
       <thead class="table-dark">
         <tr class="text-center">
@@ -23,8 +22,7 @@
           <td>{{solicitud.marcaArticulo}}</td>
           <td>
 
-            <button [routerLink]="['/editarSolicitud', solicitud._id]" type="button" class="btn btn-warning me-2">editar</button>
-            <button (click)="eliminarSolicitud(solicitud._id)" type="button" class="btn btn-danger">eliminar</button>
+            <button [routerLink]="['/prueba', solicitud._id]" type="button" class="btn btn-success me-2">Visualizar</button>
           </td>
         </tr>
       </tbody>

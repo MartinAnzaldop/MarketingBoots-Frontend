@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ChatDialogComponent } from './chat-dialog.component';
+import { EncuestasAdminComponent } from './encuestas-admin.component';
 
-describe('ChatDialogComponent', () => {
-  let component: ChatDialogComponent;
-  let fixture: ComponentFixture<ChatDialogComponent>;
+describe('EncuestasAdminComponent', () => {
+  let component: EncuestasAdminComponent;
+  let fixture: ComponentFixture<EncuestasAdminComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ChatDialogComponent ]
+      declarations: [ EncuestasAdminComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ChatDialogComponent);
+    fixture = TestBed.createComponent(EncuestasAdminComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

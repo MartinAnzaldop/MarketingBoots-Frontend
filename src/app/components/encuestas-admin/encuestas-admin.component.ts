@@ -2,21 +2,18 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { BancoPregu } from 'src/app/models/bancoPregu';
 import { Encuesta } from 'src/app/models/encuesta';
-import { PreguntaSelec } from 'src/app/models/preguntaSelec';
-import { solicitudEncuesta } from 'src/app/models/solicitudEncuesta';
 import { BancoPreguService } from 'src/app/service/bancoPregu.service';
-import { PreguntaSelecService } from 'src/app/service/preguntaSelec.service';
 import { RespuestasService } from 'src/app/service/respuestas.service';
 import { SolicitudService } from 'src/app/service/solicitud.service';
 
 @Component({
-  selector: 'app-encuestas-user',
-  templateUrl: './encuestas-user.component.html',
-  styleUrls: ['./encuestas-user.component.css']
+  selector: 'app-encuestas-admin',
+  templateUrl: './encuestas-admin.component.html',
+  styleUrls: ['./encuestas-admin.component.css']
 })
-export class EncuestasUserComponent implements OnInit {
+export class EncuestasAdminComponent implements OnInit {
+
   EncuestaForm: FormGroup;
   objeto:  any;
   id:string | null;
@@ -151,7 +148,7 @@ agregarEncuesta(){
   
     //agregamos pedido
     this._Encuesta.guardarRespuestas(ENCUESTA).subscribe(dato=>{
-    this.router.navigate(['/listasSolicitud'])
+    this.router.navigate(['/adminVista'])
     this.toastr.success('La encuesta fue contestada con exito','Encuesta contestada');
   }, error=>{
   console.log(error);
@@ -159,11 +156,3 @@ agregarEncuesta(){
   })
   }
 }
-
-
-
-
-  
-
-
-  

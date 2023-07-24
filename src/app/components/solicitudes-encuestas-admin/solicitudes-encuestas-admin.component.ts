@@ -1,19 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
-import { Toast, ToastrService } from 'ngx-toastr';
+import { Router, ActivatedRoute } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { BancoPregu } from 'src/app/models/bancoPregu';
 import { solicitudEncuesta } from 'src/app/models/solicitudEncuesta';
 import { BancoPreguService } from 'src/app/service/bancoPregu.service';
 import { SolicitudService } from 'src/app/service/solicitud.service';
 
-
 @Component({
-  selector: 'app-solicitudes-encuestas',
-  templateUrl: './solicitudes-encuestas.component.html',
-  styleUrls: ['./solicitudes-encuestas.component.css']
+  selector: 'app-solicitudes-encuestas-admin',
+  templateUrl: './solicitudes-encuestas-admin.component.html',
+  styleUrls: ['./solicitudes-encuestas-admin.component.css']
 })
-export class SolicitudesEncuestasComponent implements OnInit {
+export class SolicitudesEncuestasAdminComponent implements OnInit {
+
   solicitudEncuestaForm: FormGroup;
   id:string | null;
   titulo: string='Agregar solicitud';
@@ -90,7 +90,7 @@ export class SolicitudesEncuestasComponent implements OnInit {
     if(this.id !==null){
       //editamos pedido
       this._Solicitud.editarSolicitud(this.id, SOLICITUD).subscribe(data=>{
-        this.router.navigate(['/userVista'])
+        this.router.navigate(['/listaSolicitud'])
         this.toastr.info('La solicitud fue editado con exito','Pedido editado');
       },error=>{
     console.log(error)
@@ -156,6 +156,3 @@ export class SolicitudesEncuestasComponent implements OnInit {
   }
   
   }
-
-
-  
