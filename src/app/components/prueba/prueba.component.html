@@ -8,7 +8,7 @@
  
   <section class="row">
     <section class="col-md-12">
-      <form [formGroup]="EncuestaForm">
+      <form [formGroup]="EncuestaForm" (ngSubmit)="agregarEncuesta()">
      
       <h1  class="text-center" style="text-transform: uppercase;"><strong>{{titulo}}</strong></h1>  <br><br> 
       <section class="row">
@@ -17,7 +17,7 @@
           <div class="form-group">
             <h5>Empresa: {{empresa}}</h5> 
             <h5>Marca: {{marca}}</h5>
-        <h5>  Nombre del producto/servicio: {{nombreArticulo}}</h5>
+        <h5> Nombre del producto/servicio: {{nombreArticulo}}</h5>
         <h5>Precio: ${{precioArticulo}}</h5><br><br>
       </div>
         </div>
@@ -55,7 +55,7 @@
       <p>Pregunta 1: <strong>{{pregunta1}}</strong></p>
         <div class="col-md-3 container text-center"> 
             <p>Respuesta 1</p>
-            <select formControlName="respuesta1"  formControlName="pregunta1" id="pregunta1" class="form-control border border-success" required>
+            <select formControlName="respuesta1"  formControlName="respuesta1" id="pregunta1" class="form-control border border-success" required>
                 <option *ngFor="let opcion of opciones" [value]="opcion.valor">{{ opcion.texto }}</option>
             </select>
         </div>
@@ -65,7 +65,7 @@
         <p>Pregunta 2: <strong>{{pregunta2}}</strong></p>
           <div class="col-md-3 container text-center"> 
               <p>Respuesta 2</p>
-              <select formControlName="respuesta1"  formControlName="pregunta1" id="pregunta1" class="form-control border border-success" required>
+              <select formControlName="respuesta1"  formControlName="repuesta2" id="pregunta1" class="form-control border border-success" required>
                 <option *ngFor="let opcion of opciones" [value]="opcion.valor">{{ opcion.texto }}</option>
               </select>
           </div>
@@ -74,7 +74,7 @@
         <p>Pregunta 3: <strong>{{pregunta3}}</strong></p>
           <div class="col-md-3 container text-center"> 
               <p>Respuesta 3</p>
-              <select formControlName="respuesta1"  formControlName="pregunta1" id="pregunta1" class="form-control border border-success" required>
+              <select formControlName="respuesta1"  formControlName="respuesta3" id="pregunta1" class="form-control border border-success" required>
                 <option *ngFor="let opcion of opciones" [value]="opcion.valor">{{ opcion.texto }}</option>
               </select>
           </div>
@@ -83,7 +83,7 @@
         <p>Pregunta 4: <strong>{{pregunta4}}</strong></p>
           <div class="col-md-3 container text-center"> 
               <p>Respuesta 4</p>
-              <select formControlName="respuesta1"  formControlName="pregunta1" id="pregunta1" class="form-control border border-success" required>
+              <select formControlName="respuesta1"  formControlName="respuesta4" id="pregunta1" class="form-control border border-success" required>
                 <option *ngFor="let opcion of opciones" [value]="opcion.valor">{{ opcion.texto }}</option>
               </select>
           </div>
@@ -92,7 +92,7 @@
         <p>Pregunta 5: <strong>{{pregunta5}}</strong></p>
           <div class="col-md-3 container text-center"> 
               <p>Respuesta 5</p>
-              <select formControlName="respuesta1"  formControlName="pregunta1" id="pregunta1" class="form-control border border-success" required>
+              <select formControlName="respuesta1"  formControlName="respuesta5" id="pregunta1" class="form-control border border-success" required>
                   <option value="1">Totalmente en desacuerdo</option>
                   <option value="2">Desacuerdo</option>
                   <option value="3">De acuerdo</option>
@@ -105,7 +105,7 @@
         <p>Pregunta 6: <strong>{{pregunta6}}</strong></p>
           <div class="col-md-3 container text-center"> 
               <p>Respuesta 6</p>
-              <select formControlName="respuesta1"  formControlName="pregunta1" id="pregunta1" class="form-control border border-success" required>
+              <select formControlName="respuesta1"  formControlName="respuesta6" id="pregunta1" class="form-control border border-success" required>
                   <option value="1">Totalmente en desacuerdo</option>
                   <option value="2">Desacuerdo</option>
                   <option value="3">De acuerdo</option>
@@ -118,7 +118,7 @@
         <p>Pregunta 7: <strong>{{pregunta7}}</strong></p>
           <div class="col-md-3 container text-center"> 
               <p>Respuesta 7</p>
-              <select formControlName="respuesta1"  formControlName="pregunta1" id="pregunta1" class="form-control border border-success" required>
+              <select formControlName="respuesta1"  formControlName="respuesta7" id="pregunta1" class="form-control border border-success" required>
                   <option value="1">Totalmente en desacuerdo</option>
                   <option value="2">Desacuerdo</option>
                   <option value="3">De acuerdo</option>
@@ -131,7 +131,7 @@
         <p>Pregunta 8: <strong>{{pregunta8}}</strong></p>
           <div class="col-md-3 container text-center"> 
               <p>Respuesta 8</p>
-              <select formControlName="respuesta1"  formControlName="pregunta1" id="pregunta1" class="form-control border border-success" required>
+              <select formControlName="respuesta1"  formControlName="respuesta8" id="pregunta1" class="form-control border border-success" required>
                   <option value="1">Totalmente en desacuerdo</option>
                   <option value="2">Desacuerdo</option>
                   <option value="3">De acuerdo</option>
@@ -144,7 +144,7 @@
         <p>Pregunta 9: <strong>{{pregunta9}}</strong></p>
           <div class="col-md-3 container text-center"> 
               <p>Respuesta 9</p>
-              <select formControlName="respuesta1"  formControlName="pregunta1" id="pregunta1" class="form-control border border-success" required>
+              <select formControlName="respuesta1"  formControlName="respuesta9" id="pregunta1" class="form-control border border-success" required>
                   <option value="1">Totalmente en desacuerdo</option>
                   <option value="2">Desacuerdo</option>
                   <option value="3">De acuerdo</option>
@@ -157,7 +157,7 @@
         <p>Pregunta 10: <strong>{{pregunta10}}</strong></p>
           <div class="col-md-3 container text-center"> 
               <p>Respuesta 10</p>
-              <select formControlName="respuesta1"  formControlName="pregunta1" id="pregunta1" class="form-control border border-success" required>
+              <select formControlName="respuesta1"  formControlName="respuesta10" id="pregunta1" class="form-control border border-success" required>
                   <option value="1">Totalmente en desacuerdo</option>
                   <option value="2">Desacuerdo</option>
                   <option value="3">De acuerdo</option>

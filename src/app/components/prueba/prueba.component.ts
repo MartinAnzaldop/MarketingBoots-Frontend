@@ -19,7 +19,7 @@ export class PruebaComponent implements OnInit {
   empresa: string = '';
   titulo: string = '';
   pregunta1: string = '';
-  nombreArticulo: any;
+  nombreArticulo: string = '';
   pregunta3: string = '';
   pregunta4: string = '';
   pregunta5: string = '';
@@ -118,29 +118,29 @@ agregarEncuesta(){
     edad: this.EncuestaForm.get('edad')?.value,
     empresa: this.EncuestaForm.get('empresa')?.value,
     direccion: this.EncuestaForm.get('direccion')?.value,
-    nombreArticulo: this.EncuestaForm.get('nombreArticulo')?.value,
-    precioArticulo: this.EncuestaForm.get('precioArticulo')?.value,
-    marcaArticulo: this.EncuestaForm.get('marcaArticulo')?.value,
-    titulo: this.EncuestaForm.get('titulo')?.value,
-    pregunta1: this.EncuestaForm.get('pregunta1')?.value,
+    nombreArticulo: this.nombreArticulo,
+    precioArticulo: this.precioArticulo,
+    marcaArticulo: this.marca,
+    titulo: this.titulo,
+    pregunta1: this.pregunta1,
     respuesta1: this.EncuestaForm.get('respuesta1')?.value,
-    pregunta2: this.EncuestaForm.get('pregunta2')?.value,
+    pregunta2: this.pregunta2,
     respuesta2: this.EncuestaForm.get('respuesta2')?.value,
-    pregunta3: this.EncuestaForm.get('pregunta3')?.value,
+    pregunta3: this.pregunta3,
     respuesta3: this.EncuestaForm.get('respuesta3')?.value,
-    pregunta4: this.EncuestaForm.get('pregunta4')?.value,
+    pregunta4: this.pregunta4,
     respuesta4: this.EncuestaForm.get('respuesta4')?.value,
-    pregunta5: this.EncuestaForm.get('pregunta5')?.value,
+    pregunta5: this.pregunta5,
     respuesta5: this.EncuestaForm.get('respuesta5')?.value,
-    pregunta6: this.EncuestaForm.get('pregunta6')?.value,
+    pregunta6: this.pregunta6,
     respuesta6: this.EncuestaForm.get('respuesta6')?.value,
-    pregunta7: this.EncuestaForm.get('pregunta7')?.value,
+    pregunta7: this.pregunta7,
     respuesta7: this.EncuestaForm.get('respuesta7')?.value,
-    pregunta8: this.EncuestaForm.get('pregunta8')?.value,
+    pregunta8: this.pregunta8,
     respuesta8: this.EncuestaForm.get('respuesta8')?.value,
-    pregunta9: this.EncuestaForm.get('pregunta9')?.value,
+    pregunta9: this.pregunta9,
     respuesta9: this.EncuestaForm.get('respuesta9')?.value,
-    pregunta10: this.EncuestaForm.get('pregunta10')?.value,
+    pregunta10: this.pregunta10,
     respuesta10: this.EncuestaForm.get('respuesta10')?.value,
    ubicacion:this.EncuestaForm.get('ubicacion')?.value,
   }
@@ -148,7 +148,7 @@ agregarEncuesta(){
     //agregamos pedido
     this._Encuesta.guardarRespuestas(ENCUESTA).subscribe(dato=>{
     this.router.navigate(['/listasSolicitud'])
-    this.toastr.success('La solicitud fue agregado con exito','Pedido agregado');
+    this.toastr.success('La encuesta fue contestada con exito','Encuesta contestada');
   }, error=>{
   console.log(error);
   
