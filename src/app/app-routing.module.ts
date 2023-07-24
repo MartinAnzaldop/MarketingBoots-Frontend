@@ -29,6 +29,10 @@ import { ListaPreguntasSeleccionadasComponent } from './components/lista-pregunt
 import { PreguntasSeleccionadasUserComponent } from './components/preguntas-seleccionadas-user/preguntas-seleccionadas-user.component';
 import { ListaPreguntasUserComponent } from './components/lista-preguntas-user/lista-preguntas-user.component';
 import { EncuestasUserComponent } from './components/encuestas-user/encuestas-user.component';
+import { SolicitudesEncuestasComponent } from './components/solicitudes-encuestas/solicitudes-encuestas.component';
+import { ListaSolicitudesComponent } from './components/lista-solicitudes/lista-solicitudes.component';
+import { ListaEncuestasAdminComponent } from './components/lista-encuestas-admin/lista-encuestas-admin.component';
+import { PruebaComponent } from './components/prueba/prueba.component';
 
 
 
@@ -49,6 +53,7 @@ const routes: Routes = [
   {path:'chatbot', component:ChatDialogComponent},
   {path:'agregarsolicitud', component:SolicitudUserComponent},
   {path:'encuestasUser/:id', component:EncuestasUserComponent},
+  {path:'prueba/:id', component:PruebaComponent},
 
 
 
@@ -64,13 +69,14 @@ const routes: Routes = [
   {path:'recuperarContraseña', component:RecuperarPasswordComponent},
   {path:'verificacionCorreo', component:VerificarCorreoComponent},
   {path:'configuracionUsuario', component:ConfiguracionEncuestaUsuarioComponent},
+  {path:'solicitudEncuesta', component:SolicitudesEncuestasComponent},
 
   //Ana
   {path:'bancoPreguntas', component:AgregarPreguntaComponent},
   {path:'listaBancoPreguntas', component:ListaBancoPreguntasComponent},
   {path:'editarBancoPregu/:id', component:AgregarPreguntaComponent},
   {path:'listaPreguntasUser', component:ListaPreguntasUserComponent},
- 
+
 
   {path:'preguntasSeleccionadas', component:PreguntasSeleccionadasComponent},
   {path:'listaPreguntasSeleccionadas', component:ListaPreguntasSeleccionadasComponent},
@@ -81,6 +87,9 @@ const routes: Routes = [
   //Norma
   {path:'respuestasEncuestas', component:RespuestasEncuestasComponent},
   {path:'listaRespuestasEncuestas', component:ListaRespuestasEncuestasComponent},
+  {path:'listaSolicitud', component:ListaSolicitudesComponent},
+  {path:'editarSolicitud/:id', component:SolicitudesEncuestasComponent},
+  {path:'listaEncuestasAdmin', component:ListaEncuestasAdminComponent},
   {path:'**', redirectTo:'inicio', pathMatch:"full"}
 ];
 
