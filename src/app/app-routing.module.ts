@@ -31,7 +31,7 @@ const routes: Routes = [
   {path:'inicio', component:InicioComponent},
   {path:'navbarAdmin', component:NavbarAdminComponent},
   {path:'pedido', component:PedidoComponent},
- 
+
 
   //Martin
 
@@ -44,8 +44,8 @@ const routes: Routes = [
 
 
   //Alexandra
- 
-  {path:'inicioUsiario', component:UserIniciarSesionComponent},
+
+  {path:'inicioUsuario', component:UserIniciarSesionComponent},
   {path:'registrarUsuario', component:UserRegistroComponent},
   {path:'inicioAdministrador', component:AdminIniciarSesionComponent},
   {path:'recuperarContraseña', component:RecuperarPasswordComponent},
@@ -58,7 +58,7 @@ const routes: Routes = [
   {path:'listaBancoPreguntas', component:ListaBancoPreguntasComponent},
   {path:'editarBancoPregu/:id', component:AgregarPreguntaComponent},
 
- 
+
 
   //Norma
   {path:'respuestasEncuestas', component:RespuestasEncuestasComponent},
