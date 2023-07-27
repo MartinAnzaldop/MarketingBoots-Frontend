@@ -83,14 +83,14 @@ export class EstadisticasComponent implements OnInit {
 
   ngOnInit(): void {
     this.obtenerObjeto();
-   this.obtenerEncuestas();
+    this.obtenerEncuestas();
     
     
 }
 
 obtenerObjeto(): void {
-     this.id = this.activateRouter.snapshot.paramMap.get('id');
-    this.objeto = this._Solicitud.obtenerSolicitudById(this.id!).subscribe(data => {
+      this.id = this.activateRouter.snapshot.paramMap.get('id');
+      this.objeto = this._Solicitud.obtenerSolicitudById(this.id!).subscribe(data => {
       console.log(data.empresa);
       this.titulo = data.titulo;
       this.empresa = data.empresa;
@@ -107,7 +107,6 @@ obtenerObjeto(): void {
       this.pregunta9 = data.pregunta9;
       this.pregunta10 = data.pregunta10;
       this.pregunta2 = data.pregunta2;
-      
       this.pregunta2 = data.pregunta2;
     })
 
@@ -124,16 +123,24 @@ obtenerEncuestas(){
   })
 }
 
-
-sumarRespuestas() {
-  let suma = 0;
-  for (const encuesta of this.listaEncuestas) {
-    if (encuesta.nombreArticulo === this.nombreArticulo) {
-      suma += encuesta.respuesta1;
-    }
-  }
-  return suma;
+countOccurrencesOf1(): number {
+  return this.listaEncuestas.filter((encuesta) => encuesta.nombreArticulo === this.nombreArticulo && encuesta.respuesta1 === 1).length;
 }
+countOccurrencesOf2(): number {
+  return this.listaEncuestas.filter((encuesta) => encuesta.nombreArticulo === this.nombreArticulo && encuesta.respuesta1 === 2).length;
+}
+countOccurrencesOf3(): number {
+  return this.listaEncuestas.filter((encuesta) => encuesta.nombreArticulo === this.nombreArticulo && encuesta.respuesta1 === 3).length;
+}
+
+countOccurrencesOf4(): number {
+  return this.listaEncuestas.filter((encuesta) => encuesta.nombreArticulo === this.nombreArticulo && encuesta.respuesta1 === 4).length;
+}
+countOccurrencesOf5(): number {
+  return this.listaEncuestas.filter((encuesta) => encuesta.nombreArticulo === this.nombreArticulo && encuesta.respuesta1 === 5).length;
+}
+
+
 
 agregarEncuesta(){
   const ENCUESTA: Encuesta ={
