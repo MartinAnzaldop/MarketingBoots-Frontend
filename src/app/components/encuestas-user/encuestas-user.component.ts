@@ -120,7 +120,7 @@ agregarEncuesta(){
   const ENCUESTA: Encuesta ={
     nombre: this.EncuestaForm.get('nombre')?.value,
     edad: this.EncuestaForm.get('edad')?.value,
-    empresa: this.EncuestaForm.get('empresa')?.value,
+    empresa: this.empresa,
     direccion: this.EncuestaForm.get('direccion')?.value,
     nombreArticulo: this.nombreArticulo,
     precioArticulo: this.precioArticulo,

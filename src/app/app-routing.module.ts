@@ -22,6 +22,7 @@ import { PruebaComponent } from './components/prueba/prueba.component';
 import { EncuestasAdminComponent } from './components/encuestas-admin/encuestas-admin.component';
 import { ListaEncuestasUserComponent } from './components/lista-encuestas-user/lista-encuestas-user.component';
 import { SolicitudesEncuestasAdminComponent } from './components/solicitudes-encuestas-admin/solicitudes-encuestas-admin.component';
+import { EstadisticasComponent } from './components/estadisticas/estadisticas.component';
 
 
 
@@ -40,6 +41,7 @@ const routes: Routes = [
   {path:'encuestasUser/:id', component:EncuestasUserComponent},
   {path:'encuestasAdmin/:id', component:EncuestasAdminComponent},
   {path:'prueba/:id', component:PruebaComponent},
+  {path:'estadisticasUser/:id', component:EstadisticasComponent},
 
 
 

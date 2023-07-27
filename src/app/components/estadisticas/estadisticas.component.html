@@ -1,1 +1,63 @@
-<p>estadisticas works!</p>
+<app-nabvar-user></app-nabvar-user> <br><br><br><br>
+
+<br />
+<div class="container">
+  
+  <hr><br />
+  
+ 
+  <section class="row">
+    <section class="col-md-12">
+      
+     
+      <h1  class="text-center" style="text-transform: uppercase;"><strong>Estaditicas</strong></h1>  <br><br> 
+      <section class="row">
+        <div class="col-md-8">
+          <h2><strong>{{titulo}}</strong></h2>
+          <div class="form-group">
+            <h5>Empresa: {{empresa}}</h5> 
+            <h5>Marca: {{marca}}</h5>
+        <h5> Nombre del producto/servicio: {{nombreArticulo}}</h5>
+        <h5>Precio: ${{precioArticulo}}</h5><br><br>
+      </div>
+        </div>
+        </section>
+      <br>
+      <div class="container">
+        <div class="d-flex justify-content-center">
+            <h4>Pregunta 1: {{pregunta1}}</h4><br> <br>
+        </div>
+        <div class="d-flex justify-content-center" *ngFor="let encuesta of listaEncuestas">
+            <h4 *ngIf="encuesta.nombreArticulo === nombreArticulo"></h4><br> <br>
+            
+    </div>
+    <p>Suma de Respuestas 1: {{ sumarRespuestas() }}</p>
+    <table >
+        <tr>
+          
+            <td>Barra 1</td>
+            <td>
+                <div style="height: 80px; width: 30px; background-color: red;"></div>
+            </td>
+        </tr>
+        <tr>
+            <td>Barra 2</td>
+            <td>
+                <div style="height: 80px; width: 30px; background-color: blue;"></div>
+            </td>
+        </tr>
+        <tr>
+            <td>Barra 3</td>
+            <td>
+                <div style="height:80px; width: 30px; background-color: green;"></div>
+            </td>
+        </tr>
+    </table>
+
+ <br>
+  <hr/>
+
+
+
+
+<br> <br>

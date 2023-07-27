@@ -86,6 +86,7 @@ import { SolicitudesEncuestasAdminComponent } from './components/solicitudes-enc
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot(), // ToastrModule added
     HttpClientModule,
+  
 
     AngularFireModule.initializeApp(environment.firebaseConfig)
   ],
