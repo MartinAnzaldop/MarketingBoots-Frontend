@@ -1,3 +1,4 @@
+import { AgregarPreguntaUsuarioComponent } from './components/agregar-pregunta-usuario/agregar-pregunta-usuario.component';
 import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { InicioComponent } from './components/inicio/inicio.component';
@@ -52,6 +53,7 @@ const routes: Routes = [
   {path:'verificacionCorreo', component:VerificarCorreoComponent},
   {path:'solicitudEncuesta', component:SolicitudesEncuestasComponent},
   {path:'solicitudEncuestaAdmin', component:SolicitudesEncuestasAdminComponent},
+  {path:'agregarPreguntaUsuario', component:AgregarPreguntaUsuarioComponent},
 
   //Ana
   {path:'bancoPreguntas', component:AgregarPreguntaComponent},
