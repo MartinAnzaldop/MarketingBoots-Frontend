@@ -1,7 +1,7 @@
 <app-nabvar-user></app-nabvar-user> <br><br><br><br>
 
 <br />
-<div class="container">
+<div class="container" >
 
   <hr><br />
 
@@ -10,7 +10,7 @@
     <section class="col-md-12">
 
 
-      <h1 class="text-center" style="text-transform: uppercase;"><strong>Estaditicas</strong></h1> <br><br>
+      <h1 class="text-center" style="text-transform: uppercase;"><strong>Estadisticas</strong></h1> <br><br>
       <section class="row">
         <div class="col-md-8">
           <h2><strong>{{titulo}}</strong></h2>
@@ -30,39 +30,413 @@
         <div class="d-flex justify-content-center" *ngFor="let encuesta of listaEncuestas">
           <h4 *ngIf="encuesta.nombreArticulo === nombreArticulo"></h4>
         </div>
-        <p>Totalmente desacuerdo: {{ countOccurrencesOf1() }}</p>
-            <p>Desacuerdo: {{ countOccurrencesOf2() }}</p>
-            <p>De acuerdo: {{ countOccurrencesOf3() }}</p>
-            <p>Muy de acuerdo: {{ countOccurrencesOf4() }}</p>
-            <p>Totalmente de acuerdo: {{ countOccurrencesOf5() }}</p>
+        
 
 
         <table>
           <tr>
 
-            <td>Barra 1</td>
+            <td>Desacuerdo: {{pregunta1Of1()}}</td>
             <td>
-              <div style="height: 80px; width: 30px; background-color: red;"></div>
+              <div style="height: 80px; width: 30px; background-color: rgb(63, 63, 63);" id="barra1">
+              </div>
+             
             </td>
           </tr>
           <tr>
-            <td>Barra 2</td>
+          <td>Neutral: {{pregunta1Of2()}}</td>
             <td>
-              <div style="height: 80px; width: 30px; background-color: blue;"></div>
+              <div style="height: 80px; width: 30px; background-color: rgb(51, 47, 47);" id="barra2"></div>
             </td>
           </tr>
           <tr>
-            <td>Barra 3</td>
+            <td>De acuerdo: {{pregunta1Of3()}}</td>
             <td>
-              <div style="height:80px; width: 30px; background-color: green;"></div>
+              <div style="height: 80px; width: 30px; background-color: blue;" id="barra3"></div>
             </td>
           </tr>
+          <tr>
+            <td>Muy de acuerdo: {{pregunta1Of4()}}</td>
+            <td>
+              <div style="height:80px; width: 30px; background-color: green;" id="barra4"></div>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <div style="height:80px; width: 30px;" id="barra4"></div>
+            </td>
+          </tr>
+          
+        </table>
+        <div class="d-flex justify-content-center">
+          <h4>Pregunta 2: {{pregunta2}}</h4><br> <br>
+        </div>
+        <table>
+          <tr>
+
+            <td>Desacuerdo: {{pregunta2Of1()}}</td>
+            <td>
+              <div style="height: 80px; width: 30px; background-color: rgb(63, 63, 63);" id="barra5">
+              </div>
+             
+            </td>
+          </tr>
+          <tr>
+          <td>Neutral: {{pregunta2Of2()}}</td>
+            <td>
+              <div style="height: 80px; width: 30px; background-color: rgb(51, 47, 47);" id="barra6"></div>
+            </td>
+          </tr>
+          <tr>
+            <td>De acuerdo: {{pregunta2Of3()}}</td>
+            <td>
+              <div style="height: 80px; width: 30px; background-color: blue;" id="barra7"></div>
+            </td>
+          </tr>
+          <tr>
+            <td>Muy de acuerdo: {{pregunta2Of4()}}</td>
+            <td>
+              <div style="height:80px; width: 30px; background-color: green;" id="barra8"></div>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <div style="height:80px; width: 30px; " id="barra4"></div>
+            </td>
+          </tr>
+          
+        </table>
+        <div class="d-flex justify-content-center">
+          <h4>Pregunta 3: {{pregunta3}}</h4><br> <br>
+        </div>
+        <table>
+          <tr>
+
+            <td>Desacuerdo: {{pregunta3Of1()}}</td>
+            <td>
+              <div style="height: 80px; width: 30px; background-color: rgb(63, 63, 63);" id="barra9">
+              </div>
+             
+            </td>
+          </tr>
+          <tr>
+          <td>Neutral: {{pregunta3Of2()}}</td>
+            <td>
+              <div style="height: 80px; width: 30px; background-color: rgb(51, 47, 47);" id="barra10"></div>
+            </td>
+          </tr>
+          <tr>
+            <td>De acuerdo: {{pregunta3Of3()}}</td>
+            <td>
+              <div style="height: 80px; width: 30px; background-color: blue;" id="barra11"></div>
+            </td>
+          </tr>
+          <tr>
+            <td>Muy de acuerdo: {{pregunta3Of4()}}</td>
+            <td>
+              <div style="height:80px; width: 30px; background-color: green;" id="barra12"></div>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <div style="height:80px; width: 30px; " id="barra4"></div>
+            </td>
+          </tr>
+          
         </table>
 
+        <div class="d-flex justify-content-center">
+          <h4>Pregunta 4: {{pregunta4}}</h4><br> <br>
+        </div>
+        <table>
+          <tr>
+
+            <td>Desacuerdo: {{pregunta4Of1()}}</td>
+            <td>
+              <div style="height: 80px; width: 30px; background-color: rgb(63, 63, 63);" id="barra13">
+              </div>
+             
+            </td>
+          </tr>
+          <tr>
+          <td>Neutral: {{pregunta4Of2()}}</td>
+            <td>
+              <div style="height: 80px; width: 30px; background-color: rgb(51, 47, 47);" id="barra14"></div>
+            </td>
+          </tr>
+          <tr>
+            <td>De acuerdo: {{pregunta4Of3()}}</td>
+            <td>
+              <div style="height: 80px; width: 30px; background-color: blue;" id="barra15"></div>
+            </td>
+          </tr>
+          <tr>
+            <td>Muy de acuerdo: {{pregunta4Of4()}}</td>
+            <td>
+              <div style="height:80px; width: 30px; background-color: green;" id="barra16"></div>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <div style="height:80px; width: 30px; " id="barra4"></div>
+            </td>
+          </tr>
+          
+        </table>
+        <div class="d-flex justify-content-center">
+          <h4>Pregunta 5: {{pregunta5}}</h4><br> <br>
+        </div>
+        <table>
+          <tr>
+
+            <td>Desacuerdo: {{pregunta5Of1()}}</td>
+            <td>
+              <div style="height: 80px; width: 30px; background-color: rgb(63, 63, 63);" id="barra17">
+              </div>
+             
+            </td>
+          </tr>
+          <tr>
+          <td>Neutral: {{pregunta5Of2()}}</td>
+            <td>
+              <div style="height: 80px; width: 30px; background-color: rgb(51, 47, 47);" id="barra18"></div>
+            </td>
+          </tr>
+          <tr>
+            <td>De acuerdo: {{pregunta5Of3()}}</td>
+            <td>
+              <div style="height: 80px; width: 30px; background-color: blue;" id="barra19"></div>
+            </td>
+          </tr>
+          <tr>
+            <td>Muy de acuerdo: {{pregunta5Of4()}}</td>
+            <td>
+              <div style="height:80px; width: 30px; background-color: green;" id="barra20"></div>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <div style="height:80px; width: 30px; " id="barra4"></div>
+            </td>
+          </tr>
+          
+        </table>
+
+        <div class="d-flex justify-content-center">
+          <h4>Pregunta 6: {{pregunta6}}</h4><br> <br>
+        </div>
+        <table>
+          <tr>
+
+            <td>Desacuerdo: {{pregunta6Of1()}}</td>
+            <td>
+              <div style="height: 80px; width: 30px; background-color: rgb(63, 63, 63);" id="barra21">
+              </div>
+             
+            </td>
+          </tr>
+          <tr>
+          <td>Neutral: {{pregunta6Of2()}}</td>
+            <td>
+              <div style="height: 80px; width: 30px; background-color: rgb(51, 47, 47);" id="barra22"></div>
+            </td>
+          </tr>
+          <tr>
+            <td>De acuerdo: {{pregunta6Of3()}}</td>
+            <td>
+              <div style="height: 80px; width: 30px; background-color: blue;" id="barra23"></div>
+            </td>
+          </tr>
+          <tr>
+            <td>Muy de acuerdo: {{pregunta6Of4()}}</td>
+            <td>
+              <div style="height:80px; width: 30px; background-color: green;" id="barra24"></div>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <div style="height:80px; width: 30px; " id="barra4"></div>
+            </td>
+          </tr>
+          
+        </table>
+        <div class="d-flex justify-content-center">
+          <h4>Pregunta 7: {{pregunta7}}</h4><br> <br>
+        </div>
+        <table>
+          <tr>
+
+            <td>Desacuerdo: {{pregunta7Of1()}}</td>
+            <td>
+              <div style="height: 80px; width: 30px; background-color: rgb(63, 63, 63);" id="barra25">
+              </div>
+             
+            </td>
+          </tr>
+          <tr>
+          <td>Neutral: {{pregunta4Of2()}}</td>
+            <td>
+              <div style="height: 80px; width: 30px; background-color: rgb(51, 47, 47);" id="barra26"></div>
+            </td>
+          </tr>
+          <tr>
+            <td>De acuerdo: {{pregunta7Of3()}}</td>
+            <td>
+              <div style="height: 80px; width: 30px; background-color: blue;" id="barra27"></div>
+            </td>
+          </tr>
+          <tr>
+            <td>Muy de acuerdo: {{pregunta7Of4()}}</td>
+            <td>
+              <div style="height:80px; width: 30px; background-color: green;" id="barra28"></div>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <div style="height:80px; width: 30px; " id="barra4"></div>
+            </td>
+          </tr>
+          
+        </table>
+        <div class="d-flex justify-content-center">
+          <h4>Pregunta 8: {{pregunta8}}</h4><br> <br>
+        </div>
+        <table>
+          <tr>
+
+            <td>Desacuerdo: {{pregunta8Of1()}}</td>
+            <td>
+              <div style="height: 80px; width: 30px; background-color: rgb(63, 63, 63);" id="barra29">
+              </div>
+             
+            </td>
+          </tr>
+          <tr>
+          <td>Neutral: {{pregunta8Of2()}}</td>
+            <td>
+              <div style="height: 80px; width: 30px; background-color: rgb(51, 47, 47);" id="barra30"></div>
+            </td>
+          </tr>
+          <tr>
+            <td>De acuerdo: {{pregunta8Of3()}}</td>
+            <td>
+              <div style="height: 80px; width: 30px; background-color: blue;" id="barra31"></div>
+            </td>
+          </tr>
+          <tr>
+            <td>Muy de acuerdo: {{pregunta8Of4()}}</td>
+            <td>
+              <div style="height:80px; width: 30px; background-color: green;" id="barra32"></div>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <div style="height:80px; width: 30px; " id="barra4"></div>
+            </td>
+          </tr>
+          
+        </table>
+        <div class="d-flex justify-content-center">
+          <h4>Pregunta 9: {{pregunta9}}</h4><br> <br>
+        </div>
+        <table>
+          <tr>
+
+            <td>Desacuerdo: {{pregunta9Of1()}}</td>
+            <td>
+              <div style="height: 80px; width: 30px; background-color: rgb(63, 63, 63);" id="barra33">
+              </div>
+             
+            </td>
+          </tr>
+          <tr>
+          <td>Neutral: {{pregunta9Of2()}}</td>
+            <td>
+              <div style="height: 80px; width: 30px; background-color: rgb(51, 47, 47);" id="barra34"></div>
+            </td>
+          </tr>
+          <tr>
+            <td>De acuerdo: {{pregunta9Of3()}}</td>
+            <td>
+              <div style="height: 80px; width: 30px; background-color: blue;" id="barra35"></div>
+            </td>
+          </tr>
+          <tr>
+            <td>Muy de acuerdo: {{pregunta9Of4()}}</td>
+            <td>
+              <div style="height:80px; width: 30px; background-color: green;" id="barra36"></div>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <div style="height:80px; width: 30px; " id="barra4"></div>
+            </td>
+          </tr>
+          
+        </table>
+        <div class="d-flex justify-content-center">
+          <h4>Pregunta 10: {{pregunta10}}</h4><br> <br>
+        </div>
+        <table>
+          <tr>
+
+            <td>Desacuerdo: {{pregunta10Of1()}}</td>
+            <td>
+              <div style="height: 80px; width: 30px; background-color: rgb(63, 63, 63);" id="barra37">
+              </div>
+             
+            </td>
+          </tr>
+          <tr>
+          <td>Neutral: {{pregunta10Of2()}}</td>
+            <td>
+              <div style="height: 80px; width: 30px; background-color: rgb(51, 47, 47);" id="barra38"></div>
+            </td>
+          </tr>
+          <tr>
+            <td>De acuerdo: {{pregunta10Of3()}}</td>
+            <td>
+              <div style="height: 80px; width: 30px; background-color: blue;" id="barra39"></div>
+            </td>
+          </tr>
+          <tr>
+            <td>Muy de acuerdo: {{pregunta10Of4()}}</td>
+            <td>
+              <div style="height:80px; width: 30px; background-color: green;" id="barra40"></div>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <div style="height:80px; width: 30px; " id="barra4"></div>
+            </td>
+          </tr>
+          
+        </table>
         <br>
         <hr />
 
 
 
 
-        <br> <br>
+        
+          <br>
+          <hr />
+  
+  
+  
+  
+          <br> <br>
+          </div>
+        </section>
+        </section>
+        </div>

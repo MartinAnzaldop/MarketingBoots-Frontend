@@ -37,11 +37,10 @@ export class EncuestasUserComponent implements OnInit {
   marca: any;
   
   opciones = [
-    { valor: '1', texto: 'Totalmente desacuerdo' },
-    { valor: '2', texto: 'Desacuerdo' },
+    { valor: '1', texto: 'Desacuerdo' },
+    { valor: '2', texto: 'Neutral' },
     { valor: '3', texto: 'De acuerdo' },
     { valor: '4', texto: 'Muy de acuerdo' },
-    { valor: '5', texto: 'Totalmente de acuerdo' },
     // Agrega más opciones según tus necesidades
   ];
 
@@ -158,6 +157,7 @@ agregarEncuesta(){
   
   })
   }
+  
 }
 
 
