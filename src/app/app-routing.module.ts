@@ -22,6 +22,7 @@ import { PruebaComponent } from './components/prueba/prueba.component';
 import { EncuestasAdminComponent } from './components/encuestas-admin/encuestas-admin.component';
 import { ListaEncuestasUserComponent } from './components/lista-encuestas-user/lista-encuestas-user.component';
 import { SolicitudesEncuestasAdminComponent } from './components/solicitudes-encuestas-admin/solicitudes-encuestas-admin.component';
+import { AgregarPreguntaUserComponent } from './components/agregar-pregunta-user/agregar-pregunta-user.component';
 
 
 
@@ -57,6 +58,8 @@ const routes: Routes = [
   {path:'bancoPreguntas', component:AgregarPreguntaComponent},
   {path:'listaBancoPreguntas', component:ListaBancoPreguntasComponent},
   {path:'editarBancoPregu/:id', component:AgregarPreguntaComponent},
+  {path:'bancoPreguntaUser', component:AgregarPreguntaUserComponent},
+  {path:'editarBancoPreguUser/:id', component:AgregarPreguntaUserComponent},
 
  
 

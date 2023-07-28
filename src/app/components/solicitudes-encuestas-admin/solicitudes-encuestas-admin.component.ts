@@ -85,7 +85,7 @@ export class SolicitudesEncuestasAdminComponent implements OnInit {
       pregunta8: this.solicitudEncuestaForm.get('pregunta8')?.value,
       pregunta9: this.solicitudEncuestaForm.get('pregunta9')?.value,
       pregunta10: this.solicitudEncuestaForm.get('pregunta10')?.value,
-      
+      pregunta: this.solicitudEncuestaForm.get('pregunta')?.value,
     }
     if(this.id !==null){
       //editamos pedido

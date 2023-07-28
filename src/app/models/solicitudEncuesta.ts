@@ -25,4 +25,5 @@ export class solicitudEncuesta{
     pregunta8: string;
     pregunta9: string;
     pregunta10: string;
+    pregunta: string;
 }

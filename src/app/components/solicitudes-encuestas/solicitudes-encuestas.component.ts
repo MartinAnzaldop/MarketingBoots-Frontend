@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Toast, ToastrService } from 'ngx-toastr';
+import { ToastrService } from 'ngx-toastr';
 import { BancoPregu } from 'src/app/models/bancoPregu';
 import { solicitudEncuesta } from 'src/app/models/solicitudEncuesta';
+import { BancoPreguUser } from 'src/app/models/bancoPreguUser';
 import { BancoPreguService } from 'src/app/service/bancoPregu.service';
 import { SolicitudService } from 'src/app/service/solicitud.service';
+import { BancoPreguUserService } from 'src/app/service/bancoPreguUser.service';
 
 
 @Component({
@@ -18,9 +20,11 @@ export class SolicitudesEncuestasComponent implements OnInit {
   id:string | null;
   titulo: string='Agregar solicitud';
   listaBancoPregu:BancoPregu []=[];
+  listaBancoPreguUser:BancoPreguUser []=[];
 
-    constructor(private _BancoPreguService: BancoPreguService, private fb: FormBuilder, private  router: Router, private toastr: ToastrService,
-     private aRouter: ActivatedRoute, private _Solicitud: SolicitudService) {
+    constructor(private fb: FormBuilder, private  router: Router, private toastr: ToastrService,
+    private _BancoPreguService: BancoPreguService, private _Solicitud: SolicitudService, private _BancoPreguUserService:BancoPreguUserService,
+    private aRouter: ActivatedRoute) {
 
   this.solicitudEncuestaForm=this.fb.group({
     empresa:['', Validators.required],
@@ -48,12 +52,14 @@ export class SolicitudesEncuestasComponent implements OnInit {
       pregunta8:['', Validators.required],
       pregunta9:['', Validators.required],
       pregunta10:['', Validators.required],
+      pregunta:['', Validators.required],
   })
   this.id=this.aRouter.snapshot.paramMap.get('id')
  }
 
   ngOnInit(): void {
     this.obtenerBancoPregu()
+    this.obtenerBancoPreguUser()
     this. esEditar()
   }
 
@@ -85,7 +91,7 @@ export class SolicitudesEncuestasComponent implements OnInit {
       pregunta8: this.solicitudEncuestaForm.get('pregunta8')?.value,
       pregunta9: this.solicitudEncuestaForm.get('pregunta9')?.value,
       pregunta10: this.solicitudEncuestaForm.get('pregunta10')?.value,
-      
+      pregunta: this.solicitudEncuestaForm.get('pregunta')?.value,
     }
     if(this.id !==null){
       //editamos pedido
@@ -114,6 +120,25 @@ export class SolicitudesEncuestasComponent implements OnInit {
       this.listaBancoPregu=data;
     },error=>{
     console.log(error)
+    })
+  }
+
+  obtenerBancoPreguUser(){
+    this._BancoPreguUserService.getBancoPreguUser().subscribe(data=>{
+      console.log(data);
+      this.listaBancoPreguUser=data;
+    },error=>{
+    console.log(error)
+    })
+  }
+
+  eliminarBancoPreguUser(id:any){
+    this._BancoPreguUserService.deleteBancoPreguUser(id).subscribe(data=>{
+    this.toastr.error('La pregunta fue eliminada con exito','Pregunta eliminada');
+    this.obtenerBancoPreguUser();
+    this.router.navigate(['/solicitudEncuesta'])
+    },error=>{
+      console.log(error)
     })
   }
     
@@ -147,7 +172,7 @@ export class SolicitudesEncuestasComponent implements OnInit {
           pregunta8: data.pregunta8,
           pregunta9: data.pregunta9,
           pregunta10: data.pregunta10,
-
+          pregunta: data.pregunta,
       })
       },error=>{
         console.log(error)
