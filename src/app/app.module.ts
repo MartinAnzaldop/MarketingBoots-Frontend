@@ -51,6 +51,8 @@ import { PreguntasSeleccionadasUserComponent } from './components/preguntas-sele
 import { ListaPreguntasUserComponent } from './components/lista-preguntas-user/lista-preguntas-user.component';
 import { EncuestasUserComponent } from './components/encuestas-user/encuestas-user.component';
 
+import { ChatbotPopupComponent } from './components/chatbot-popup/chatbot-popup.component';
+
 
 @NgModule({
   declarations: [
@@ -91,6 +93,7 @@ import { EncuestasUserComponent } from './components/encuestas-user/encuestas-us
     PreguntasSeleccionadasUserComponent,
     ListaPreguntasUserComponent,
     EncuestasUserComponent,
+    ChatbotPopupComponent,
 
 
 

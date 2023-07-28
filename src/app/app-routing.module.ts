@@ -33,6 +33,7 @@ import { ListaPreguntasSeleccionadasComponent } from './components/lista-pregunt
 import { PreguntasSeleccionadasUserComponent } from './components/preguntas-seleccionadas-user/preguntas-seleccionadas-user.component';
 import { ListaPreguntasUserComponent } from './components/lista-preguntas-user/lista-preguntas-user.component';
 import { EncuestasUserComponent } from './components/encuestas-user/encuestas-user.component';
+import { ChatbotPopupComponent } from './components/chatbot-popup/chatbot-popup.component';
 
 
 
@@ -89,7 +90,7 @@ const routes: Routes = [
   //Norma
   {path:'respuestasEncuestas', component:RespuestasEncuestasComponent},
   {path:'listaRespuestasEncuestas', component:ListaRespuestasEncuestasComponent},
-
+  {path:'ChatbotFlotante', component:ChatbotPopupComponent},
   {path:'userResultadoEncuesta', component:UserResultadoEncuestaComponent},
   {path:'estadisticas', component:EstadisticasComponent},
 
