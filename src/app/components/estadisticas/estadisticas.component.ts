@@ -6,6 +6,8 @@ import { Encuesta } from 'src/app/models/encuesta';
 import { BancoPreguService } from 'src/app/service/bancoPregu.service';
 import { RespuestasService } from 'src/app/service/respuestas.service';
 import { SolicitudService } from 'src/app/service/solicitud.service';
+import {Chart, registerables} from 'node_modules/chart.js'
+Chart.register(...registerables);
 
 @Component({
   selector: 'app-estadisticas',
@@ -89,6 +91,7 @@ export class EstadisticasComponent implements OnInit {
     this.obtenerObjeto();
     this.obtenerEncuestas();
     this.pregunta1ChangeWidthGraph();
+    this.renderChart();
   }
 
   obtenerObjeto(): void {
@@ -582,4 +585,29 @@ export class EstadisticasComponent implements OnInit {
       }
     );
   }
+
+renderChart(){
+  setTimeout(() =>{
+  const ctx = new Chart("respuesta1", {
+    type: 'bar',
+    data: {
+      labels: ['Desacuerdo', 'Neutral', 'De acuerdo', 'Muy de acuerdo'],
+      datasets: [{
+        label: '# of Votes',
+        data: [this.pregunta1Of1(), this.pregunta1Of2(), this.pregunta1Of3(), this.pregunta1Of4()],
+        borderWidth: 50,
+       
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true,
+          max: 20 //
+        }
+      },
+      
+    }
+  });
+}, 1000)};
 }

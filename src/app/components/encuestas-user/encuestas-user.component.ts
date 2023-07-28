@@ -11,6 +11,9 @@ import { PreguntaSelecService } from 'src/app/service/preguntaSelec.service';
 import { RespuestasService } from 'src/app/service/respuestas.service';
 import { SolicitudService } from 'src/app/service/solicitud.service';
 
+
+
+
 @Component({
   selector: 'app-encuestas-user',
   templateUrl: './encuestas-user.component.html',
@@ -18,6 +21,9 @@ import { SolicitudService } from 'src/app/service/solicitud.service';
 })
 export class EncuestasUserComponent implements OnInit {
   EncuestaForm: FormGroup;
+  tituloApp: string = 'MarketingBoots';
+  pdfDocGenerator: any;
+  pdfDefinition: any;
   objeto:  any;
   id:string | null;
   empresa: string = '';
@@ -157,6 +163,11 @@ agregarEncuesta(){
   
   })
   }
+
+  
+    
+
+ 
   
 }
 

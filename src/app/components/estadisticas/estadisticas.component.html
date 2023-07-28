@@ -1,7 +1,7 @@
 <app-nabvar-user></app-nabvar-user> <br><br><br><br>
 
 <br />
-<div class="container" >
+<div class=" container color border border-black">
 
   <hr><br />
 
@@ -23,6 +23,15 @@
         </div>
       </section>
       <br>
+      <div class="row">
+        <div class="col-lg-6">
+          <h2>Pregunta 1: {{pregunta1}}</h2>
+          <canvas id="respuesta"></canvas>
+        </div>
+      </div>
+
+
+
       <div class="container">
         <div class="d-flex justify-content-center">
           <h4>Pregunta 1: {{pregunta1}}</h4><br> <br>
@@ -30,45 +39,11 @@
         <div class="d-flex justify-content-center" *ngFor="let encuesta of listaEncuestas">
           <h4 *ngIf="encuesta.nombreArticulo === nombreArticulo"></h4>
         </div>
-        
-
-
-        <table>
-          <tr>
-
-            <td>Desacuerdo: {{pregunta1Of1()}}</td>
-            <td>
-              <div style="height: 80px; width: 30px; background-color: rgb(63, 63, 63);" id="barra1">
-              </div>
-             
-            </td>
-          </tr>
-          <tr>
-          <td>Neutral: {{pregunta1Of2()}}</td>
-            <td>
-              <div style="height: 80px; width: 30px; background-color: rgb(51, 47, 47);" id="barra2"></div>
-            </td>
-          </tr>
-          <tr>
-            <td>De acuerdo: {{pregunta1Of3()}}</td>
-            <td>
-              <div style="height: 80px; width: 30px; background-color: blue;" id="barra3"></div>
-            </td>
-          </tr>
-          <tr>
-            <td>Muy de acuerdo: {{pregunta1Of4()}}</td>
-            <td>
-              <div style="height:80px; width: 30px; background-color: green;" id="barra4"></div>
-            </td>
-          </tr>
-          <tr>
-            <td></td>
-            <td>
-              <div style="height:80px; width: 30px;" id="barra4"></div>
-            </td>
-          </tr>
-          
-        </table>
+        <br>
+        <div class="col-lg-6">
+          <canvas id="respuesta1" width="200px"></canvas>
+        </div>
+        <br>
         <div class="d-flex justify-content-center">
           <h4>Pregunta 2: {{pregunta2}}</h4><br> <br>
         </div>
@@ -79,11 +54,11 @@
             <td>
               <div style="height: 80px; width: 30px; background-color: rgb(63, 63, 63);" id="barra5">
               </div>
-             
+
             </td>
           </tr>
           <tr>
-          <td>Neutral: {{pregunta2Of2()}}</td>
+            <td>Neutral: {{pregunta2Of2()}}</td>
             <td>
               <div style="height: 80px; width: 30px; background-color: rgb(51, 47, 47);" id="barra6"></div>
             </td>
@@ -106,7 +81,7 @@
               <div style="height:80px; width: 30px; " id="barra4"></div>
             </td>
           </tr>
-          
+
         </table>
         <div class="d-flex justify-content-center">
           <h4>Pregunta 3: {{pregunta3}}</h4><br> <br>
@@ -118,11 +93,11 @@
             <td>
               <div style="height: 80px; width: 30px; background-color: rgb(63, 63, 63);" id="barra9">
               </div>
-             
+
             </td>
           </tr>
           <tr>
-          <td>Neutral: {{pregunta3Of2()}}</td>
+            <td>Neutral: {{pregunta3Of2()}}</td>
             <td>
               <div style="height: 80px; width: 30px; background-color: rgb(51, 47, 47);" id="barra10"></div>
             </td>
@@ -145,7 +120,7 @@
               <div style="height:80px; width: 30px; " id="barra4"></div>
             </td>
           </tr>
-          
+
         </table>
 
         <div class="d-flex justify-content-center">
@@ -158,11 +133,11 @@
             <td>
               <div style="height: 80px; width: 30px; background-color: rgb(63, 63, 63);" id="barra13">
               </div>
-             
+
             </td>
           </tr>
           <tr>
-          <td>Neutral: {{pregunta4Of2()}}</td>
+            <td>Neutral: {{pregunta4Of2()}}</td>
             <td>
               <div style="height: 80px; width: 30px; background-color: rgb(51, 47, 47);" id="barra14"></div>
             </td>
@@ -185,7 +160,7 @@
               <div style="height:80px; width: 30px; " id="barra4"></div>
             </td>
           </tr>
-          
+
         </table>
         <div class="d-flex justify-content-center">
           <h4>Pregunta 5: {{pregunta5}}</h4><br> <br>
@@ -197,11 +172,11 @@
             <td>
               <div style="height: 80px; width: 30px; background-color: rgb(63, 63, 63);" id="barra17">
               </div>
-             
+
             </td>
           </tr>
           <tr>
-          <td>Neutral: {{pregunta5Of2()}}</td>
+            <td>Neutral: {{pregunta5Of2()}}</td>
             <td>
               <div style="height: 80px; width: 30px; background-color: rgb(51, 47, 47);" id="barra18"></div>
             </td>
@@ -224,7 +199,7 @@
               <div style="height:80px; width: 30px; " id="barra4"></div>
             </td>
           </tr>
-          
+
         </table>
 
         <div class="d-flex justify-content-center">
@@ -237,11 +212,11 @@
             <td>
               <div style="height: 80px; width: 30px; background-color: rgb(63, 63, 63);" id="barra21">
               </div>
-             
+
             </td>
           </tr>
           <tr>
-          <td>Neutral: {{pregunta6Of2()}}</td>
+            <td>Neutral: {{pregunta6Of2()}}</td>
             <td>
               <div style="height: 80px; width: 30px; background-color: rgb(51, 47, 47);" id="barra22"></div>
             </td>
@@ -264,7 +239,7 @@
               <div style="height:80px; width: 30px; " id="barra4"></div>
             </td>
           </tr>
-          
+
         </table>
         <div class="d-flex justify-content-center">
           <h4>Pregunta 7: {{pregunta7}}</h4><br> <br>
@@ -276,11 +251,11 @@
             <td>
               <div style="height: 80px; width: 30px; background-color: rgb(63, 63, 63);" id="barra25">
               </div>
-             
+
             </td>
           </tr>
           <tr>
-          <td>Neutral: {{pregunta4Of2()}}</td>
+            <td>Neutral: {{pregunta4Of2()}}</td>
             <td>
               <div style="height: 80px; width: 30px; background-color: rgb(51, 47, 47);" id="barra26"></div>
             </td>
@@ -303,7 +278,7 @@
               <div style="height:80px; width: 30px; " id="barra4"></div>
             </td>
           </tr>
-          
+
         </table>
         <div class="d-flex justify-content-center">
           <h4>Pregunta 8: {{pregunta8}}</h4><br> <br>
@@ -315,11 +290,11 @@
             <td>
               <div style="height: 80px; width: 30px; background-color: rgb(63, 63, 63);" id="barra29">
               </div>
-             
+
             </td>
           </tr>
           <tr>
-          <td>Neutral: {{pregunta8Of2()}}</td>
+            <td>Neutral: {{pregunta8Of2()}}</td>
             <td>
               <div style="height: 80px; width: 30px; background-color: rgb(51, 47, 47);" id="barra30"></div>
             </td>
@@ -342,7 +317,7 @@
               <div style="height:80px; width: 30px; " id="barra4"></div>
             </td>
           </tr>
-          
+
         </table>
         <div class="d-flex justify-content-center">
           <h4>Pregunta 9: {{pregunta9}}</h4><br> <br>
@@ -354,11 +329,11 @@
             <td>
               <div style="height: 80px; width: 30px; background-color: rgb(63, 63, 63);" id="barra33">
               </div>
-             
+
             </td>
           </tr>
           <tr>
-          <td>Neutral: {{pregunta9Of2()}}</td>
+            <td>Neutral: {{pregunta9Of2()}}</td>
             <td>
               <div style="height: 80px; width: 30px; background-color: rgb(51, 47, 47);" id="barra34"></div>
             </td>
@@ -381,7 +356,7 @@
               <div style="height:80px; width: 30px; " id="barra4"></div>
             </td>
           </tr>
-          
+
         </table>
         <div class="d-flex justify-content-center">
           <h4>Pregunta 10: {{pregunta10}}</h4><br> <br>
@@ -393,11 +368,11 @@
             <td>
               <div style="height: 80px; width: 30px; background-color: rgb(63, 63, 63);" id="barra37">
               </div>
-             
+
             </td>
           </tr>
           <tr>
-          <td>Neutral: {{pregunta10Of2()}}</td>
+            <td>Neutral: {{pregunta10Of2()}}</td>
             <td>
               <div style="height: 80px; width: 30px; background-color: rgb(51, 47, 47);" id="barra38"></div>
             </td>
@@ -420,7 +395,7 @@
               <div style="height:80px; width: 30px; " id="barra4"></div>
             </td>
           </tr>
-          
+
         </table>
         <br>
         <hr />
@@ -428,15 +403,15 @@
 
 
 
-        
-          <br>
-          <hr />
-  
-  
-  
-  
-          <br> <br>
-          </div>
-        </section>
-        </section>
-        </div>
+
+        <br>
+        <hr />
+
+
+
+
+        <br> <br>
+      </div>
+    </section>
+  </section>
+</div>
