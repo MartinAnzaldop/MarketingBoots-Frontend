@@ -156,7 +156,7 @@ agregarEncuesta(){
   
     //agregamos pedido
     this._Encuesta.guardarRespuestas(ENCUESTA).subscribe(dato=>{
-    this.router.navigate(['/listasSolicitud'])
+    this.router.navigate(['/listaEncuestasUser'])
     this.toastr.success('La encuesta fue contestada con exito','Encuesta contestada');
   }, error=>{
   console.log(error);

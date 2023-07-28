@@ -1,7 +1,7 @@
 <app-nabvar-user></app-nabvar-user><br><br><br><br>
 <div class="container mt-5 table-responsive">
 
-    <h1 class="text-center">Lista de Encuestas</h1>
+    <h1 class="text-center">Lista de encuestas</h1><br>
     <table class="table table-bordered border-primary table-hover">
       <thead class="table-dark">
         <tr class="text-center">
@@ -22,7 +22,7 @@
           <td>{{solicitud.marcaArticulo}}</td>
           <td>
 
-            <button [routerLink]="['/encuestasUser', solicitud._id]" type="button" class="btn btn-success me-2">Visualizar</button>
+            <button [routerLink]="['/encuestasUser', solicitud._id]" type="button" class="btn btn-success me-2">Encuesta</button>
             <button [routerLink]="['/estadisticasUser', solicitud._id]" type="button" class="btn btn-info me-2">Estadisticas</button>
 
           </td>
