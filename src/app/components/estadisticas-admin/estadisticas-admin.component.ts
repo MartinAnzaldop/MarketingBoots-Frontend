@@ -1,20 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Chart } from 'chart.js';
 import { ToastrService } from 'ngx-toastr';
 import { Encuesta } from 'src/app/models/encuesta';
 import { BancoPreguService } from 'src/app/service/bancoPregu.service';
 import { RespuestasService } from 'src/app/service/respuestas.service';
 import { SolicitudService } from 'src/app/service/solicitud.service';
-import {Chart, registerables} from 'node_modules/chart.js'
-Chart.register(...registerables);
 
 @Component({
-  selector: 'app-estadisticas',
-  templateUrl: './estadisticas.component.html',
-  styleUrls: ['./estadisticas.component.css'],
+  selector: 'app-estadisticas-admin',
+  templateUrl: './estadisticas-admin.component.html',
+  styleUrls: ['./estadisticas-admin.component.css']
 })
-export class EstadisticasComponent implements OnInit {
+export class EstadisticasAdminComponent implements OnInit {
   EncuestaForm: FormGroup;
   listaEncuestas: Encuesta[] = [];
   objeto: any;

@@ -39,6 +39,7 @@ import { PruebaComponent } from './components/prueba/prueba.component';
 import { EncuestasAdminComponent } from './components/encuestas-admin/encuestas-admin.component';
 import { ListaEncuestasUserComponent } from './components/lista-encuestas-user/lista-encuestas-user.component';
 import { SolicitudesEncuestasAdminComponent } from './components/solicitudes-encuestas-admin/solicitudes-encuestas-admin.component';
+import { EstadisticasAdminComponent } from './components/estadisticas-admin/estadisticas-admin.component';
 
 
 @NgModule({
@@ -72,6 +73,7 @@ import { SolicitudesEncuestasAdminComponent } from './components/solicitudes-enc
     EncuestasAdminComponent,
     ListaEncuestasUserComponent,
     SolicitudesEncuestasAdminComponent,
+    EstadisticasAdminComponent,
    
 
 
@@ -86,6 +88,7 @@ import { SolicitudesEncuestasAdminComponent } from './components/solicitudes-enc
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot(), // ToastrModule added
     HttpClientModule,
+  
 
     AngularFireModule.initializeApp(environment.firebaseConfig)
   ],

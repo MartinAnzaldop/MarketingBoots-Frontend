@@ -99,7 +99,7 @@ export class SolicitudesEncuestasComponent implements OnInit {
       //agregamos pedido
       console.log(SOLICITUD);
       this._Solicitud.guardarSolicitud(SOLICITUD).subscribe(dato=>{
-      this.router.navigate(['/listasSolicitud'])
+      this.router.navigate(['/userVista'])
       this.toastr.success('La solicitud fue agregado con exito','Pedido agregado');
     }, error=>{
     console.log(error);
