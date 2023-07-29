@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { InicioComponent } from './components/inicio/inicio.component';
@@ -41,6 +42,8 @@ import { ListaEncuestasUserComponent } from './components/lista-encuestas-user/l
 import { SolicitudesEncuestasAdminComponent } from './components/solicitudes-encuestas-admin/solicitudes-encuestas-admin.component';
 import { EstadisticasAdminComponent } from './components/estadisticas-admin/estadisticas-admin.component';
 
+import { ChatbotPopupComponent } from './components/chatbot-popup/chatbot-popup.component';
+
 
 @NgModule({
   declarations: [
@@ -66,6 +69,7 @@ import { EstadisticasAdminComponent } from './components/estadisticas-admin/esta
     RecuperarPasswordComponent,
     SpinnerComponent,
     EncuestasUserComponent,
+
     SolicitudesEncuestasComponent,
     ListaSolicitudesComponent,
     ListaEncuestasAdminComponent,
@@ -74,6 +78,7 @@ import { EstadisticasAdminComponent } from './components/estadisticas-admin/esta
     ListaEncuestasUserComponent,
     SolicitudesEncuestasAdminComponent,
     EstadisticasAdminComponent,
+    ChatbotPopupComponent,
    
 
 
@@ -83,16 +88,21 @@ import { EstadisticasAdminComponent } from './components/estadisticas-admin/esta
   ],
   imports: [
     BrowserModule,
+
     AppRoutingModule,
     ReactiveFormsModule,
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot(), // ToastrModule added
+
     HttpClientModule,
   
 
     AngularFireModule.initializeApp(environment.firebaseConfig)
+
   ],
+
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+ 

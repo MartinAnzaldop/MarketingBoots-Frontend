@@ -56,7 +56,10 @@ export class SolicitudesEncuestasComponent implements OnInit {
     this.obtenerBancoPregu()
     this. esEditar()
   }
-
+  isChatbotVisible = false;
+  toggleChatbot(): void {
+    this.isChatbotVisible = !this.isChatbotVisible;
+  }
   agregarSolicitud(){
     console.log(this.solicitudEncuestaForm)
     const SOLICITUD: solicitudEncuesta ={

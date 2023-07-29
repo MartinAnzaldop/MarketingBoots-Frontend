@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
@@ -7,6 +8,7 @@ import { BancoPreguService } from 'src/app/service/bancoPregu.service';
 import { RespuestasService } from 'src/app/service/respuestas.service';
 import { SolicitudService } from 'src/app/service/solicitud.service';
 import {Chart, registerables} from 'node_modules/chart.js'
+
 Chart.register(...registerables);
 
 @Component({
@@ -15,6 +17,7 @@ Chart.register(...registerables);
   styleUrls: ['./estadisticas.component.css'],
 })
 export class EstadisticasComponent implements OnInit {
+
   EncuestaForm: FormGroup;
   listaEncuestas: Encuesta[] = [];
   objeto: any;

@@ -11,5 +11,8 @@ export class UserVistaComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  isChatbotVisible = false;
+  toggleChatbot(): void {
+    this.isChatbotVisible = !this.isChatbotVisible;
+  }
 }

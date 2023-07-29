@@ -22,10 +22,7 @@ export class RespuestasEncuestasComponent implements OnInit {
         respuesta4:['', Validators.required],
         respuesta5:['', Validators.required],
         respuesta6:['', Validators.required],
-        respuesta7:['', Validators.required],
-        respuesta8:['', Validators.required],
-        respuesta9:['', Validators.required],
-        respuesta10:['', Validators.required],
+
       })
     }
 
@@ -41,12 +38,8 @@ export class RespuestasEncuestasComponent implements OnInit {
       respuesta4: this.respuestasForm.get('respuesta4')?.value,
       respuesta5: this.respuestasForm.get('respuesta5')?.value,
       respuesta6: this.respuestasForm.get('respuesta6')?.value,
-      respuesta7: this.respuestasForm.get('respuesta7')?.value,
-      respuesta8: this.respuestasForm.get('respuesta8')?.value,
-      respuesta9: this.respuestasForm.get('respuesta9')?.value,
-      respuesta10: this.respuestasForm.get('respuesta10')?.value,
+
 
     }
-    
-    }
+  }
 }
