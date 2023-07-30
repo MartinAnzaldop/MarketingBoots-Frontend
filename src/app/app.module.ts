@@ -43,6 +43,7 @@ import { SolicitudesEncuestasAdminComponent } from './components/solicitudes-enc
 import { EstadisticasAdminComponent } from './components/estadisticas-admin/estadisticas-admin.component';
 
 import { ChatbotPopupComponent } from './components/chatbot-popup/chatbot-popup.component';
+import { ChatBotComponent } from './components/chat-bot/chat-bot.component';
 
 
 @NgModule({
@@ -79,6 +80,7 @@ import { ChatbotPopupComponent } from './components/chatbot-popup/chatbot-popup.
     SolicitudesEncuestasAdminComponent,
     EstadisticasAdminComponent,
     ChatbotPopupComponent,
+    ChatBotComponent,
    
 
 

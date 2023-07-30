@@ -3,6 +3,7 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { DatosUsuarioService } from 'src/app/service/DatosUsuario.service';
 import { FirebaseCodeErrorService } from 'src/app/service/firebase-code-error.service';
 
 @Component({
@@ -15,7 +16,8 @@ export class UserIniciarSesionComponent implements OnInit {
   loading: boolean = false;
 
   constructor(private fb: FormBuilder, private afAuth: AngularFireAuth, private  toastr: ToastrService,
-    private router: Router, private firebaseError: FirebaseCodeErrorService) {
+    private router: Router, private firebaseError: FirebaseCodeErrorService,
+    private _DatosUsuario: DatosUsuarioService) {
       this.loginUsuario = this.fb.group({
         email: ['',[Validators.required, Validators.email]],
         password: ['', [Validators.required, Validators.minLength(6)]],
@@ -27,12 +29,13 @@ export class UserIniciarSesionComponent implements OnInit {
   login(){
     const email = this.loginUsuario.value.email;
     const password = this.loginUsuario.value.password;
-
     this.loading = true;
     this.afAuth.signInWithEmailAndPassword(email, password).then((user) => {
       console.log(user);
       if(user.user?.emailVerified){
           this.router.navigate(['/userVista']);
+          this._DatosUsuario.setEmail(email);
+          console.log('correo guardado'+this._DatosUsuario.getEmail());
       }else {
         this.router.navigate(['/verificacionCorreo']);
       }

@@ -6,7 +6,7 @@
     <h1 class="mb-2">Inicio de Sesión</h1>
     <form (ngSubmit)="login()" [formGroup]="loginUsuario">
       <div class="form-floating mb-3">
-        <input type="email" formControlName="email" class="form-control"  placeholder="Correo electronico">
+        <input type="email" formControlName="email"  class="form-control"  placeholder="Correo electronico">
         <label>Correo electronico</label>
       <span *ngIf="loginUsuario.get('email')?.hasError('required') && loginUsuario.get('email')?.touched" class="text-danger errorLabel">
         El <strong>Correo</strong> es invalido.

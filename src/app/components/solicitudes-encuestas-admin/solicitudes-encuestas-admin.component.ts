@@ -4,6 +4,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { BancoPregu } from 'src/app/models/bancoPregu';
 import { solicitudEncuesta } from 'src/app/models/solicitudEncuesta';
+import { DatosUsuarioService } from 'src/app/service/DatosUsuario.service';
 import { BancoPreguService } from 'src/app/service/bancoPregu.service';
 import { SolicitudService } from 'src/app/service/solicitud.service';
 
@@ -13,16 +14,17 @@ import { SolicitudService } from 'src/app/service/solicitud.service';
   styleUrls: ['./solicitudes-encuestas-admin.component.css']
 })
 export class SolicitudesEncuestasAdminComponent implements OnInit {
-
   solicitudEncuestaForm: FormGroup;
   id:string | null;
   titulo: string='Agregar solicitud';
   listaBancoPregu:BancoPregu []=[];
-
+  usuario:string;
+  
     constructor(private _BancoPreguService: BancoPreguService, private fb: FormBuilder, private  router: Router, private toastr: ToastrService,
-     private aRouter: ActivatedRoute, private _Solicitud: SolicitudService) {
+     private aRouter: ActivatedRoute, private _Solicitud: SolicitudService, private _DatosUsuario: DatosUsuarioService) {
 
   this.solicitudEncuestaForm=this.fb.group({
+    
     empresa:['', Validators.required],
     direccion:['', Validators.required],
     contacto:['', Validators.required],
@@ -55,11 +57,18 @@ export class SolicitudesEncuestasAdminComponent implements OnInit {
   ngOnInit(): void {
     this.obtenerBancoPregu()
     this. esEditar()
+    this.usuario=this._DatosUsuario.getEmail();
+    console.log('correo'+this._DatosUsuario.getEmail())
   }
-
+  isChatbotVisible = false;
+  toggleChatbot(): void {
+    this.isChatbotVisible = !this.isChatbotVisible;
+  }
   agregarSolicitud(){
+    
     console.log(this.solicitudEncuestaForm)
     const SOLICITUD: solicitudEncuesta ={
+      usuario: this._DatosUsuario.getEmail(),
       empresa: this.solicitudEncuestaForm.get('empresa')?.value,
       direccion: this.solicitudEncuestaForm.get('direccion')?.value,
       contacto: this.solicitudEncuestaForm.get('contacto')?.value,
@@ -122,6 +131,7 @@ export class SolicitudesEncuestasAdminComponent implements OnInit {
       this.titulo='Editar solicitud';
       this._Solicitud.obtenerSolicitudById(this.id).subscribe(data=>{
       this.solicitudEncuestaForm.setValue({
+          usuario: data.usuario,
           empresa: data.empresa,
           direccion: data.direccion,
           contacto: data.contacto,
@@ -156,3 +166,6 @@ export class SolicitudesEncuestasAdminComponent implements OnInit {
   }
   
   }
+
+
+  
