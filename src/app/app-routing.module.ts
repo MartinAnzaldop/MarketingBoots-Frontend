@@ -76,16 +76,6 @@ const routes: Routes = [
   {path:'listaBancoPreguntas', component:ListaBancoPreguntasComponent},
   {path:'editarBancoPregu/:id', component:AgregarPreguntaComponent},
 
-<<<<<<< HEAD
-
-=======
-  
-
-
-
- 
->>>>>>> produccion
-
   //Norma
   {path:'respuestasEncuestas', component:RespuestasEncuestasComponent},
   {path:'listaRespuestasEncuestas', component:ListaRespuestasEncuestasComponent},
