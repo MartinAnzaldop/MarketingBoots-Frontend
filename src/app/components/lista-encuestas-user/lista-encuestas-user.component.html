@@ -13,8 +13,8 @@
           <th>Operaciones</th>
         </tr>
       </thead>
-      <tbody>
-        <tr *ngFor="let solicitud of listaSolicitudes" class="text-center">
+      <tbody *ngFor="let solicitud of listaSolicitudes">
+        <tr  class="text-center" *ngIf="solicitud.usuario === correo">
           <td>{{solicitud.empresa}}</td>
           <td>{{solicitud.encargado}}</td>
           <td>{{solicitud.nombreArticulo}}</td>

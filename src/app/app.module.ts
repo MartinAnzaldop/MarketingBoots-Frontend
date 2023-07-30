@@ -46,6 +46,7 @@ import { AgregarPreguntaUsuarioComponent } from './components/agregar-pregunta-u
 import { EstadisticasAdminComponent } from './components/estadisticas-admin/estadisticas-admin.component';
 
 import { ChatbotPopupComponent } from './components/chatbot-popup/chatbot-popup.component';
+import { ChatBotComponent } from './components/chat-bot/chat-bot.component';
 
 
 
@@ -86,6 +87,10 @@ import { ChatbotPopupComponent } from './components/chatbot-popup/chatbot-popup.
 
     EstadisticasAdminComponent,
     ChatbotPopupComponent,
+
+
+
+    ChatBotComponent,
 
 
 

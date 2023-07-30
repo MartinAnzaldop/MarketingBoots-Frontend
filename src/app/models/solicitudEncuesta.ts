@@ -1,5 +1,6 @@
 export class solicitudEncuesta{
     _id?: number;
+    usuario: string;
     empresa: string;
     direccion: string;
     contacto: string;
