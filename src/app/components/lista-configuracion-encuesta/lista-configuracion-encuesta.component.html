@@ -1,0 +1,31 @@
+<app-navbar-admin></app-navbar-admin><br><br><br><br>
+<div class="container mt-3">
+  <h1 class="text-center m-5">Lista configuración de encuestas.</h1>
+  <button type="button" class="btn btn-success float-end m-2" routerLink="/agregarConfiguracion">Agregar</button>
+    <table class="table table-hover table-bordered border-primary m-3" style="text-align: center;">
+      <thead class="table-dark g-4">
+        <tr>
+          <th>Fecha inicio</th>
+          <th>Fecha final</th>
+          <th>Titulo</th>
+          <th>Población</th>
+          <th>Número de encuesta</th>
+          <th>Operaciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let encuestaConfigurada of listaEncuestaConfigurada" class="text-center" style="text-align: center;">
+          <td>{{encuestaConfigurada.fechaInicio}}</td>
+          <td>{{encuestaConfigurada.fechaFinal}}</td>
+          <td>{{encuestaConfigurada.titulo}}</td>
+          <td>{{encuestaConfigurada.poblacion}}</td>
+          <td>{{encuestaConfigurada.numeroEncuesta}}</td>
+          <td class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <button [routerLink]="['/editarEncuestaConfigurada', encuestaConfigurada._id]" class="btn btn-warning btn-sm">Editar</button>
+            <button (click)="eliminarEncuestaConfigurada(encuestaConfigurada._id)" type="button" class="btn btn-danger btn-sm">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+

@@ -2,8 +2,8 @@
 <div class="container mt-5">
     <h1 class="text-center">Lista de respuestas de encuestas</h1>
     <button [routerLink]="['/respuestasEncuestas']" type="button" class="btn btn-success float-end m-2">agregar</button>
-    <table class="table table-dark table-hover">
-      <thead>
+        <table class="table table-hover table-bordered border-primary m-3">
+          <thead class="table-dark g-4">
         <tr class="text-center">
           <th>Respuesta1</th>
           <th>Respuesta2</th>
@@ -11,8 +11,16 @@
           <th>Respuesta4</th>
           <th>Respuesta5</th>
           <th>Respuesta6</th>
+<<<<<<< HEAD
+          <th>Respuesta7</th>
+          <th>Respuesta8</th>
+          <th>Respuesta9</th>
+          <th>Respuesta10</th>
+          <th>Operaciones</th>
+=======
           <th>Operación</th>
 
+>>>>>>> produccion
         </tr>
       </thead>
       <tbody>
@@ -24,7 +32,6 @@
           <td>{{respuestas.respuesta5}}</td>
           <td>{{respuestas.respuesta6}}</td>
           <td>
-
             <button (click)="eliminarRespuestas(respuestas._id)" type="button" class="btn btn-danger">eliminar</button>
           </td>
         </tr>

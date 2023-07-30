@@ -1,0 +1,31 @@
+<app-navbar-admin></app-navbar-admin><br><br><br><br>
+<div class="container mt-5">
+    <h1 class="text-center">Lista de solicitud</h1>
+    <button type="button" class="btn btn-success float-end m-2" routerLink="/agregarPedido">agregar</button>
+    <table class="table table-hover table-bordered border-primary m-3">
+      <thead class="table-dark g-4">
+        <tr class="text-center">
+          <th>Empresa</th>
+          <th>Encargado</th>
+          <th>Articulo</th>
+          <th>categoria</th>
+          <th>Marca</th>
+          <th>Operaciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let pedido of listaPedido" class="text-center">
+          <td>{{pedido.empresa}}</td>
+          <td>{{pedido.encargado}}</td>
+          <td>{{pedido.nombreArticulo}}</td>
+          <td>{{pedido.categoria}}</td>
+          <td>{{pedido.marcaArticulo}}</td>
+          <td>
+
+            <button [routerLink]="['/editarPedido', pedido._id]" type="button" class="btn btn-warning me-2">editar</button>
+            <button (click)="eliminarPedido(pedido._id)" type="button" class="btn btn-danger">eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

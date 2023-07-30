@@ -40,10 +40,14 @@ import { PruebaComponent } from './components/prueba/prueba.component';
 import { EncuestasAdminComponent } from './components/encuestas-admin/encuestas-admin.component';
 import { ListaEncuestasUserComponent } from './components/lista-encuestas-user/lista-encuestas-user.component';
 import { SolicitudesEncuestasAdminComponent } from './components/solicitudes-encuestas-admin/solicitudes-encuestas-admin.component';
+
+import { AgregarPreguntaUsuarioComponent } from './components/agregar-pregunta-usuario/agregar-pregunta-usuario.component';
+
 import { EstadisticasAdminComponent } from './components/estadisticas-admin/estadisticas-admin.component';
 
 import { ChatbotPopupComponent } from './components/chatbot-popup/chatbot-popup.component';
 import { ChatBotComponent } from './components/chat-bot/chat-bot.component';
+
 
 
 @NgModule({
@@ -78,10 +82,16 @@ import { ChatBotComponent } from './components/chat-bot/chat-bot.component';
     EncuestasAdminComponent,
     ListaEncuestasUserComponent,
     SolicitudesEncuestasAdminComponent,
+
+    AgregarPreguntaUsuarioComponent,
+
     EstadisticasAdminComponent,
     ChatbotPopupComponent,
+
+
+
     ChatBotComponent,
-   
+
 
 
 
@@ -97,7 +107,7 @@ import { ChatBotComponent } from './components/chat-bot/chat-bot.component';
     ToastrModule.forRoot(), // ToastrModule added
 
     HttpClientModule,
-  
+
 
     AngularFireModule.initializeApp(environment.firebaseConfig)
 
@@ -107,4 +117,3 @@ import { ChatBotComponent } from './components/chat-bot/chat-bot.component';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
- 

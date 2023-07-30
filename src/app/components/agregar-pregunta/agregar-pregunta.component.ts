@@ -23,7 +23,7 @@ export class AgregarPreguntaComponent implements OnInit {
       })
       this.id=this.aRouter.snapshot.paramMap.get('id')
      }
-  
+
     ngOnInit(): void {
       this.esEditar()
     }
@@ -35,7 +35,7 @@ export class AgregarPreguntaComponent implements OnInit {
         categoria: this.bancoPreguForm.get('categoria')?.value,
         opcion: this.bancoPreguForm.get('opcion')?.value,
       }
-      
+
       if(this.id !==null){
         //editamos banco de pregunta
         this._BancoPreguService.editarBancoPregu(this.id, BANCOPREGU).subscribe(data=>{
@@ -55,7 +55,7 @@ export class AgregarPreguntaComponent implements OnInit {
       this.bancoPreguForm.reset()
       })
       }
-      
+
       }
 
 

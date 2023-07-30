@@ -1,3 +1,4 @@
+import { AgregarPreguntaUsuarioComponent } from './components/agregar-pregunta-usuario/agregar-pregunta-usuario.component';
 import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { InicioComponent } from './components/inicio/inicio.component';
@@ -42,7 +43,7 @@ const routes: Routes = [
   {path:'inicio', component:InicioComponent},
   {path:'navbarAdmin', component:NavbarAdminComponent},
   {path:'pedido', component:PedidoComponent},
- 
+
 
   {path:'chart', component:UserResultadoEncuestaComponent},
 
@@ -60,25 +61,20 @@ const routes: Routes = [
 
 
   //Alexandra
- 
-  {path:'inicioUsiario', component:UserIniciarSesionComponent},
+
+  {path:'inicioUsuario', component:UserIniciarSesionComponent},
   {path:'registrarUsuario', component:UserRegistroComponent},
   {path:'inicioAdministrador', component:AdminIniciarSesionComponent},
   {path:'recuperarContraseña', component:RecuperarPasswordComponent},
   {path:'verificacionCorreo', component:VerificarCorreoComponent},
   {path:'solicitudEncuesta', component:SolicitudesEncuestasComponent},
   {path:'solicitudEncuestaAdmin', component:SolicitudesEncuestasAdminComponent},
+  {path:'agregarPreguntaUsuario', component:AgregarPreguntaUsuarioComponent},
 
   //Ana
   {path:'bancoPreguntas', component:AgregarPreguntaComponent},
   {path:'listaBancoPreguntas', component:ListaBancoPreguntasComponent},
   {path:'editarBancoPregu/:id', component:AgregarPreguntaComponent},
-
-  
-
-
-
- 
 
   //Norma
   {path:'respuestasEncuestas', component:RespuestasEncuestasComponent},
