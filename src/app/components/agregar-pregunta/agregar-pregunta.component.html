@@ -18,6 +18,7 @@
                   <input type="name" formControlName="pregunta" name="pregunta" id="pregunta" placeholder="Pregunta" autocomplete="on" required>
                   <div class="text-danger" *ngIf="bancoPreguForm.get('pregunta')?.hasError('required') && bancoPreguForm.get('pregunta')?.touched">
                     <span>La pregunta <strong>es obligatoria</strong></span>
+
                   </div>
                 </div>
                 <div class="row">
@@ -25,7 +26,7 @@
                         <td><label align-items="left">Selecciona la categoría:</label></td>
                     </tr>
                     <select class="form-control" formControlName="categoria" type="text" name="categoria"  id="categoria" placeholder="Selecciona la categoría" required>
-                      <option value="categoria"disabled> Selecciona la categoría</option>
+                      <option value="" disabled> --Seleciona una opción--</option>
                       <option value="Precio">Precio</option>
                       <option value="Calidad">Calidad</option>
                       <option value="Comunidad">Comunidad</option>
@@ -39,7 +40,7 @@
                       <td><label align-items="left">Selecciona una opción:</label></td>
                   </tr>
                   <select class="form-control" formControlName="opcion" type="text" name="opcion"  id="opcion" placeholder="Selecciona una opción" required>
-                    <option value="opcion"disabled> Selecciona una opción</option>
+                    <option value="" disabled> --Seleciona una opción--</option>
                     <option value="opcion 1">opcion 1</option>
                     <option value="opcion 2">opcion 2</option>
                     <option value="opcion 3">opcion 3</option>

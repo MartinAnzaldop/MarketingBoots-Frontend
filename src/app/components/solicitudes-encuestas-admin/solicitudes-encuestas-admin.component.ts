@@ -56,8 +56,8 @@ export class SolicitudesEncuestasAdminComponent implements OnInit {
 
   ngOnInit(): void {
     this.obtenerBancoPregu()
-    this. esEditar()
-    this.usuario=this._DatosUsuario.getEmail();
+    this.esEditar();
+    
     console.log('correo'+this._DatosUsuario.getEmail())
   }
   isChatbotVisible = false;
@@ -99,7 +99,7 @@ export class SolicitudesEncuestasAdminComponent implements OnInit {
     if(this.id !==null){
       //editamos pedido
       this._Solicitud.editarSolicitud(this.id, SOLICITUD).subscribe(data=>{
-        this.router.navigate(['/adminVista'])
+        this.router.navigate(['/listaEncuestasAdmin'])
         this.toastr.info('La solicitud fue editado con exito','Pedido editado');
       },error=>{
     console.log(error)
@@ -131,7 +131,6 @@ export class SolicitudesEncuestasAdminComponent implements OnInit {
       this.titulo='Editar solicitud';
       this._Solicitud.obtenerSolicitudById(this.id).subscribe(data=>{
       this.solicitudEncuestaForm.setValue({
-          usuario: data.usuario,
           empresa: data.empresa,
           direccion: data.direccion,
           contacto: data.contacto,
@@ -164,8 +163,6 @@ export class SolicitudesEncuestasAdminComponent implements OnInit {
       })
     }
   }
-  
-  }
 
-
+}
   
