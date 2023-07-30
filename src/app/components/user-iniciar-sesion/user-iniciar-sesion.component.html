@@ -33,3 +33,8 @@
   </div>
   <app-spinner *ngIf="loading"></app-spinner>
 </div>
+
+<button  class="floating-btn" (click)="toggleChatbot()" class="btn btn-primary chatbot-button">
+  <img src="assets/images/chat.jpg" alt="Chatbot" class="chatbot-image" />
+</button><br>
+<app-chatbot-popup *ngIf="isChatbotVisible"></app-chatbot-popup>

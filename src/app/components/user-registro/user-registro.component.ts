@@ -61,4 +61,11 @@ export class UserRegistroComponent implements OnInit {
       this.router.navigate(['/inicioUsiario']);
     });
   }
+
+  isChatbotVisible = false;
+
+  toggleChatbot(): void {
+    this.isChatbotVisible = !this.isChatbotVisible;
+  }
+
 }

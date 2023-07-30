@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { InicioComponent } from './components/inicio/inicio.component';
@@ -39,7 +40,13 @@ import { PruebaComponent } from './components/prueba/prueba.component';
 import { EncuestasAdminComponent } from './components/encuestas-admin/encuestas-admin.component';
 import { ListaEncuestasUserComponent } from './components/lista-encuestas-user/lista-encuestas-user.component';
 import { SolicitudesEncuestasAdminComponent } from './components/solicitudes-encuestas-admin/solicitudes-encuestas-admin.component';
+
 import { AgregarPreguntaUsuarioComponent } from './components/agregar-pregunta-usuario/agregar-pregunta-usuario.component';
+
+import { EstadisticasAdminComponent } from './components/estadisticas-admin/estadisticas-admin.component';
+
+import { ChatbotPopupComponent } from './components/chatbot-popup/chatbot-popup.component';
+
 
 
 @NgModule({
@@ -66,6 +73,7 @@ import { AgregarPreguntaUsuarioComponent } from './components/agregar-pregunta-u
     RecuperarPasswordComponent,
     SpinnerComponent,
     EncuestasUserComponent,
+
     SolicitudesEncuestasComponent,
     ListaSolicitudesComponent,
     ListaEncuestasAdminComponent,
@@ -73,8 +81,12 @@ import { AgregarPreguntaUsuarioComponent } from './components/agregar-pregunta-u
     EncuestasAdminComponent,
     ListaEncuestasUserComponent,
     SolicitudesEncuestasAdminComponent,
+
     AgregarPreguntaUsuarioComponent,
-   
+
+    EstadisticasAdminComponent,
+    ChatbotPopupComponent,
+
 
 
 
@@ -83,14 +95,19 @@ import { AgregarPreguntaUsuarioComponent } from './components/agregar-pregunta-u
   ],
   imports: [
     BrowserModule,
+
     AppRoutingModule,
     ReactiveFormsModule,
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot(), // ToastrModule added
+
     HttpClientModule,
 
+
     AngularFireModule.initializeApp(environment.firebaseConfig)
+
   ],
+
   providers: [],
   bootstrap: [AppComponent]
 })

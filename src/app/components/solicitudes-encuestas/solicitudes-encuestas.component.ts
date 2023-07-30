@@ -56,7 +56,10 @@ export class SolicitudesEncuestasComponent implements OnInit {
     this.obtenerBancoPregu()
     this. esEditar()
   }
-
+  isChatbotVisible = false;
+  toggleChatbot(): void {
+    this.isChatbotVisible = !this.isChatbotVisible;
+  }
   agregarSolicitud(){
     console.log(this.solicitudEncuestaForm)
     const SOLICITUD: solicitudEncuesta ={
@@ -99,7 +102,7 @@ export class SolicitudesEncuestasComponent implements OnInit {
       //agregamos pedido
       console.log(SOLICITUD);
       this._Solicitud.guardarSolicitud(SOLICITUD).subscribe(dato=>{
-      this.router.navigate(['/listasSolicitud'])
+      this.router.navigate(['/userVista'])
       this.toastr.success('La solicitud fue agregado con exito','Pedido agregado');
     }, error=>{
     console.log(error);

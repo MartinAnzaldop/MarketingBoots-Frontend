@@ -90,7 +90,7 @@ export class SolicitudesEncuestasAdminComponent implements OnInit {
     if(this.id !==null){
       //editamos pedido
       this._Solicitud.editarSolicitud(this.id, SOLICITUD).subscribe(data=>{
-        this.router.navigate(['/listaSolicitud'])
+        this.router.navigate(['/adminVista'])
         this.toastr.info('La solicitud fue editado con exito','Pedido editado');
       },error=>{
     console.log(error)
@@ -99,7 +99,7 @@ export class SolicitudesEncuestasAdminComponent implements OnInit {
       //agregamos pedido
       console.log(SOLICITUD);
       this._Solicitud.guardarSolicitud(SOLICITUD).subscribe(dato=>{
-      this.router.navigate(['/listasSolicitud'])
+      this.router.navigate(['/adminVista'])
       this.toastr.success('La solicitud fue agregado con exito','Pedido agregado');
     }, error=>{
     console.log(error);

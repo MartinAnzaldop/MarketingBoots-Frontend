@@ -42,4 +42,10 @@ export class UserIniciarSesionComponent implements OnInit {
     })
   }
 
+  isChatbotVisible = false;
+
+  toggleChatbot(): void {
+    this.isChatbotVisible = !this.isChatbotVisible;
+  }
+
 }

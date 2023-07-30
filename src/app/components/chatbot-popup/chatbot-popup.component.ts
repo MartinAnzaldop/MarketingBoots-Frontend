@@ -1,18 +1,24 @@
 import { Component, OnInit } from '@angular/core';
 
+
+
 @Component({
-  selector: 'app-inicio',
-  templateUrl: './inicio.component.html',
-  styleUrls: ['./inicio.component.css'],
+  selector: 'app-chatbot-popup',
+  templateUrl: './chatbot-popup.component.html',
+  styleUrls: ['./chatbot-popup.component.css']
 })
-export class InicioComponent implements OnInit {
+export class ChatbotPopupComponent implements OnInit {
 
   constructor() { }
+
   ngOnInit(): void {
   }
+
   isChatbotVisible = false;
+
   toggleChatbot(): void {
     this.isChatbotVisible = !this.isChatbotVisible;
   }
+
 
 }

@@ -16,15 +16,16 @@
                     <fieldset>
                       <input type="text" formControlName="respuesta1" name="respuesta1" id="respuesta1" placeholder="respuesta1" autocomplete="on" required>
                     <div class="text-danger" *ngIf="respuestasForm.get('respuesta1')?.hasError('required') && respuestasForm.get('respuesta1')?.touched">
-                      <span>El respuesta 1 <strong>es obligatoria</strong></span>
+                      <span>La respuesta 1 <strong>es obligatoria</strong></span>
                     </div>
-                    </fieldset>
-                  </div>
+                  </fieldset>
+                </div>
                   <div class="col-lg-12">
+
                     <fieldset>
                       <input type="text" formControlName="respuesta2" name="respuesta2" id="respuesta2" placeholder="respuesta2" autocomplete="on" required>
-                    <div class="text-danger" *ngIf="respuestasForm.get('respuesta2')?.hasError('required') && respuestasForm.get('respuesta2')?.touched">
-                      <span>El respuesta 2 <strong>es obligatoria</strong></span>
+                       <div class="text-danger" *ngIf="respuestasForm.get('respuesta2')?.hasError('required') && respuestasForm.get('respuesta2')?.touched">
+                      <span>La respuesta 2 <strong>es obligatoria</strong></span>
                       </div>
                     </fieldset>
                   </div>
@@ -60,38 +61,8 @@
                     </div>
                     </fieldset>
                   </div>
-                  <div class="col-lg-12">
-                    <fieldset>
-                      <input type="text" formControlName="respuesta7" name="respuesta7" id="respuesta7" placeholder="respuesta7" autocomplete="on" required>
-                    <div class="text-danger" *ngIf="respuestasForm.get('respuesta7')?.hasError('required') && respuestasForm.get('respuesta7')?.touched">
-                      <span>El respuesta 7 <strong>es obligatoria</strong></span>
-                    </div>
-                    </fieldset>
-                  </div>
-                  <div class="col-lg-12">
-                    <fieldset>
-                      <input type="text" formControlName="respuesta8" name="respuesta8" id="respuesta8" placeholder="respuesta8" autocomplete="on" required>
-                    <div class="text-danger" *ngIf="respuestasForm.get('respuesta8')?.hasError('required') && respuestasForm.get('respuesta8')?.touched">
-                      <span>El respuesta 8 <strong>es obligatoria</strong></span>
-                    </div>
-                    </fieldset>
-                  </div>
-                  <div class="col-lg-12">
-                    <fieldset>
-                      <input type="text" formControlName="respuesta9" name="respuesta9" id="respuesta9" placeholder="respuesta9" autocomplete="on" required>
-                    <div class="text-danger" *ngIf="respuestasForm.get('respuesta9')?.hasError('required') && respuestasForm.get('respuesta9')?.touched">
-                      <span>El respuesta 9 <strong>es obligatoria</strong></span>
-                    </div>
-                    </fieldset>
-                  </div>
-                  <div class="col-lg-12">
-                    <fieldset>
-                      <input type="text" formControlName="respuesta10" name="respuesta10" id="respuesta10" placeholder="respuesta10" autocomplete="on" required>
-                    <div class="text-danger" *ngIf="respuestasForm.get('respuesta10')?.hasError('required') && respuestasForm.get('respuesta10')?.touched">
-                      <span>El respuesta 10 <strong>es obligatoria</strong></span>
-                    </div>
-                    </fieldset>
-                  </div>
+
+
                   <!--Boton de enviar-->
                   <div class="col-lg-12">
                     <fieldset>

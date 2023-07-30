@@ -20,6 +20,10 @@ export class ListaEncuestasUserComponent implements OnInit {
   ngOnInit(): void {
     this.obetenerSolicitud()
   }
+  isChatbotVisible = false;
+  toggleChatbot(): void {
+    this.isChatbotVisible = !this.isChatbotVisible;
+  }
 obetenerSolicitud(){
   this._Solicitud.getSolicitud().subscribe(data=>{
     console.log(data);

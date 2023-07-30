@@ -54,7 +54,7 @@
               <fieldset>
                 <label>Seleccione la categoria</label>
                 <select name="categoria" formControlName="categoria" id="categoria" class="form-control">
-                  <option value="opcion2" disabled>-- Seleccione Categoria a encuestar --</option>
+                  <option value="" disabled> --Seleciona una opción--</option>
                   <option value="servicio">Servicio</option>
                   <option value="producto">Producto</option>
                 </select>
@@ -158,7 +158,7 @@
                   <label>Eliga tipo de poblacion</label>
                   <select name="poblacion" formControlName="poblacion" id="poblacion" class="form-control"
                     placeholder="Poblacion">
-                    <option value="opcion2" disabled>-- Seleccione poblacion a encuestar --</option>
+                    <option value="" disabled> --Seleciona una opción--</option>
                     <option value="nino">Niño</option>
                     <option value="joven">Joven</option>
                     <option value="adulto">Adulto</option>
@@ -219,6 +219,7 @@
                       [value]="bancoPregu.pregunta ? bancoPregu.pregunta.toString() : ''">
                       {{ bancoPregu.pregunta }}
                     </option>
+                    <option value="" disabled> --Seleciona una opción--</option>
                   </select>
                   <div class="text-danger"
                     *ngIf="solicitudEncuestaForm.get('pregunta1')?.hasError('required') && solicitudEncuestaForm.get('pregunta1')?.touched">
@@ -236,6 +237,7 @@
                       [value]="bancoPregu.pregunta ? bancoPregu.pregunta.toString() : ''">
                       {{ bancoPregu.pregunta }}
                     </option>
+                    <option value="" disabled> --Seleciona una opción--</option>
                   </select>
                   <div class="text-danger" formControlName="pregunta2" name="pregunta2"
                     *ngIf="solicitudEncuestaForm.get('pregunta2')?.hasError('required') && solicitudEncuestaForm.get('pregunta2')?.touched">
@@ -253,6 +255,7 @@
                       [value]="bancoPregu.pregunta ? bancoPregu.pregunta.toString() : ''">
                       {{ bancoPregu.pregunta }}
                     </option>
+                    <option value="" disabled> --Seleciona una opción--</option>
                   </select>
                   <div class="text-danger"
                     *ngIf="solicitudEncuestaForm.get('pregunta3')?.hasError('required') && solicitudEncuestaForm.get('pregunta3')?.touched">
@@ -270,6 +273,7 @@
                       [value]="bancoPregu.pregunta ? bancoPregu.pregunta.toString() : ''">
                       {{ bancoPregu.pregunta }}
                     </option>
+                    <option value="" disabled> --Seleciona una opción--</option>
                   </select>
                   <div class="text-danger"
                     *ngIf="solicitudEncuestaForm.get('pregunta4')?.hasError('required') && solicitudEncuestaForm.get('pregunta4')?.touched">
@@ -287,6 +291,7 @@
                       [value]="bancoPregu.pregunta ? bancoPregu.pregunta.toString() : ''">
                       {{ bancoPregu.pregunta }}
                     </option>
+                    <option value="" disabled> --Seleciona una opción--</option>
                   </select>
                   <div class="text-danger"
                     *ngIf="solicitudEncuestaForm.get('pregunta5')?.hasError('required') && solicitudEncuestaForm.get('pregunta5')?.touched">
@@ -304,6 +309,7 @@
                       [value]="bancoPregu.pregunta ? bancoPregu.pregunta.toString() : ''">
                       {{ bancoPregu.pregunta }}
                     </option>
+                    <option value="" disabled> --Seleciona una opción--</option>
                   </select>
                   <div class="text-danger"
                     *ngIf="solicitudEncuestaForm.get('pregunta6')?.hasError('required') && solicitudEncuestaForm.get('pregunta6')?.touched">
@@ -321,6 +327,7 @@
                       [value]="bancoPregu.pregunta ? bancoPregu.pregunta.toString() : ''">
                       {{ bancoPregu.pregunta }}
                     </option>
+                    <option value="" disabled> --Seleciona una opción--</option>
                   </select>
                   <div class="text-danger"
                     *ngIf="solicitudEncuestaForm.get('pregunta7')?.hasError('required') && solicitudEncuestaForm.get('pregunta7')?.touched">
@@ -338,6 +345,7 @@
                       [value]="bancoPregu.pregunta ? bancoPregu.pregunta.toString() : ''">
                       {{ bancoPregu.pregunta }}
                     </option>
+                    <option value="" disabled> --Seleciona una opción--</option>
                   </select>
                   <div class="text-danger"
                     *ngIf="solicitudEncuestaForm.get('pregunta8')?.hasError('required') && solicitudEncuestaForm.get('pregunta8')?.touched">
@@ -355,6 +363,7 @@
                       [value]="bancoPregu.pregunta ? bancoPregu.pregunta.toString() : ''">
                       {{ bancoPregu.pregunta }}
                     </option>
+                    <option value="" disabled> --Seleciona una opción--</option>
                   </select>
                   <div class="text-danger"
                     *ngIf="solicitudEncuestaForm.get('pregunta9')?.hasError('required') && solicitudEncuestaForm.get('pregunta9')?.touched">
@@ -372,6 +381,7 @@
                       [value]="bancoPregu.pregunta ? bancoPregu.pregunta.toString() : ''">
                       {{ bancoPregu.pregunta }}
                     </option>
+                    <option value="" disabled> --Seleciona una opción--</option>
                   </select>
                   <div class="text-danger"
                     *ngIf="solicitudEncuestaForm.get('pregunta10')?.hasError('required') && solicitudEncuestaForm.get('pregunta10')?.touched">

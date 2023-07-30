@@ -11,6 +11,9 @@ import { PreguntaSelecService } from 'src/app/service/preguntaSelec.service';
 import { RespuestasService } from 'src/app/service/respuestas.service';
 import { SolicitudService } from 'src/app/service/solicitud.service';
 
+
+
+
 @Component({
   selector: 'app-encuestas-user',
   templateUrl: './encuestas-user.component.html',
@@ -18,6 +21,9 @@ import { SolicitudService } from 'src/app/service/solicitud.service';
 })
 export class EncuestasUserComponent implements OnInit {
   EncuestaForm: FormGroup;
+  tituloApp: string = 'MarketingBoots';
+  pdfDocGenerator: any;
+  pdfDefinition: any;
   objeto:  any;
   id:string | null;
   empresa: string = '';
@@ -37,11 +43,10 @@ export class EncuestasUserComponent implements OnInit {
   marca: any;
   
   opciones = [
-    { valor: '1', texto: 'Totalmente desacuerdo' },
-    { valor: '2', texto: 'Desacuerdo' },
+    { valor: '1', texto: 'Desacuerdo' },
+    { valor: '2', texto: 'Neutral' },
     { valor: '3', texto: 'De acuerdo' },
     { valor: '4', texto: 'Muy de acuerdo' },
-    { valor: '5', texto: 'Totalmente de acuerdo' },
     // Agrega más opciones según tus necesidades
   ];
 
@@ -120,7 +125,7 @@ agregarEncuesta(){
   const ENCUESTA: Encuesta ={
     nombre: this.EncuestaForm.get('nombre')?.value,
     edad: this.EncuestaForm.get('edad')?.value,
-    empresa: this.EncuestaForm.get('empresa')?.value,
+    empresa: this.empresa,
     direccion: this.EncuestaForm.get('direccion')?.value,
     nombreArticulo: this.nombreArticulo,
     precioArticulo: this.precioArticulo,
@@ -151,13 +156,19 @@ agregarEncuesta(){
   
     //agregamos pedido
     this._Encuesta.guardarRespuestas(ENCUESTA).subscribe(dato=>{
-    this.router.navigate(['/listasSolicitud'])
+    this.router.navigate(['/listaEncuestasUser'])
     this.toastr.success('La encuesta fue contestada con exito','Encuesta contestada');
   }, error=>{
   console.log(error);
   
   })
   }
+
+  
+    
+
+ 
+  
 }
 
 
