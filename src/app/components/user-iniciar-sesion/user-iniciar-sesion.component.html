@@ -3,7 +3,7 @@
 <div class="wrapper">
   <div *ngIf="!loading" class="body">
     <img class="logo" src="../../../assets/admin/images/logos/usuario.png" alt="Login">
-    <h1 class="mb-2">Inicio de Sesión</h1>
+    <h1 class="mb-2">Inicio de sesión</h1>
     <form (ngSubmit)="login()" [formGroup]="loginUsuario">
       <div class="form-floating mb-3">
         <input type="email" formControlName="email"  class="form-control"  placeholder="Correo electronico">

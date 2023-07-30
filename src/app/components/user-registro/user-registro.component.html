@@ -1,7 +1,7 @@
 <app-navbar></app-navbar>
 
 <br><br>
-
+ 
 <div class="wrapper">
   <div *ngIf="!loading" class="body">
     <img class="logo" src="../../../assets/admin/images/logos/usuario.png" alt="Login">
@@ -18,7 +18,9 @@
       <div class="form-floating mb-3">
         <select class="form-control" formControlName="paquete" type="text" name="paquete" id="paquete" required>
           <label>Eleguir paquete</label>
-          <option value="paquete1">Paquete 1</option>
+          <option value="" disabled> --Seleciona una opción--</option>
+          <option value="paquete1">Paquete básico</option>
+          <option value="paquete2">Paquete premium</option>
         </select>
         <span *ngIf="registrarUsuario.get('paquete')?.hasError('required') && registrarUsuario.get('paquete')?.touched" class="text-danger errorLabel">
           El <strong>paquete</strong> es requerido.

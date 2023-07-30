@@ -82,6 +82,7 @@ const routes: Routes = [
 
   {path:'listaSolicitud', component:ListaSolicitudesComponent},
   {path:'editarSolicitud/:id', component:SolicitudesEncuestasComponent},
+  {path:'editarSolicitudAdmin/:id', component:SolicitudesEncuestasAdminComponent},
   {path:'listaEncuestasAdmin', component:ListaEncuestasAdminComponent},
   {path:'listaEncuestasUser', component:ListaEncuestasUserComponent},
 

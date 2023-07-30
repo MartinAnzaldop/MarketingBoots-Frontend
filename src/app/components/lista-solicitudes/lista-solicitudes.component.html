@@ -23,7 +23,7 @@
           <td>{{solicitud.marcaArticulo}}</td>
           <td>
 
-            <button [routerLink]="['/editarSolicitud', solicitud._id]" type="button" class="btn btn-warning me-2">editar</button>
+            <button [routerLink]="['/editarSolicitudAdmin', solicitud._id]" type="button" class="btn btn-warning me-2">editar</button>
             <button (click)="eliminarSolicitud(solicitud._id)" type="button" class="btn btn-danger">eliminar</button>
           </td>
         </tr>
