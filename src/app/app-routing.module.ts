@@ -81,17 +81,18 @@ const routes: Routes = [
   {path:'listaRespuestasEncuestas', component:ListaRespuestasEncuestasComponent},
 
   {path:'listaSolicitud', component:ListaSolicitudesComponent},
-  {path:'editarSolicitud/:id', component:SolicitudesEncuestasComponent},
+
+  
   {path:'editarSolicitudAdmin/:id', component:SolicitudesEncuestasAdminComponent},
+
+  {path:'editarSolicitud/:id', component:SolicitudesEncuestasAdminComponent},
+
   {path:'listaEncuestasAdmin', component:ListaEncuestasAdminComponent},
   {path:'listaEncuestasUser', component:ListaEncuestasUserComponent},
 
   {path:'ChatbotFlotante', component:ChatbotPopupComponent},
   {path:'userResultadoEncuesta', component:UserResultadoEncuestaComponent},
   {path:'estadisticas', component:EstadisticasComponent},
-
-
-
 
   {path:'**', redirectTo:'inicio', pathMatch:"full"}
 ];

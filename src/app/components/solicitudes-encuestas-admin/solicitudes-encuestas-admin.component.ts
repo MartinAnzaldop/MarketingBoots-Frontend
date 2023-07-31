@@ -18,13 +18,13 @@ export class SolicitudesEncuestasAdminComponent implements OnInit {
   id:string | null;
   titulo: string='Agregar solicitud';
   listaBancoPregu:BancoPregu []=[];
-  usuario:string;
+  
   
     constructor(private _BancoPreguService: BancoPreguService, private fb: FormBuilder, private  router: Router, private toastr: ToastrService,
      private aRouter: ActivatedRoute, private _Solicitud: SolicitudService, private _DatosUsuario: DatosUsuarioService) {
 
   this.solicitudEncuestaForm=this.fb.group({
-    
+    usuario:['', Validators.required],
     empresa:['', Validators.required],
     direccion:['', Validators.required],
     contacto:['', Validators.required],
@@ -56,9 +56,7 @@ export class SolicitudesEncuestasAdminComponent implements OnInit {
 
   ngOnInit(): void {
     this.obtenerBancoPregu()
-    this. esEditar()
-    this.usuario=this._DatosUsuario.getEmail();
-    console.log('correo'+this._DatosUsuario.getEmail())
+    this.esEditar();
   }
   isChatbotVisible = false;
   toggleChatbot(): void {
@@ -68,7 +66,7 @@ export class SolicitudesEncuestasAdminComponent implements OnInit {
     
     console.log(this.solicitudEncuestaForm)
     const SOLICITUD: solicitudEncuesta ={
-      usuario: this._DatosUsuario.getEmail(),
+      usuario: this.solicitudEncuestaForm.get('usuario')?.value,
       empresa: this.solicitudEncuestaForm.get('empresa')?.value,
       direccion: this.solicitudEncuestaForm.get('direccion')?.value,
       contacto: this.solicitudEncuestaForm.get('contacto')?.value,
@@ -99,7 +97,7 @@ export class SolicitudesEncuestasAdminComponent implements OnInit {
     if(this.id !==null){
       //editamos pedido
       this._Solicitud.editarSolicitud(this.id, SOLICITUD).subscribe(data=>{
-        this.router.navigate(['/adminVista'])
+        this.router.navigate(['/listaSolicitud'])
         this.toastr.info('La solicitud fue editado con exito','Pedido editado');
       },error=>{
     console.log(error)
@@ -108,7 +106,7 @@ export class SolicitudesEncuestasAdminComponent implements OnInit {
       //agregamos pedido
       console.log(SOLICITUD);
       this._Solicitud.guardarSolicitud(SOLICITUD).subscribe(dato=>{
-      this.router.navigate(['/adminVista'])
+      this.router.navigate(['/listaSolicitud'])
       this.toastr.success('La solicitud fue agregado con exito','Pedido agregado');
     }, error=>{
     console.log(error);
@@ -130,8 +128,9 @@ export class SolicitudesEncuestasAdminComponent implements OnInit {
     if(this.id !==null){
       this.titulo='Editar solicitud';
       this._Solicitud.obtenerSolicitudById(this.id).subscribe(data=>{
+        console.log(data)
       this.solicitudEncuestaForm.setValue({
-          usuario: data.usuario,
+          usuario:data.usuario,
           empresa: data.empresa,
           direccion: data.direccion,
           contacto: data.contacto,
@@ -159,13 +158,13 @@ export class SolicitudesEncuestasAdminComponent implements OnInit {
           pregunta10: data.pregunta10,
 
       })
+      console.log('Objeto a')
       },error=>{
         console.log(error)
       })
     }
-  }
-  
+    
   }
 
-
+}
   

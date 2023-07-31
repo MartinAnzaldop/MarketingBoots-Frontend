@@ -6,6 +6,7 @@
     <table class="table table-bordered border-primary table-hover">
       <thead class="table-dark">
         <tr class="text-center">
+          <th>Usuario</th>
           <th>Empresa</th>
           <th>Encargado</th>
           <th>Articulo</th>
@@ -16,6 +17,7 @@
       </thead>
       <tbody>
         <tr *ngFor="let solicitud of listaSolicitudes" class="text-center">
+          <td>{{solicitud.usuario}}</td>
           <td>{{solicitud.empresa}}</td>
           <td>{{solicitud.encargado}}</td>
           <td>{{solicitud.nombreArticulo}}</td>
