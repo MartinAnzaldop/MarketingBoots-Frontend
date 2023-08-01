@@ -6,11 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./inicio.component.css'],
 })
 export class InicioComponent implements OnInit {
-  isChatbotVisible = false;
+
   constructor() { }
   ngOnInit(): void {
   }
-
+  isChatbotVisible = false;
   toggleChatbot(): void {
     this.isChatbotVisible = !this.isChatbotVisible;
   }

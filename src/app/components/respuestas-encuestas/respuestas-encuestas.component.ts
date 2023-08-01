@@ -41,14 +41,5 @@ export class RespuestasEncuestasComponent implements OnInit {
 
 
     }
-    console.log(RESPUESTAS);
-    this._RespuestasService.guardarRespuestas(RESPUESTAS).subscribe(dato=>{
-      this.toastr.success('La respuesta fue agregada con exito','Respuesta agregada');
-      this.router.navigate(['/listaRespuestasEncuestas'])
-    }, error=>{
-    console.log(error);
-    this.respuestasForm.reset();
-    })
-    }
-
+  }
 }

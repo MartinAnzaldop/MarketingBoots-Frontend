@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
 import { Respuestas } from '../models/respuestas';
+import { Encuesta } from '../models/encuesta';
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +19,7 @@ export class RespuestasService {
     return this.http.delete(this.url + id);
   }
 
-  guardarRespuestas(respuestas: Respuestas): Observable<any> {
+  guardarRespuestas(respuestas: Encuesta): Observable<any> {
     return this.http.post(this.url, respuestas);
   }
 

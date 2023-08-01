@@ -1,0 +1,124 @@
+<app-navbar-admin></app-navbar-admin> <br><br><br><br>
+
+<br />
+<div class=" container color border border-black">
+
+  <hr><br />
+
+
+  <section class="row">
+    <section class="col-md-12">
+
+
+      <h1 class="text-center" style="text-transform: uppercase;"><strong>Estadisticas</strong></h1> <br><br>
+      <section class="row">
+        <div class="col-md-8">
+          <h2><strong>{{titulo}}</strong></h2>
+          <div class="form-group">
+            <h5>Empresa: {{empresa}}</h5>
+            <h5>Marca: {{marca}}</h5>
+            <h5> Nombre del producto/servicio: {{nombreArticulo}}</h5>
+            <h5>Precio: ${{precioArticulo}}</h5><br><br>
+          </div>
+        </div>
+      </section>
+      <br>
+      
+
+
+
+      <div class="container">
+        <div class="d-flex justify-content-center">
+          <h4>Pregunta 1: {{pregunta1}}</h4><br> <br>
+        </div>
+        <div class="d-flex justify-content-center" *ngFor="let encuesta of listaEncuestas">
+          <h4 *ngIf="encuesta.nombreArticulo === nombreArticulo"></h4>
+        </div>
+        <br>
+        <div class="col-lg-6">
+          <canvas id="respuesta1" width="200px"></canvas>
+        </div>
+        <br>
+        <div class="d-flex justify-content-center">
+          <h4>Pregunta 2: {{pregunta2}}</h4><br> <br>
+        </div><br>
+        <div class="col-lg-6">
+          <canvas id="respuesta2" width="200px"></canvas>
+        </div>
+        
+        <div class="d-flex justify-content-center">
+          <h4>Pregunta 3: {{pregunta3}}</h4><br> <br>
+        </div>
+        <br>
+        <div class="col-lg-6">
+          <canvas id="respuesta3" width="200px"></canvas>
+        </div>
+
+        <div class="d-flex justify-content-center">
+          <h4>Pregunta 4: {{pregunta4}}</h4><br> <br>
+        </div>
+        <br>
+        <div class="col-lg-6">
+          <canvas id="respuesta4" width="200px"></canvas>
+        </div>
+        <div class="d-flex justify-content-center">
+          <h4>Pregunta 5: {{pregunta5}}</h4><br> <br>
+        </div>
+        <br>
+        <div class="col-lg-6">
+          <canvas id="respuesta5" width="200px"></canvas>
+        </div>
+
+        <div class="d-flex justify-content-center">
+          <h4>Pregunta 6: {{pregunta6}}</h4><br> <br>
+        </div>
+        <br>
+        <div class="col-lg-6">
+          <canvas id="respuesta6" width="200px"></canvas>
+        </div>
+        <div class="d-flex justify-content-center">
+          <h4>Pregunta 7: {{pregunta7}}</h4><br> <br>
+        </div>
+        <br>
+        <div class="col-lg-6">
+          <canvas id="respuesta7" width="200px"></canvas>
+        </div>
+        <div class="d-flex justify-content-center">
+          <h4>Pregunta 8: {{pregunta8}}</h4><br> <br>
+        </div>
+        <br>
+        <div class="col-lg-6">
+          <canvas id="respuesta8" width="200px"></canvas>
+        </div>
+        <div class="d-flex justify-content-center">
+          <h4>Pregunta 9: {{pregunta9}}</h4><br> <br>
+        </div>
+        <br>
+        <div class="col-lg-6">
+          <canvas id="respuesta9" width="200px"></canvas>
+        </div>
+        <div class="d-flex justify-content-center">
+          <h4>Pregunta 10: {{pregunta10}}</h4><br> <br>
+        </div>
+        <br>
+        <div class="col-lg-6">
+          <canvas id="respuesta10" width="200px"></canvas>
+        </div>
+        <br>
+        <hr />
+
+
+
+
+
+        <br>
+        <hr />
+
+
+
+
+        <br> <br>
+      </div>
+    </section>
+  </section>
+</div>

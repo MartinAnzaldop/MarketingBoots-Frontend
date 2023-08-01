@@ -11,10 +11,10 @@ import { BancoPreguService } from 'src/app/service/bancoPregu.service';
 })
 export class ListaBancoPreguntasComponent implements OnInit {
   listaBancoPregu:BancoPregu []=[];
-  
+
     constructor(private _BancoPreguService: BancoPreguService, private toastr: ToastrService,
       private router: Router){ }
-  
+
     ngOnInit(): void {
       this.obtenerBancoPregu()
     }

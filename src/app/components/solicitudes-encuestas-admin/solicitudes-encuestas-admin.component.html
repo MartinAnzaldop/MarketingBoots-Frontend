@@ -1,0 +1,403 @@
+<app-navbar-admin></app-navbar-admin>
+<div id="contact" class="contact-us section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.25s">
+        <form id="contact" [formGroup]="solicitudEncuestaForm" (ngSubmit)="agregarSolicitud()">
+          <div class="row">
+            <div class="col-lg-6 offset-lg-3">
+              <div class="section-heading">
+                <h2>{{titulo}}</h2>
+                <p>Ingrese los datos para generar la solicitud.</p>
+              </div>
+            </div>
+            
+            <div class="col-lg-6">
+              <fieldset>
+                <input type="name" formControlName="empresa" name="empresa" id="empresa" placeholder="Empresa"
+                  autocomplete="on" required>
+                <div *ngIf="solicitudEncuestaForm.get('empresa')?.hasError('required') && solicitudEncuestaForm.get('empresa')?.touched">
+                  <span>El nombre de la empresa <strong>es obligatorio</strong></span>
+                </div>
+              </fieldset>
+            </div>
+            <div class="col-lg-6">
+              <fieldset>
+                <input type="surname" formControlName="direccion" name="direccion" id="direccion"
+                  placeholder="Direccion" autocomplete="on" required>
+                <div class="text-danger"
+                  *ngIf="solicitudEncuestaForm.get('direccion')?.hasError('required') && solicitudEncuestaForm.get('direccion')?.touched">
+                  <span>El nombre de la direccion <strong>es obligatorio</strong></span>
+                </div>
+              </fieldset>
+            </div>
+            <div class="col-lg-6">
+              <fieldset>
+                <input class="form-control" formControlName="contacto" type="text" name="contacto" id="contacto"
+                  placeholder="Contacto" required>
+                <div class="text-danger"
+                  *ngIf="solicitudEncuestaForm.get('contacto')?.hasError('required') && solicitudEncuestaForm.get('contacto')?.touched">
+                  <span>El nombre del contacto <strong>es obligatorio</strong></span>
+                </div>
+              </fieldset>
+            </div>
+            <div class="col-lg-6">
+              <fieldset>
+                <input type="subject" formControlName="encargado" name="encargado" id="encargado"
+                  placeholder="Encargado" autocomplete="on">
+                <div class="text-danger"
+                  *ngIf="solicitudEncuestaForm.get('encargado')?.hasError('required') && solicitudEncuestaForm.get('encargado')?.touched">
+                  <span>El nombre del encargado <strong>es obligatorio</strong></span>
+                </div>
+              </fieldset>
+            </div>
+            <div class="col-lg-6">
+              <fieldset>
+                <label>Seleccione la categoria</label>
+                <select name="categoria" formControlName="categoria" id="categoria" class="form-control">
+                  <option value="" disabled> --Seleciona una opción--</option>
+                  <option value="servicio">Servicio</option>
+                  <option value="producto">Producto</option>
+                </select>
+                <div class="text-danger"
+                  *ngIf="solicitudEncuestaForm.get('categoria')?.hasError('required') && solicitudEncuestaForm.get('categoria')?.touched">
+                  <span>La categoria <strong>es obligatoria</strong></span>
+                </div>
+              </fieldset>
+            </div>
+            <div class="col-lg-6"><br>
+              <fieldset>
+                <input class="form-control" formControlName="nombreArticulo" type="text" name="nombreArticulo"
+                  id="nombreArticulo" placeholder="Nombre del articulo" required>
+                <div class="text-danger"
+                  *ngIf="solicitudEncuestaForm.get('nombreArticulo')?.hasError('required') && solicitudEncuestaForm.get('nombreArticulo')?.touched">
+                  <span>El nombre del articulo <strong>es obligatorio</strong></span>
+                </div>
+              </fieldset>
+            </div>
+            <div class="col-lg-6">
+              <fieldset>
+                <input class="form-control" formControlName="precioArticulo" type="number" name="precioArticulo"
+                  id="precioArticulo" placeholder="Precio del articulo" required>
+                <div class="text-danger"
+                  *ngIf="solicitudEncuestaForm.get('precioArticulo')?.hasError('required') && solicitudEncuestaForm.get('precioArticulo')?.touched">
+                  <span>El precio del articulo <strong>es obligatorio</strong></span>
+                </div>
+              </fieldset>
+            </div>
+            <div class="col-lg-6">
+              <fieldset>
+                <input class="form-control" formControlName="marcaArticulo" type="text" name="marcaArticulo"
+                  id="marcaArticulo" placeholder="Marca del articulo" required>
+                <div class="text-danger"
+                  *ngIf="solicitudEncuestaForm.get('marcaArticulo')?.hasError('required') && solicitudEncuestaForm.get('marcaArticulo')?.touched">
+                  <span>El nombre de la marca <strong>es obligatorio</strong></span>
+                </div>
+              </fieldset>
+            </div>
+            <div class="col-lg-12">
+              <fieldset>
+                <textarea formControlName="descripcionArticulo" name="descripcionArticulo" type="text"
+                  class="form-control" id="descripcionArticulo" placeholder="ingresa descripcion del articulo"
+                  required=""></textarea>
+                <div class="text-danger"
+                  *ngIf="solicitudEncuestaForm.get('descripcionArticulo')?.hasError('required') && solicitudEncuestaForm.get('descripcionArticulo')?.touched">
+                  <span>La descripcion del articulo <strong>es obligatorio</strong></span>
+                </div>
+              </fieldset>
+            </div>
+            <!--Boton de enviar
+            <div class="col-lg-12 text-end">
+              <fieldset>
+                <button type="submit" [disabled]="pedidoForm.invalid" id="form-submit"
+                  class="main-button btn-success">Enviar
+                  solicitud</button>
+              </fieldset>
+            </div>-->
+          </div>
+          <!---Configuración encuesta---->
+
+            <div class="row">
+              <div class="col-lg-6 offset-lg-3">
+                <div class="section-heading">
+                  <h2>Encuesta configurada</h2>
+                  <p>Ingrese los datos para configurar la encuesta.</p>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <fieldset>
+                  <input type="date" formControlName="fechaInicio" name="fechaInicio" id="fechaInicio"
+                    placeholder="Fecha Inicio" autocomplete="on" required formArrayName="questions">
+                  <div class="text-danger"
+                    *ngIf="solicitudEncuestaForm.get('fechaInicio')?.hasError('required') && solicitudEncuestaForm.get('fechaInicio')?.touched">
+                    <span>La fecha inicial <strong>es obligatoria</strong></span>
+                  </div>
+                </fieldset>
+              </div>
+              
+              <div class="col-lg-6">
+                <fieldset>
+                  <input type="date" formControlName="fechaFinal" name="fechaFinal" id="fechaFinal"
+                    placeholder="Fecha Final" autocomplete="on" required>
+                  <div class="text-danger"
+                    *ngIf="solicitudEncuestaForm.get('fechaFinal')?.hasError('required') && solicitudEncuestaForm.get('fechaFinal')?.touched">
+                    <span>La fecha de termino <strong>es obligatoria</strong></span>
+                  </div>
+                </fieldset>
+              </div>
+              <div class="col-lg-6">
+                <fieldset><br>
+                  <input class="form-control" formControlName="titulo" type="text" name="titulo" id="titulo"
+                    placeholder="Titulo" autocomplete="on" required>
+                  <div class="text-danger"
+                    *ngIf="solicitudEncuestaForm.get('titulo')?.hasError('required') && solicitudEncuestaForm.get('titulo')?.touched">
+                    <span>El titulo <strong>es obligatorio</strong></span>
+                  </div>
+                </fieldset>
+              </div>
+              <div class="col-lg-6">
+                <fieldset>
+                  <label>Eliga tipo de poblacion</label>
+                  <select name="poblacion" formControlName="poblacion" id="poblacion" class="form-control"
+                    placeholder="Poblacion">
+                    <option value="" disabled> --Seleciona una opción--</option>
+                    <option value="nino">Niño</option>
+                    <option value="joven">Joven</option>
+                    <option value="adulto">Adulto</option>
+                    <option value="anciano">Anciano</option>
+                    <option value="mujer">Mujer</option>
+                    <option value="hombre">Hombre</option>
+                    <option value="binario">Binario</option>
+                  </select>
+                  <div class="text-danger"
+                    *ngIf="solicitudEncuestaForm.get('poblacion')?.hasError('required') && solicitudEncuestaForm.get('poblacion')?.touched">
+                    <span>La categoria <strong>es obligatoria</strong></span>
+                  </div>
+                </fieldset>
+              </div>
+
+              <div class="col-lg-12">
+                <fieldset>
+                  <input class="form-control" formControlName="numeroEncuesta" type="number" name="numeroEncuesta"
+                    id="numeroEncuesta" placeholder="Número de encuesta" autocomplete="on" required>
+                  <div class="text-danger"
+                    *ngIf="solicitudEncuestaForm.get('numeroEncuesta')?.hasError('required') && solicitudEncuestaForm.get('numeroEncuesta')?.touched">
+                    <span>El número de encuesta <strong>es obligatorio</strong></span>
+                  </div>
+                </fieldset>
+              </div>
+              <div class="col-lg-12">
+                <fieldset>
+                  <input class="form-control" formControlName="objetivo" type="text" name="objetivo"
+                    id="numeroEncuesta" placeholder="objetivo de la encuesta" autocomplete="on" required>
+                  <div class="text-danger"
+                    *ngIf="solicitudEncuestaForm.get('numeroEncuesta')?.hasError('required') && solicitudEncuestaForm.get('numeroEncuesta')?.touched">
+                    <span>El número de encuesta <strong>es obligatorio</strong></span>
+                  </div>
+                </fieldset>
+              </div>
+              <!--Botón envio
+              <div class="col-lg-12 text-end">
+                <fieldset>
+                  <button type="submit" [disabled]="encuestaConfiguradaForm.invalid" id="form-submit"
+                    class="main-button">Agregar encuesta</button>
+                </fieldset>
+              </div>-->
+            </div>
+            <!--Selección de preguntas-->
+              <div class="row">
+                <div class="col-lg-6 offset-lg-3">
+                  <div class="section-heading">
+                    <h2>Selecciona tus preguntas</h2>
+                  </div>
+                </div>
+                <div class="row">
+                  <tr>
+                    <td><label align-items="left" for="campo-select">Seleccione la pregunta 1 sobre el precio:</label>
+                    </td>
+                  </tr>
+                  <select formControlName="pregunta1">
+                    <option *ngFor="let bancoPregu of listaBancoPregu"
+                      [value]="bancoPregu.pregunta ? bancoPregu.pregunta.toString() : ''">
+                      {{ bancoPregu.pregunta }}
+                    </option>
+                    <option value="" disabled> --Seleciona una opción--</option>
+                  </select>
+                  <div class="text-danger"
+                    *ngIf="solicitudEncuestaForm.get('pregunta1')?.hasError('required') && solicitudEncuestaForm.get('pregunta1')?.touched">
+                    <span>La pregunta 1 <strong>es obligatorio</strong></span>
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                  <tr>
+                    <td><label align-items="left" for="campo-select">Selecciona la pregunta 2 sobre el precio:</label>
+                    </td>
+                  </tr>
+                  <select formControlName="pregunta2">
+                    <option *ngFor="let bancoPregu of listaBancoPregu"
+                      [value]="bancoPregu.pregunta ? bancoPregu.pregunta.toString() : ''">
+                      {{ bancoPregu.pregunta }}
+                    </option>
+                    <option value="" disabled> --Seleciona una opción--</option>
+                  </select>
+                  <div class="text-danger" formControlName="pregunta2" name="pregunta2"
+                    *ngIf="solicitudEncuestaForm.get('pregunta2')?.hasError('required') && solicitudEncuestaForm.get('pregunta2')?.touched">
+                    <span>La pregunta 2 <strong>es obligatorio</strong></span>
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                  <tr>
+                    <td><label align-items="left" for="campo-select">Selecciona la pregunta 3 sobre el precio:</label>
+                    </td>
+                  </tr>
+                  <select formControlName="pregunta3">
+                    <option *ngFor="let bancoPregu of listaBancoPregu"
+                      [value]="bancoPregu.pregunta ? bancoPregu.pregunta.toString() : ''">
+                      {{ bancoPregu.pregunta }}
+                    </option>
+                    <option value="" disabled> --Seleciona una opción--</option>
+                  </select>
+                  <div class="text-danger"
+                    *ngIf="solicitudEncuestaForm.get('pregunta3')?.hasError('required') && solicitudEncuestaForm.get('pregunta3')?.touched">
+                    <span>La pregunta 3 <strong>es obligatorio</strong></span>
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                  <tr>
+                    <td><label align-items="left" for="campo-select">Selecciona la pregunta 4 sobre la
+                        calidad:</label></td>
+                  </tr>
+                  <select formControlName="pregunta4">
+                    <option *ngFor="let bancoPregu of listaBancoPregu"
+                      [value]="bancoPregu.pregunta ? bancoPregu.pregunta.toString() : ''">
+                      {{ bancoPregu.pregunta }}
+                    </option>
+                    <option value="" disabled> --Seleciona una opción--</option>
+                  </select>
+                  <div class="text-danger"
+                    *ngIf="solicitudEncuestaForm.get('pregunta4')?.hasError('required') && solicitudEncuestaForm.get('pregunta4')?.touched">
+                    <span>La pregunta 4 <strong>es obligatorio</strong></span>
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                  <tr>
+                    <td><label align-items="left" for="campo-select">Selecciona la pregunta 5 sobre la
+                        calidad:</label></td>
+                  </tr>
+                  <select formControlName="pregunta5">
+                    <option *ngFor="let bancoPregu of listaBancoPregu"
+                      [value]="bancoPregu.pregunta ? bancoPregu.pregunta.toString() : ''">
+                      {{ bancoPregu.pregunta }}
+                    </option>
+                    <option value="" disabled> --Seleciona una opción--</option>
+                  </select>
+                  <div class="text-danger"
+                    *ngIf="solicitudEncuestaForm.get('pregunta5')?.hasError('required') && solicitudEncuestaForm.get('pregunta5')?.touched">
+                    <span>La pregunta 5 <strong>es obligatorio</strong></span>
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                  <tr>
+                    <td><label align-items="left" for="campo-select">Selecciona la pregunta 6 sobre la
+                        calidad:</label></td>
+                  </tr>
+                  <select formControlName="pregunta6">
+                    <option *ngFor="let bancoPregu of listaBancoPregu"
+                      [value]="bancoPregu.pregunta ? bancoPregu.pregunta.toString() : ''">
+                      {{ bancoPregu.pregunta }}
+                    </option>
+                    <option value="" disabled> --Seleciona una opción--</option>
+                  </select>
+                  <div class="text-danger"
+                    *ngIf="solicitudEncuestaForm.get('pregunta6')?.hasError('required') && solicitudEncuestaForm.get('pregunta6')?.touched">
+                    <span>La pregunta 6 <strong>es obligatorio</strong></span>
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                  <tr>
+                    <td><label align-items="left" for="campo-select">Selecciona la pregunta 7 sobre la
+                        calidad:</label></td>
+                  </tr>
+                  <select formControlName="pregunta7">
+                    <option *ngFor="let bancoPregu of listaBancoPregu"
+                      [value]="bancoPregu.pregunta ? bancoPregu.pregunta.toString() : ''">
+                      {{ bancoPregu.pregunta }}
+                    </option>
+                    <option value="" disabled> --Seleciona una opción--</option>
+                  </select>
+                  <div class="text-danger"
+                    *ngIf="solicitudEncuestaForm.get('pregunta7')?.hasError('required') && solicitudEncuestaForm.get('pregunta7')?.touched">
+                    <span>La pregunta 7 <strong>es obligatorio</strong></span>
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                  <tr>
+                    <td><label align-items="left" for="campo-select">Selecciona la pregunta 8 sobre la
+                        comunidad:</label></td>
+                  </tr>
+                  <select formControlName="pregunta8">
+                    <option *ngFor="let bancoPregu of listaBancoPregu"
+                      [value]="bancoPregu.pregunta ? bancoPregu.pregunta.toString() : ''">
+                      {{ bancoPregu.pregunta }}
+                    </option>
+                    <option value="" disabled> --Seleciona una opción--</option>
+                  </select>
+                  <div class="text-danger"
+                    *ngIf="solicitudEncuestaForm.get('pregunta8')?.hasError('required') && solicitudEncuestaForm.get('pregunta8')?.touched">
+                    <span>La pregunta 8 <strong>es obligatorio</strong></span>
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                  <tr>
+                    <td><label align-items="left" for="campo-select">Selecciona la pregunta 9 sobre la
+                        comunidad:</label></td>
+                  </tr>
+                  <select formControlName="pregunta9">
+                    <option *ngFor="let bancoPregu of listaBancoPregu"
+                      [value]="bancoPregu.pregunta ? bancoPregu.pregunta.toString() : ''">
+                      {{ bancoPregu.pregunta }}
+                    </option>
+                    <option value="" disabled> --Seleciona una opción--</option>
+                  </select>
+                  <div class="text-danger"
+                    *ngIf="solicitudEncuestaForm.get('pregunta9')?.hasError('required') && solicitudEncuestaForm.get('pregunta9')?.touched">
+                    <span>La pregunta 9 <strong>es obligatorio</strong></span>
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                  <tr>
+                    <td><label align-items="left" for="campo-select">Selecciona la pregunta 10 sobre la
+                        comunidad:</label></td>
+                  </tr>
+                  <select formControlName="pregunta10">
+                    <option *ngFor="let bancoPregu of listaBancoPregu"
+                      [value]="bancoPregu.pregunta ? bancoPregu.pregunta.toString() : ''">
+                      {{ bancoPregu.pregunta }}
+                    </option>
+                    <option value="" disabled> --Seleciona una opción--</option>
+                  </select>
+                  <div class="text-danger"
+                    *ngIf="solicitudEncuestaForm.get('pregunta10')?.hasError('required') && solicitudEncuestaForm.get('pregunta10')?.touched">
+                    <span>La pregunta 10 <strong>es obligatorio</strong></span>
+                  </div>
+                </div>
+                <!--Boton de enviar-->
+                <div class="col-lg-12 text-end">
+                  <fieldset>
+                    <button type="submit"  id="form-submit" class="main-button ">Enviar
+                      Pregunta</button>
+                  </fieldset>
+                </div>
+              </div>
+
+        </form>
+

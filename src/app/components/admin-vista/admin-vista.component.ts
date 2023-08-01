@@ -11,5 +11,8 @@ export class AdminVistaComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  isChatbotVisible = false;
+  toggleChatbot(): void {
+    this.isChatbotVisible = !this.isChatbotVisible;
+  }
 }
