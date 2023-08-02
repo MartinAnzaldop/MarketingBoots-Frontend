@@ -47,6 +47,7 @@ import { EstadisticasAdminComponent } from './components/estadisticas-admin/esta
 
 import { ChatbotPopupComponent } from './components/chatbot-popup/chatbot-popup.component';
 import { ChatBotComponent } from './components/chat-bot/chat-bot.component';
+import { ListasSolicitudesComponent } from './components/listas-solicitudes/listas-solicitudes.component';
 
 
 
@@ -91,6 +92,7 @@ import { ChatBotComponent } from './components/chat-bot/chat-bot.component';
 
 
     ChatBotComponent,
+          ListasSolicitudesComponent,
 
 
 
@@ -109,7 +111,8 @@ import { ChatBotComponent } from './components/chat-bot/chat-bot.component';
     HttpClientModule,
 
 
-    AngularFireModule.initializeApp(environment.firebaseConfig)
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+   
 
   ],
 

@@ -8,7 +8,7 @@ import { solicitudEncuesta } from '../models/solicitudEncuesta';
 })
 export class SolicitudService {
   
-  url='http://localhost:4000/api/solicitud/';
+  url='https://marketingboots.onrender.com/api/solicitud/';
   constructor(private http: HttpClient) { }
 
   getSolicitud():Observable<any>{

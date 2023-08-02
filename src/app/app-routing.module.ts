@@ -32,6 +32,8 @@ import { SolicitudesEncuestasAdminComponent } from './components/solicitudes-enc
 import { EstadisticasAdminComponent } from './components/estadisticas-admin/estadisticas-admin.component';
 
 import { ChatbotPopupComponent } from './components/chatbot-popup/chatbot-popup.component';
+import { ListasSolicitudesComponent } from './components/listas-solicitudes/listas-solicitudes.component';
+import { ChatBotComponent } from './components/chat-bot/chat-bot.component';
 
 
 
@@ -57,6 +59,7 @@ const routes: Routes = [
   {path:'prueba/:id', component:PruebaComponent},
   {path:'estadisticasUser/:id', component:EstadisticasComponent},
   {path:'estadisticasAdmin/:id', component:EstadisticasAdminComponent},
+  {path:'chatbot', component:ChatBotComponent},
 
 
 
@@ -81,11 +84,13 @@ const routes: Routes = [
   {path:'listaRespuestasEncuestas', component:ListaRespuestasEncuestasComponent},
 
   {path:'listaSolicitud', component:ListaSolicitudesComponent},
+  {path:'listaSolicitudesUser', component:ListasSolicitudesComponent},
 
   
   {path:'editarSolicitudAdmin/:id', component:SolicitudesEncuestasAdminComponent},
 
   {path:'editarSolicitud/:id', component:SolicitudesEncuestasAdminComponent},
+  {path:'editarSolicitudUser/:id', component: SolicitudesEncuestasComponent},
 
   {path:'listaEncuestasAdmin', component:ListaEncuestasAdminComponent},
   {path:'listaEncuestasUser', component:ListaEncuestasUserComponent},

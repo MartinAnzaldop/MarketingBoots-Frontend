@@ -7,7 +7,7 @@ import { PreguntaSelec } from '../models/preguntaSelec';
   providedIn: 'root'
 })
 export class PreguntaSelecService {
-url='http://localhost:4000/api/preguntaSelec/';
+url='https://marketingboots.onrender.com/api/preguntaSelec/';
   constructor(private http: HttpClient) { }
 
   getPreguntaSelec():Observable<any>{

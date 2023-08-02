@@ -7,7 +7,7 @@ import { Pedido } from '../models/pedido';
   providedIn: 'root'
 })
 export class PedidoService {
-url='http://localhost:4000/api/pedido/';
+url='https://marketingboots.onrender.com/api/pedido/';
   constructor(private http: HttpClient) { }
 
   getPedidos():Observable<any>{

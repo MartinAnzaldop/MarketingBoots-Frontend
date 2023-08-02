@@ -8,7 +8,7 @@ import { Encuesta } from '../models/encuesta';
   providedIn: 'root'
 })
 export class RespuestasService {
-  url = 'http://localhost:4000/api/respuestas/';
+  url = 'https://marketingboots.onrender.com/api/respuestas/';
   constructor(private http: HttpClient) { }
 
   getRespuestas(): Observable<any> {

@@ -1,6 +1,6 @@
 
 export const environment = {
-  production: false,
+  production: true,
   firebaseConfig: {
     apiKey: "AIzaSyCxKRAQ5qxhybNJ_gIe60zxdRQViWmSqoU",
     authDomain: "marktingboots.firebaseapp.com",
