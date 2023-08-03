@@ -7,7 +7,7 @@ import { BancoPregu } from '../models/bancoPregu';
   providedIn: 'root'
 })
 export class BancoPreguService {
-url='http://localhost:4000/api/bancoPregu/';
+url='https://marketingboots.onrender.com/api/bancoPregu/';
   constructor(private http: HttpClient) { }
 
   getBancoPregu():Observable<any>{
